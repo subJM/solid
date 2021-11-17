@@ -27,7 +27,7 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>토닥토닥</title>
+		<title>No.1 가상자산 플랫폼, Solid</title>
 		<script src="http://code.jquery.com/jquery-1.12.4.min.js" charset="utf-8"></script>
 		<link rel="shortcut icon" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/todagtodag/img/todagtodag_logo.png">
 		<script src="./js/member_form.js" charset="utf-8"></script>
