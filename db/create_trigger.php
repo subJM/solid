@@ -17,7 +17,7 @@ function create_trigger($con, $trigger_name) {
             for each row
             begin
             insert into deleted_members values (old.num, old.id, old.password, old.name, old.phone, 
-            old.email, old.address, old.regist_day, old.level, curdate());
+            old.email, old.regist_day, old.level, curdate());
             end";
         break;
       default:
