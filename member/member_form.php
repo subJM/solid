@@ -31,7 +31,6 @@
         <script src="http://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
 		<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
 		<script src="./js/member_form.js" charset="utf-8"></script>
-		<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST']; ?>/solid/css/common.css">
 		<link rel="stylesheet" href="./css/member.css">
 		<link rel="stylesheet" href="./css/mypage.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
@@ -138,7 +137,7 @@
             }
 		</script>
 		<script type="text/javascript">
-            var naver_id_login = new naver_id_login("oTiDPiE8zHoaVttCf0a_", "http://127.0.0.1/todagtodag/member/member_form.php");
+            var naver_id_login = new naver_id_login("oTiDPiE8zHoaVttCf0a_", "http://127.0.0.1/solid/member/member_form.php");
             // 접근 토큰 값 출력 alert(naver_id_login.oauthParams.access_token); 네이버 사용자 프로필 조회
             naver_id_login.get_naver_userprofile("naverSignInCallback()");
 
@@ -210,7 +209,7 @@
 		</script>
 		<script type="text/javascript">
             $(document).ready(function () {
-                history.pushState(null, null, "http://127.0.0.1/todagtodag/member/member_form.php");
+                history.pushState(null, null, "http://127.0.0.1/solid/member/member_form.php");
             })
 		</script>
 	</head>
@@ -489,7 +488,7 @@
                                 <? if ($mode === "modify"){ ?>
 								<a href="member_mypage.php">
                                     <? }else{ ?>
-									<a href="http://<?= $_SERVER['HTTP_HOST'] ?>/todagtodag/index.php">
+									<a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/index.php">
                                         <? } ?>
 										<p>취 소</p>
 									</a>

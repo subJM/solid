@@ -48,13 +48,13 @@ header {
 ul {
   list-style-type: none;
 }
-ul > li.top1-1tabletd {
+li.top1-1tabletd {
   color: white;
   display: inline;
   margin-right: 25px;
   font-weight: bold;
 }
-ul > li.top1-1tabletd:hover {
+li.top1-1tabletd:hover {
   color: rgb(104, 145, 231);
 }
 .top1-2 {
@@ -66,16 +66,20 @@ ul > li.top1-1tabletd:hover {
 .top1-2table {
   padding: 20px;
 }
-ul > li.top1-2tabletd {
+li.top1-2tabletd {
   color: white;
   display: inline;
   margin-right: 25px;
   font-weight: bold;
   float: right;
 }
-ul > li.top1-2tabletd:hover {
+li.top1-2tabletd:hover {
   color: rgb(104, 145, 231);
 }
+a{
+  cursor: pointer;
+}
+
 article {
   position: relative;
   top: 65px;
@@ -99,6 +103,7 @@ article > section.notice_FAQ {
   text-align: center;
   /* border: 1px solid black; */
 }
+
 #notice {
   width: 49%;
   float: left;

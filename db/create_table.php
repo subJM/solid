@@ -107,7 +107,7 @@ function create_table($con, $table_name)
                 $sql = "CREATE TABLE `interest` (
                   `no` int(11) NOT NULL AUTO_INCREMENT,
                   `member_num` int(11) NOT NULL,
-                  `hospital_id` char(10) NOT NULL,
+                  `coin_id` char(10) NOT NULL,
                   PRIMARY KEY (`no`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
@@ -171,7 +171,7 @@ function create_table($con, $table_name)
         if (mysqli_query($con, $sql)) {
             echo "<script>alert('{$table_name} 테이블이 생성되었습니다.');</script>";
         } else {
-            echo "테이블 생성 실패원인" . mysqli_error($con);
+            // echo "테이블 생성 실패원인" . mysqli_error($con);
         }
     } //end of if($flag)
 }
