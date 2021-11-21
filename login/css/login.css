@@ -7,6 +7,7 @@ input {
 #login_main_content {
   width: 225px;
   margin: 0 auto;
+  vertical-align: middle;
 }
 
 #title_login {
