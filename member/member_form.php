@@ -36,6 +36,15 @@
     <link rel="stylesheet" href="./css/mypage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <script src="./js/mypage.js" defer></script>
+    <style>
+    body {
+        margin-top: -40px;
+    }
+
+    section {
+        margin-top: 120px;
+    }
+    </style>
 
     <!-- 우편번호 api 참조 스크립트 -->
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

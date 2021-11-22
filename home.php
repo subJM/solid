@@ -1,7 +1,7 @@
-<section class="mainframe">
+<div class="mainframe">
     <img id="mainpic" src="https://ftx.com/static/media/climateBanner.3fc5b882.jpg" />
-</section>
-<section class="notice_FAQ">
+</div>
+<div class="notice_FAQ">
     <div id="notice">
         <table>
             <th id="notice-1" class="notice_FAQ_left">공지사항</th>
@@ -55,7 +55,7 @@
             </tr>
         </table>
     </div>
-</section>
-<section class="subframe">
+</div>
+<div class="subframe">
     <img id="subpic" src="https://ftx.com/static/media/climateBanner.3fc5b882.jpg" />
-</section>
+</div>
