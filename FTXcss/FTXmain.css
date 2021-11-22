@@ -9,10 +9,10 @@
   height: auto;
 }
 header {
-  float: left;
+  /* float: left; */
   padding: 0;
   position: fixed;
-  z-index: 1;
+  /* z-index: 1; */
   width: 100%;
   height: 65px;
   background-color: black;
@@ -76,7 +76,7 @@ li.top1-2tabletd {
 li.top1-2tabletd:hover {
   color: rgb(104, 145, 231);
 }
-a{
+a {
   cursor: pointer;
 }
 
