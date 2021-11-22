@@ -43,6 +43,31 @@ function create_table($con, $table_name)
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;";
                 break;
+            case 'coin_info':
+                  $sql = "CREATE TABLE `coin_info` (
+                    `num` int(11) NOT NULL AUTO_INCREMENT,
+                    `coinName` char(15) NOT NULL,
+                    `trTime` char(15) NOT NULL,
+                    `transaction` BIGINT(20) NOT NULL,
+                    `price` char(20) NOT NULL,
+                    `among` int(20) DEFAULT NULL,
+                    `totalPrice` char(20) DEFAULT NULL,
+                    PRIMARY KEY (`num`)
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+                  break;
+            case 'favorite_coin':
+                  $sql = "CREATE TABLE `coin_info` (
+                    `num` int(11) NOT NULL AUTO_INCREMENT,
+                    `id` char(15) NOT NULL,
+                    `coinName` char(15) NOT NULL,
+                    `trTime` char(15) NOT NULL,
+                    `transaction` BIGINT(20) NOT NULL,
+                    `price` char(20) NOT NULL,
+                    `among` int(20) DEFAULT NULL,
+                    `totalPrice` char(20) DEFAULT NULL,
+                    PRIMARY KEY (`num`)
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+                  break;
             case 'notice':
                 $sql = "CREATE TABLE `notice` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
@@ -164,18 +189,7 @@ function create_table($con, $table_name)
                   PRIMARY KEY (`num`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
-            case 'coin_info':
-                $sql = "CREATE TABLE `coin_info` (
-                  `num` int(11) NOT NULL AUTO_INCREMENT,
-                  `coinName` char(15) NOT NULL,
-                  `trTime` char(15) NOT NULL,
-                  `transaction` BIGINT(20) NOT NULL,
-                  `price` char(20) NOT NULL,
-                  `among` int(20) DEFAULT NULL,
-                  `totalPrice` char(20) DEFAULT NULL,
-                  PRIMARY KEY (`num`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
-                break;
+            
             default:
                 echo "<script>alert('해당테이블명이 없습니다. 점검요망!');</script>";
                 break;

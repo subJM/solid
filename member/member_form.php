@@ -137,7 +137,7 @@
     }
     </script>
     <script type="text/javascript">
-    var naver_id_login = new naver_id_login("oTiDPiE8zHoaVttCf0a_", "http://127.0.0.1/solid/member/member_form.php");
+    var naver_id_login = new naver_id_login("kqhyCKEnsQrOw5wB5Tob", "http://127.0.0.1/solid/member/member_form.php");
     // 접근 토큰 값 출력 alert(naver_id_login.oauthParams.access_token); 네이버 사용자 프로필 조회
     naver_id_login.get_naver_userprofile("naverSignInCallback()");
 
@@ -354,28 +354,7 @@
                                     }
                                 ?>
                         </div>
-                        <?php
-                                if ($mode === "") {
-                            ?>
-                        <div id="phone_certification_check">
-                            <input autocomplete="off" type="text" id="input_phone_certification"
-                                placeholder=" 문자 인증 번호 입력 ">
-                            <div id="phone_certification_check_button">
-                                <a href="#" id="input_phone_certification_check">
-                                    <p>확 인</p>
-                                </a>
-                            </div>
-                            <div id="phone_certification">
-                                <a href="#" id="phone_check">
-                                    <p>인증 요청</p>
-                                </a>
-                            </div>
-                            <p id="input_phone_confirm"></p>
-                        </div>
-                    </div>
-                    <?php
-                        }
-                    ?>
+                        
                     <div id="email">
                         <div id="email_input">
                             <?php
