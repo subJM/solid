@@ -5,22 +5,22 @@
 }
 .container {
   background-color: white;
-  width: 100%;
-  height: auto;
+  width: 1920px;
+  height: 3000px;
 }
 header {
-  /* float: left; */
+  float: left;
   padding: 0;
   position: fixed;
-  /* z-index: 1; */
-  width: 100%;
+  z-index: 1;
+  width: 1920px;
   height: 65px;
   background-color: black;
 }
 .top1 {
   /* border: 1px solid black; */
   padding-left: 40px;
-  width: 100%;
+  width: 1920px;
   height: 65px;
   background-color: #1a1d53;
 }
@@ -48,64 +48,63 @@ header {
 ul {
   list-style-type: none;
 }
-li.top1-1tabletd {
+ul > li.top1-1tabletd {
   color: white;
   display: inline;
   margin-right: 25px;
   font-weight: bold;
 }
-li.top1-1tabletd:hover {
+ul > li.top1-1tabletd:hover {
+  cursor: pointer;
   color: rgb(104, 145, 231);
 }
 .top1-2 {
   float: right;
-  /* border: 1px solid black; */
   width: 400px;
   height: 65px;
 }
 .top1-2table {
   padding: 20px;
 }
-li.top1-2tabletd {
+ul > li.top1-2tabletd {
   color: white;
   display: inline;
   margin-right: 25px;
   font-weight: bold;
   float: right;
 }
-li.top1-2tabletd:hover {
+ul > li.top1-2tabletd:hover {
+  cursor: pointer;
   color: rgb(104, 145, 231);
 }
-a {
-  cursor: pointer;
-}
-
-article {
-  position: relative;
-  top: 65px;
-  width: 100%;
+section {
+  /* position: relative; */
+  width: 1920px;
   /* height: 470px; */
-  height: auto;
+  height: 1700px;
 }
-
+.mainframe {
+  width: 1920px;
+  height: 500px;
+}
 #mainpic {
   margin-left: 5%;
-  width: 90%;
+  width: 1728px;
   height: 470px;
 }
-article > section.notice_FAQ {
-  position: absolute;
+section > div.notice_FAQ {
+  /* position: absolute;
   top: 610px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
+  transform: translate(-50%, -50%); */
+  margin-left: 480px;
+  width: 960px;
   height: 200px;
   text-align: center;
   /* border: 1px solid black; */
 }
-
 #notice {
-  width: 49%;
+  width: 470.4px;
   float: left;
   height: 100%;
   margin-right: 10px;
@@ -120,7 +119,7 @@ article > section.notice_FAQ {
   width: 300px;
 }
 #FAQ {
-  width: 49%;
+  width: 470.4px;
   float: left;
   height: 100%;
 }
@@ -132,68 +131,64 @@ article > section.notice_FAQ {
   text-align: right;
 }
 .subframe {
-  position: absolute;
-  margin-top: 780px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 75%;
+  margin-left: 240px;
+  width: 1440px;
 }
 
 #subpic {
-  width: 100%;
+  width: 1440px;
 }
 footer {
-  width: 100%;
+  width: 1920px;
   height: 210px;
-  margin-top: 920px;
   /* padding-top: 30px; */
   background-color: #1a1d53;
-  position: relative;
 }
 .footer-1 {
-  width: 55%;
+  display: inline-block;
+  width: 1056px;
   height: 150px;
+  margin-left: 200px;
   /* border: 1px solid black; */
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 47.5%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 #footer-icon {
-  position: absolute;
+  /* position: absolute;
   top: 75%;
   left: 10%;
-  transform: translate(-50%, -50%);
-  width: 16%;
+  transform: translate(-50%, -50%); */
+  width: 168.96px;
   height: 150px;
   /* border: red solid 1px; */
 }
 #footer-terms {
-  position: absolute;
+  /* position: absolute;
   top: 60%;
   left: 48%;
-  transform: translate(-50%, -50%);
-  width: 60%;
+  transform: translate(-50%, -50%); */
+  width: 633.6px;
   height: 70px;
   /* border: red solid 1px; */
 }
 #service-center {
-  width: 12%;
+  width: 126.72px;
   height: 150px;
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   right: 10%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   /* border: red solid 1px; */
 }
 #other {
-  width: 12%;
+  width: 126.72px;
   height: 150px;
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   right: -5%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   /* border: red solid 1px; */
 }
 h4 {

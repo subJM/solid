@@ -19,9 +19,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
         <header>
             <?php include "./header.php"; ?>
         </header>
-        <article>
+        <section>
             <?php include "./home.php"; ?>
-        </article>
+        </section>
         <footer>
             <?php include "./footer.php"; ?>
         </footer>
