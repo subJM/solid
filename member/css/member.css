@@ -1,13 +1,13 @@
 input {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   border: 0.5px solid lightgray;
   border-radius: 2px;
 }
 
-pz {
+/* pz {
   font-size: 12px;
   margin-bottom: 10px;
-}
+} */
 
 #member_main_content {
   width: 400px;
@@ -16,7 +16,7 @@ pz {
 
 #title_member {
   text-align: center;
-  margin-top: 40px;
+  /* margin-top: 60px; */
   margin-bottom: 20px;
 }
 

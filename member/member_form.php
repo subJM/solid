@@ -34,8 +34,8 @@
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?a">
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?asd">
     <script src="./js/member_form.js" charset="utf-8"></script>
-    <!-- <link rel="stylesheet" href="./css/member.css">
-    <link rel="stylesheet" href="./css/mypage.css"> -->
+    <link rel="stylesheet" href="./css/member.css?asd">
+    <!-- <link rel="stylesheet" href="./css/mypage.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <script src="./js/mypage.js" defer></script>
     <!-- <style>
@@ -225,7 +225,7 @@
         <header>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
         </header>
-        <section id="registerpage">
+        <section id="member_section">
             <?php
                 // 내 정보 수정인지 판별
                 if (isset($_GET["mode"])) {

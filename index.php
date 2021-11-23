@@ -11,10 +11,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
 
 <head>
     <title>No.1 가상자산 플랫폼, Solid</title>
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css?.afkkkster">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?.asd">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?.5ssda">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain_section.css?ssa">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css?.afkqwekkster">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?.aqwesd">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?.5swqesda">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain_section.css?swqesa">
 </head>
 
 <body>
@@ -22,7 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
         <header>
             <?php include "./header.php"; ?>
         </header>
-        <section>
+        <section id="main-section">
             <?php include "./home.php"; ?>
         </section>
         <footer>
