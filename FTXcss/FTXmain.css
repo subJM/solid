@@ -6,7 +6,7 @@
 .container {
   background-color: white;
   width: 1920px;
-  height: 3000px;
+  height: auto;
 }
 header {
   float: left;
@@ -77,11 +77,11 @@ ul > li.top1-2tabletd:hover {
   cursor: pointer;
   color: rgb(104, 145, 231);
 }
-section {
+#main-section {
   /* position: relative; */
   width: 1920px;
   /* height: 470px; */
-  height: 1700px;
+  height: 1250px;
 }
 .mainframe {
   width: 1920px;
@@ -99,7 +99,7 @@ section > div.notice_FAQ {
   transform: translate(-50%, -50%); */
   margin-left: 480px;
   width: 960px;
-  height: 200px;
+  height: 160px;
   text-align: center;
   /* border: 1px solid black; */
 }
@@ -131,6 +131,7 @@ section > div.notice_FAQ {
   text-align: right;
 }
 .subframe {
+  margin-top: 20px;
   margin-left: 240px;
   width: 1440px;
 }
@@ -141,55 +142,41 @@ section > div.notice_FAQ {
 footer {
   width: 1920px;
   height: 210px;
-  /* padding-top: 30px; */
+  margin-top: 30px;
   background-color: #1a1d53;
 }
 .footer-1 {
-  display: inline-block;
+  /* display: flex;
+  justify-content: center; */
   width: 1056px;
   height: 150px;
-  margin-left: 200px;
-  /* border: 1px solid black; */
-  /* position: absolute;
-  top: 50%;
-  left: 47.5%;
-  transform: translate(-50%, -50%); */
+  margin-left: 350px;
 }
 #footer-icon {
-  /* position: absolute;
-  top: 75%;
-  left: 10%;
-  transform: translate(-50%, -50%); */
+  margin-top: 70px;
+  float: left;
   width: 168.96px;
   height: 150px;
-  /* border: red solid 1px; */
 }
 #footer-terms {
-  /* position: absolute;
-  top: 60%;
-  left: 48%;
-  transform: translate(-50%, -50%); */
-  width: 633.6px;
+  margin-top: 90px;
+  float: left;
+  width: 677.04px;
   height: 70px;
-  /* border: red solid 1px; */
+}
+
+#other {
+  text-align: right;
+  margin-top: 30px;
+  width: 100px;
+  height: auto;
+  float: left;
 }
 #service-center {
-  width: 126.72px;
-  height: 150px;
-  /* position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translate(-50%, -50%); */
-  /* border: red solid 1px; */
-}
-#other {
-  width: 126.72px;
-  height: 150px;
-  /* position: absolute;
-  top: 50%;
-  right: -5%;
-  transform: translate(-50%, -50%); */
-  /* border: red solid 1px; */
+  margin-top: 30px;
+  width: 110px;
+  height: auto;
+  float: left;
 }
 h4 {
   color: white;

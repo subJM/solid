@@ -16,12 +16,14 @@ else $userlevel = "";
         <span><img class="icon" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/logo1.svg" /></span>
         <ul class="top1-1table">
 
-            <li class="top1-1tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coin/coin.html">거래소</li>
-            <li class="top1-1tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php">
-                공지사항
+            <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coin/coin.php">거래소</a>
             </li>
-            <li class="top1-1tabletd">자산</li>
-            <li class="top1-1tabletd">1:1문의</li>
+            <li class="top1-1tabletd">
+                <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/notice/notice.php">공지사항</a>
+            </li>
+            <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/wallet.php">자산</a></li>
+            <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/service.php">1:1문의</a>
+            </li>
         </ul>
     </div>
     <div class="top1-2">

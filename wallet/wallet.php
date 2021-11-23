@@ -23,7 +23,6 @@
         font-size: 14px;
         color: #18191c;
         margin: 0;
-
     }
 
     /* Style the top navigation bar */
