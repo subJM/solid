@@ -3,8 +3,10 @@
 
 <head>
     <title>No.1 가상자산 플랫폼, Solid :: 회원가입</title>
-    <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?.5sda">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/css/login.css">
     <link
         href="https://fonts.googleapis.com/css?family=Gothic+A1:400,500,700|Nanum+Gothic+Coding:400,700|Nanum+Gothic:400,700,800|Noto+Sans+KR:400,500,700,900&display=swap&subset=korean"
         rel="stylesheet">
@@ -110,7 +112,8 @@
                                         console.log(JSON.stringify(authObj));
 
                                         var kakao_name = res["kakao_account"]["profile"][
-                                        "name"];
+                                            "name"
+                                        ];
                                         var kakao_email = res["kakao_account"]["email"];
                                         if (kakao_name !== "undefined" && kakao_email !==
                                             "undefined") {
