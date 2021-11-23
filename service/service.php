@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solid</title>
     <style>
-    table {
-        border-top: 1px solid #444444;
-        border-collapse: collapse;
-    }
+        table {
+            border-top: 1px solid #444444;
+            border-collapse: collapse;
+        }
 
-    tr {
-        border-bottom: 1px solid #444444;
-        padding: 10px;
-    }
+        tr {
+            border-bottom: 1px solid #444444;
+            padding: 10px;
+        }
 
-    td {
-        border-bottom: 1px solid #efefef;
-        padding: 10px;
-    }
+        td {
+            border-bottom: 1px solid #efefef;
+            padding: 10px;
+        }
 
-    table .even {
-        background: #efefef;
-    }
+        table .even {
+            background: #efefef;
+        }
 
-    .text {
-        text-align: center;
-        padding-top: 20px;
-        color: #000000
-    }
+        .text {
+            text-align: center;
+            padding-top: 20px;
+            color: #000000
+        }
 
-    .text:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
+        .text:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
 
-    a:link {
-        color: #57A0EE;
-        text-decoration: none;
-    }
+        a:link {
+            color: #57A0EE;
+            text-decoration: none;
+        }
 
-    a:hover {
-        text-decoration: underline;
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    td:hover {
-        cursor: pointer;
-    }
+        td:hover {
+            cursor: pointer;
+        }
 
-    button {
-        font-size: 15px;
-    }
-    </style>
+        button {
+            font-size: 15px;
+        }
+        </style>
 </head>
-
 <body>
     <h1 align=center>고객센터</h1>
     <table align="center">
@@ -111,5 +109,4 @@
         <button>글쓰기</button>
     </div>
 </body>
-
 </html>

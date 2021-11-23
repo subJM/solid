@@ -32,15 +32,13 @@
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
     <script src="./js/member_form.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="./FTXcss/FTXmain.css">
     <link rel="stylesheet" href="./css/member.css">
     <link rel="stylesheet" href="./css/mypage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <script src="./js/mypage.js" defer></script>
     <style>
-    section {
-        margin-top: 60px;
-        margin-left: 760px;
+    body {
+        margin-top: -40px;
     }
     </style>
 
@@ -225,7 +223,7 @@
         <header>
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
         </header>
-        <section id="main-section">
+        <section id="registerpage">
             <?php
                 // 내 정보 수정인지 판별
                 if (isset($_GET["mode"])) {
@@ -361,7 +359,6 @@
                                 <?php
                                     }
                                 ?>
-
                             </div>
 
                             <div id="email">

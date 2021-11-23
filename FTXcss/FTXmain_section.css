@@ -1,0 +1,51 @@
+.mainframe {
+  width: 1920px;
+  height: 500px;
+}
+#mainpic {
+  margin-left: 5%;
+  width: 1728px;
+  height: 470px;
+}
+section > div.notice_FAQ {
+  margin-left: 480px;
+  width: 960px;
+  height: 150px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#notice {
+  width: 470.4px;
+  float: left;
+  height: 100%;
+  margin-right: 10px;
+  border-right: gray solid 1px;
+}
+#notice-1 {
+  font-weight: bold;
+  font-size: 27px;
+}
+.notice_FAQ_left {
+  text-align: left;
+  width: 300px;
+}
+#FAQ {
+  width: 470.4px;
+  float: left;
+  height: 100%;
+}
+#FAQ-1 {
+  font-weight: bold;
+  font-size: 27px;
+}
+.notice_FAQ_right {
+  text-align: right;
+}
+.subframe {
+  margin-left: 240px;
+  width: 1440px;
+}
+
+#subpic {
+  width: 1440px;
+}

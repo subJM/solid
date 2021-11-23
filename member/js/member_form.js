@@ -307,22 +307,6 @@ $(document).ready(function () {
         }
     });
 
-    $("#input_phone_certification_check").click(function () {
-        phone_code_pass = false;
-        if ($("#input_phone_certification").val() === "") {
-            $("#input_phone_confirm").html("<span style='color:red'>인증번호를 입력해주세요.</span>");
-        } else if ($("#input_phone_certification").val() === phone_code) {
-            $("#input_phone_confirm").html("<span style='color:green'>인증에 성공하였습니다.</span>");
-            phone_code_pass = true;
-        } else if ($("#input_phone_certification").val() !== phone_code) {
-            $("#input_phone_confirm").html("<span style='color:red'>인증에 실패하였습니다.</span>");
-        } else {
-            alert("문자 인증 오류입니다!");
-        }
-        console.log("phone_code_pass");
-        isAllPass();
-    });
-
     // 전체 선택 체크박스
     $("#all_agree").click(function () {
         if ($("#all_agree").prop("checked")) {

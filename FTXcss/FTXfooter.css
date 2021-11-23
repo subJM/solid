@@ -1,0 +1,37 @@
+.footer-1 {
+  width: 1056px;
+  height: 150px;
+  margin-left: 350px;
+}
+#footer-icon {
+  margin-top: 70px;
+  float: left;
+  width: 168.96px;
+  height: 150px;
+}
+#footer-terms {
+  margin-top: 90px;
+  float: left;
+  width: 677.04px;
+  height: 70px;
+}
+
+#other {
+  text-align: right;
+  margin-top: 30px;
+  width: 100px;
+  height: auto;
+  float: left;
+}
+#service-center {
+  margin-top: 30px;
+  width: 110px;
+  height: auto;
+  float: left;
+}
+h4 {
+  color: white;
+}
+.tag {
+  color: rgb(145, 144, 144);
+}

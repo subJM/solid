@@ -1,0 +1,58 @@
+.top1 {
+  padding-left: 40px;
+  width: 1920px;
+  height: 65px;
+  background-color: #1a1d53;
+}
+.top1-1 {
+  width: 1000px;
+  height: 65px;
+  position: relative;
+  float: left;
+}
+.icon {
+  float: left;
+  margin-top: 6px;
+  width: 150px;
+  height: 50px;
+}
+.top1-1table {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+ul {
+  list-style-type: none;
+}
+ul > li.top1-1tabletd {
+  color: white;
+  display: inline;
+  margin-right: 25px;
+  font-weight: bold;
+}
+ul > li.top1-1tabletd:hover {
+  cursor: pointer;
+  color: rgb(104, 145, 231);
+}
+.top1-2 {
+  float: right;
+  width: 400px;
+  height: 65px;
+}
+.top1-2table {
+  padding: 20px;
+}
+ul > li.top1-2tabletd {
+  color: white;
+  display: inline;
+  margin-right: 25px;
+  font-weight: bold;
+  float: right;
+}
+ul > li.top1-2tabletd:hover {
+  cursor: pointer;
+  color: rgb(104, 145, 231);
+}
