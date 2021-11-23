@@ -33,8 +33,7 @@ else $userlevel = "";
                 ?>
             <li class="top1-2tabletd"><a
                     href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php">회원가입</a></li>
-            <li class="top1-2tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/login_form.php">
-                로그인</a>
+            <li class="top1-2tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/login_form.php">로그인</a>
             </li>
             <?php
 			} else {

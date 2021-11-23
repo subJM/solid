@@ -49,3 +49,7 @@ section > div.notice_FAQ {
 #subpic {
   width: 1440px;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}

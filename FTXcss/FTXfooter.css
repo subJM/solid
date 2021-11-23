@@ -35,3 +35,7 @@ h4 {
 .tag {
   color: rgb(145, 144, 144);
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}

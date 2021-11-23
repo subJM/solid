@@ -30,17 +30,19 @@
     <meta charset="utf-8">
     <title>No.1 가상자산 플랫폼, Solid</title>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css?sad">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?a">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?asd">
     <script src="./js/member_form.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="./css/member.css">
-    <link rel="stylesheet" href="./css/mypage.css">
+    <!-- <link rel="stylesheet" href="./css/member.css">
+    <link rel="stylesheet" href="./css/mypage.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <script src="./js/mypage.js" defer></script>
-    <style>
+    <!-- <style>
     body {
         margin-top: -40px;
     }
-    </style>
+    </style> -->
 
     <!-- 우편번호 api 참조 스크립트 -->
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
