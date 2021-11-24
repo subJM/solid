@@ -43,7 +43,7 @@
 
         echo "
       <script>
-        location.href = '../index.php';
+        location.href = '../index.php'
       </script>
     ";
     } elseif ($type === "delete") {
@@ -108,7 +108,7 @@
         echo "
       <script>
         alert('정보가 변경되셨습니다.');
-        location.href = 'member_mypage.php';
+        location.href = '../index.php';
       </script>
     ";
     }

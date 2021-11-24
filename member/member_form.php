@@ -33,17 +33,12 @@
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css?sad">
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?a">
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?asd">
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/css/member.css">
     <script src="./js/member_form.js" charset="utf-8"></script>
     <link rel="stylesheet" href="./css/member.css?asd">
     <!-- <link rel="stylesheet" href="./css/mypage.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <script src="./js/mypage.js" defer></script>
-    <!-- <style>
-    body {
-        margin-top: -40px;
-    }
-    </style> -->
-
     <!-- 우편번호 api 참조 스크립트 -->
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- 네이버 아이디로 로그인 api 참조 스크립트 -->
@@ -144,9 +139,12 @@
     }
     </script>
     <script type="text/javascript">
-    var naver_id_login = new naver_id_login("kqhyCKEnsQrOw5wB5Tob", "http://127.0.0.1/solid/member/member_form.php");
+    var naver_id_login = new naver_id_login("kqhyCKEnsQrOw5wB5Tob",
+        "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php");
     // 접근 토큰 값 출력 alert(naver_id_login.oauthParams.access_token); 네이버 사용자 프로필 조회
-    naver_id_login.get_naver_userprofile("naverSignInCallback()");
+    if (naver_id_login.is_callback == true) {
+        naver_id_login.get_naver_userprofile("naverSignInCallback()");
+    }
 
     // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
     function naverSignInCallback() {
@@ -215,18 +213,17 @@
     </script>
     <script type="text/javascript">
     $(document).ready(function() {
-        history.pushState(null, null, "http://127.0.0.1/solid/member/member_form.php");
+        history.pushState(null, null, "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php");
     })
     </script>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
-        </header>
-        <section id="member_section">
-            <?php
+    <header>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
+    </header>
+    <section id="member_section">
+        <?php
                 // 내 정보 수정인지 판별
                 if (isset($_GET["mode"])) {
                     $mode = $_GET["mode"];
@@ -265,246 +262,244 @@
                         alert_back("잘못된 접근입니다");
                     }
                     ?>
-            <div id="title_member">
-                <h1>회원가입</h1>
-            </div>
-            <?php
+        <div id="title_member">
+            <h1>회원가입</h1>
+        </div>
+        <?php
                 } else {
                     ?>
-            <div class="content_title">
-                <h1> 내 정보 수정</h1>
-            </div>
-            <?php
+        <div class="content_title">
+            <h1> 내 정보 수정</h1>
+        </div>
+        <?php
                 }
             ?>
-            <div id="member_main_content">
-                <div id="member_form">
-                    <form name="member_form" id="input_member_form" method="post">
-                        <?php
+        <div id="member_main_content">
+            <div id="member_form">
+                <form name="member_form" id="input_member_form" method="post">
+                    <?php
                             if ($mode === "") {
                                 ?>
-                        <input autocomplete="off" type="text" name="id" id="input_id" placeholder=" 아이디 입력 ">
-                        <br>
-                        <p id="input_id_confirm"></p>
-                        <input type="password" name="password" id="input_password" placeholder=" 비밀번호 입력 ">
-                        <br>
-                        <p id="input_password_confirm"></p>
-                        <input type="password" id="input_password_check" placeholder=" 비밀번호 재입력 ">
-                        <br>
-                        <p id="input_password_check_confirm"></p>
-                        <?php
+                    <input autocomplete="off" type="text" name="id" id="input_id" placeholder=" 아이디 입력 ">
+                    <br>
+                    <p id="input_id_confirm"></p>
+                    <input type="password" name="password" id="input_password" placeholder=" 비밀번호 입력 ">
+                    <br>
+                    <p id="input_password_confirm"></p>
+                    <input type="password" id="input_password_check" placeholder=" 비밀번호 재입력 ">
+                    <br>
+                    <p id="input_password_check_confirm"></p>
+                    <?php
                             } else {
                                 ?>
-                        <input autocomplete="off" type="text" name="id" id="input_id" value="<?= $userid ?>"
-                            readonly="readonly">
-                        <br>
-                        <p id="input_id_confirm"></p>
-                        <input type="password" name="password" id="input_password" value="<?= $password ?>">
-                        <br>
-                        <p id="input_password_confirm"></p>
-                        <input type="password" id="input_password_check" value="<?= $password ?>">
-                        <br>
-                        <p id="input_password_check_confirm"></p>
-                        <?php
+                    <input autocomplete="off" type="text" name="id" id="input_id" value="<?= $userid ?>"
+                        readonly="readonly">
+                    <br>
+                    <p id="input_id_confirm"></p>
+                    <input type="password" name="password" id="input_password" value="<?= $password ?>">
+                    <br>
+                    <p id="input_password_confirm"></p>
+                    <input type="password" id="input_password_check" value="<?= $password ?>">
+                    <br>
+                    <p id="input_password_check_confirm"></p>
+                    <?php
                             }
                         ?>
 
-                        <?php
+                    <?php
                             if ($hidden_kakao_name) {
                                 ?>
-                        <input autocomplete="off" type="text" name="name" id="input_name"
-                            value=<?= $hidden_kakao_name ?> readonly>
-                        <br>
-                        <?php
+                    <input autocomplete="off" type="text" name="name" id="input_name" value=<?= $hidden_kakao_name ?>
+                        readonly>
+                    <br>
+                    <?php
                             } else if ($mode) {
                                 ?>
-                        <input autocomplete="off" type="text" name="name" id="input_name" value="<?= $name ?>">
-                        <br>
-                        <?php
+                    <input autocomplete="off" type="text" name="name" id="input_name" value="<?= $name ?>">
+                    <br>
+                    <?php
                             } else {
                                 ?>
-                        <input autocomplete="off" type="text" name="name" id="input_name" placeholder=" 이름 입력 ">
-                        <br>
-                        <?php
+                    <input autocomplete="off" type="text" name="name" id="input_name" placeholder=" 이름 입력 ">
+                    <br>
+                    <?php
                             }
                         ?>
-                        <p id="input_name_confirm"></p>
+                    <p id="input_name_confirm"></p>
 
-                        <div id="phone">
-                            <div id="phone_input">
-                                <?php
+                    <div id="phone">
+                        <div id="phone_input">
+                            <?php
                                     if ($mode === "") {
                                         ?>
-                                <select name="phone_one" id="phone_one">
-                                    <option value="010" selected="selected">010</option>
-                                    <option value="011">011</option>
-                                </select>
-                                -
-                                <input autocomplete="off" type="text" name="phone_two" id="phone_two"
-                                    placeholder=" 0000 " maxlength="4" oninput="maxLengthCheck(this);">
-                                -
-                                <input autocomplete="off" type="text" name="phone_three" id="phone_three"
-                                    placeholder=" 0000 " maxlength="4" oninput="maxLengthCheck(this);">
-                                <?php
+                            <select name="phone_one" id="phone_one">
+                                <option value="010" selected="selected">010</option>
+                                <option value="011">011</option>
+                            </select>
+                            -
+                            <input autocomplete="off" type="text" name="phone_two" id="phone_two" placeholder=" 0000 "
+                                maxlength="4" oninput="maxLengthCheck(this);">
+                            -
+                            <input autocomplete="off" type="text" name="phone_three" id="phone_three"
+                                placeholder=" 0000 " maxlength="4" oninput="maxLengthCheck(this);">
+                            <?php
                                     } else {
                                         ?>
-                                <select name="phone_one" id="phone_one" value="<?= $phone1 ?>">
-                                    <option value="010">010</option>
-                                    <option value="011">011</option>
-                                </select>
-                                -
-                                <input autocomplete="off" type="text" name="phone_two" id="phone_two" maxlength="4"
-                                    onkeyup="max_length_check(this)" value="<?= $phone2 ?>">
-                                -
-                                <input autocomplete="off" type="text" name="phone_three" id="phone_three" maxlength="4"
-                                    onkeyup="max_length_check(this)" value="<?= $phone3 ?>">
-                                <?php
+                            <select name="phone_one" id="phone_one" value="<?= $phone1 ?>">
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                            </select>
+                            -
+                            <input autocomplete="off" type="text" name="phone_two" id="phone_two" maxlength="4"
+                                onkeyup="max_length_check(this)" value="<?= $phone2 ?>">
+                            -
+                            <input autocomplete="off" type="text" name="phone_three" id="phone_three" maxlength="4"
+                                onkeyup="max_length_check(this)" value="<?= $phone3 ?>">
+                            <?php
                                     }
                                 ?>
-                            </div>
+                        </div>
 
-                            <div id="email">
-                                <div id="email_input">
-                                    <?php
+                        <div id="email">
+                            <div id="email_input">
+                                <?php
                                     if ($hidden_kakao_email) {
                                         ?>
-                                    <input autocomplete="off" type="text" name="email_one" id="email_one"
-                                        value="<?= $hidden_kakao_email_one ?>" readonly>
-                                    @
-                                    <input autocomplete="off" type="text" name="email_two" id="email_two"
-                                        value="<?= $hidden_kakao_email_two ?>" readonly>
-                                    <script type="text/javascript">
-                                    signup_duplicate_check();
-                                    </script>
-                                    <?php
+                                <input autocomplete="off" type="text" name="email_one" id="email_one"
+                                    value="<?= $hidden_kakao_email_one ?>" readonly>
+                                @
+                                <input autocomplete="off" type="text" name="email_two" id="email_two"
+                                    value="<?= $hidden_kakao_email_two ?>" readonly>
+                                <script type="text/javascript">
+                                signup_duplicate_check();
+                                </script>
+                                <?php
                                         } else if ($mode) {
                                     ?>
-                                    <input autocomplete="off" type="text" name="email_one" id="email_one"
-                                        value="<?= $email1 ?>">
-                                    @
-                                    <input autocomplete="off" type="text" name="email_two" id="email_two"
-                                        value="<?= $email2 ?>">
-                                    <?php
+                                <input autocomplete="off" type="text" name="email_one" id="email_one"
+                                    value="<?= $email1 ?>">
+                                @
+                                <input autocomplete="off" type="text" name="email_two" id="email_two"
+                                    value="<?= $email2 ?>">
+                                <?php
                                     } else {
                                         ?>
-                                    <input autocomplete="off" type="text" name="email_one" id="email_one"
-                                        placeholder=" 이메일 입력 ">
-                                    @
-                                    <input autocomplete="off" type="text" name="email_two" id="email_two">
-                                    <?php
+                                <input autocomplete="off" type="text" name="email_one" id="email_one"
+                                    placeholder=" 이메일 입력 ">
+                                @
+                                <input autocomplete="off" type="text" name="email_two" id="email_two">
+                                <?php
                                     }
                                 ?>
-                                    <select name="email_option" onchange="mail_address_setting(this);">
-                                        <option value="" disabled selected>---선택하세요---</option>
-                                        <option value="gmail.com">gmail.com</option>
-                                        <option value="naver.com">naver.com</option>
-                                        <option value="daum.net">daum.net</option>
-                                        <option value="nate.com">nate.com</option>
-                                        <option value="">직접 입력</option>
-                                    </select>
-                                    <br>
-                                    <p id="input_email_confirm"></p>
-                                </div>
+                                <select name="email_option" onchange="mail_address_setting(this);">
+                                    <option value="" disabled selected>---선택하세요---</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="">직접 입력</option>
+                                </select>
+                                <br>
+                                <p id="input_email_confirm"></p>
                             </div>
-                            <?php
+                        </div>
+                        <?php
                             if ($mode === "") {
                                 ?>
-                            <div id="address">
-                                <input autocomplete="off" type="text" name="address_one" id="address_one"
-                                    placeholder=" 우편번호 " onclick="address_input();">
-                                <input autocomplete="off" type="text" name="address_two" id="address_two"
-                                    placeholder=" 주소 ">
-                                <input autocomplete="off" type="text" name="address_three" id="address_three"
-                                    placeholder=" 상세주소 ">
-                                <br>
-                                <p id="input_address_confirm"></p>
-                            </div>
-                            <?php
+                        <div id="address">
+                            <input autocomplete="off" type="text" name="address_one" id="address_one"
+                                placeholder=" 우편번호 " onclick="address_input();">
+                            <input autocomplete="off" type="text" name="address_two" id="address_two"
+                                placeholder=" 주소 ">
+                            <input autocomplete="off" type="text" name="address_three" id="address_three"
+                                placeholder=" 상세주소 ">
+                            <br>
+                            <p id="input_address_confirm"></p>
+                        </div>
+                        <?php
                             } else {
                                 ?>
-                            <div id="address">
-                                <input autocomplete="off" type="text" name="address_one" id="address_one"
-                                    value="<?= $address1 ?>" onclick="address_input();">
-                                <input autocomplete="off" type="text" name="address_two" id="address_two"
-                                    value="<?= $address2 ?>" onclick="address_input();">
-                                <input autocomplete="off" type="text" name="address_three" id="address_three"
-                                    value="<?= $address3 ?>">
-                                <br>
-                                <p id="input_address_confirm"></p>
-                            </div>
-                            <?php
+                        <div id="address">
+                            <input autocomplete="off" type="text" name="address_one" id="address_one"
+                                value="<?= $address1 ?>" onclick="address_input();">
+                            <input autocomplete="off" type="text" name="address_two" id="address_two"
+                                value="<?= $address2 ?>" onclick="address_input();">
+                            <input autocomplete="off" type="text" name="address_three" id="address_three"
+                                value="<?= $address3 ?>">
+                            <br>
+                            <p id="input_address_confirm"></p>
+                        </div>
+                        <?php
                             }
                         ?>
-                            <?php
+                        <?php
                             if ($mode === "") {
                                 ?>
-                            <div id="check_box">
-                                <input type="checkbox" id="all_agree">
-                                <span id="all_agree_span">
-                                    전체 동의 (필수, 선택 모두 포함)
-                                </span><br>
-                                <input type="checkbox" id="tou_one">
-                                <span>
-                                    이용 약관 동의 (필수)
-                                </span>
-                                <a href="./terms_of_use.php?page=tou1" target="_blank">약관 보기</a>
-                                <br>
-                                <input type="checkbox" id="tou_two">
-                                <span>
-                                    개인정보 수집 동의 (필수)
-                                </span>
-                                <a href="./terms_of_use.php?page=tou2" target="_blank">약관 보기</a>
-                                <br>
-                                <input type="checkbox" id="tou_three">
-                                <span>
-                                    마케팅 수신 동의 (선택)
-                                </span>
-                                <a href="./terms_of_use.php?page=tou3" target="_blank">상세 보기</a>
-                                <br>
-                            </div>
-                            <?php
+                        <div id="check_box">
+                            <input type="checkbox" id="all_agree">
+                            <span id="all_agree_span">
+                                전체 동의 (필수, 선택 모두 포함)
+                            </span><br>
+                            <input type="checkbox" id="tou_one">
+                            <span>
+                                이용 약관 동의 (필수)
+                            </span>
+                            <a href="./terms_of_use.php?page=tou1" target="_blank">약관 보기</a>
+                            <br>
+                            <input type="checkbox" id="tou_two">
+                            <span>
+                                개인정보 수집 동의 (필수)
+                            </span>
+                            <a href="./terms_of_use.php?page=tou2" target="_blank">약관 보기</a>
+                            <br>
+                            <input type="checkbox" id="tou_three">
+                            <span>
+                                마케팅 수신 동의 (선택)
+                            </span>
+                            <a href="./terms_of_use.php?page=tou3" target="_blank">상세 보기</a>
+                            <br>
+                        </div>
+                        <?php
                             }
                         ?>
-                            <div id="button">
-                                <div id="cancel">
-                                    <? if ($mode === "modify"){ ?>
-                                    <a href="member_mypage.php">
-                                        <? }else{ ?>
-                                        <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/index.php">
-                                            <? } ?>
-                                            <p>취 소</p>
-                                        </a>
-                                </div>
-                                <?php
+                        <div id="button">
+                            <div id="cancel">
+                                <? if ($mode === "modify"){ ?>
+                                <a href="../index.php">
+                                    <? }else{ ?>
+                                    <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/index.php">
+                                        <? } ?>
+                                        <p>취 소</p>
+                                    </a>
+                            </div>
+                            <?php
                                 if ($mode === "") {
                                     ?>
-                                <div id="signup">
-                                    <input type="button" id="button_submit" value="가 입" onclick="action_signup();"
-                                        disabled="disabled">
-                                </div>
-                                <?php
+                            <div id="signup">
+                                <input type="button" id="button_submit" value="가 입" onclick="action_signup()">
+                            </div>
+                            <?php
                                 } else {
                                     ?>
-                                <div id="signup">
-                                    <input type="button" id="button_submit" value="수정완료" onclick="action_update();">
-                                </div>
-                                <?php
+                            <div id="signup">
+                                <input type="button" id="button_submit" value="수정완료" onclick="action_update()">
+                            </div>
+                            <?php
                                 }
                             ?>
-                            </div>
-                    </form>
-                </div>
-                <?php
+                        </div>
+                </form>
+            </div>
+            <?php
                     if ($mode !== "") {
                         ?>
-                <div id="member_delete">회원탈퇴</div>
-                <? } ?>
-            </div>
-        </section>
-        <footer>
-            <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php"; ?>
-        </footer>
-    </div>
+            <div id="member_delete">회원탈퇴</div>
+            <? } ?>
+        </div>
+    </section>
+    <footer>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php"; ?>
+    </footer>
 </body>
 
 </html>

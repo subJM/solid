@@ -9,6 +9,11 @@ input {
   margin-bottom: 10px;
 } */
 
+#member_section {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
 #member_main_content {
   width: 400px;
   margin: 0 auto;
