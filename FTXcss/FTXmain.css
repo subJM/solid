@@ -3,19 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  margin-top: 65px;
+}
 .container {
   background-color: white;
   width: 1920px;
   height: auto;
 }
 header {
-  float: left;
-  padding: 0;
-  position: fixed;
-  /* z-index: 1; */
   width: 1920px;
   height: 65px;
   background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 footer {
