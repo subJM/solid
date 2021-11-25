@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 700px) {
+  .coinData-div {
+    width: 100%;
+  }
+
+  .coinData-div > ul > li:nth-child(n) {
+    display: inline-block;
+  }
+
+  .coinData-div > ul > li:nth-child(n + 4) {
+    display: none;
+  }
+
+  .main-div {
+    display: flex;
+    height: 70%;
+    flex-direction: column;
+  }
+
+  .flexTable-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-div > .chart-div,
+  .section {
+    border: solid 1px;
+    padding: 20px;
+    height: 300px;
+    width: 90%;
+    overflow: auto;
+  }
+
+  .flexTable-div > .section > .orderbookTable-div {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .transactionTable-div {
+    order: -1;
+  }
+
+  table {
+    flex: 1;
+  }
+
+  .marketTradesTable-div > table {
+    width: 100%;
+  }
+
+  .marketTradesTable-div > table td {
+    padding: 0px 20px;
+  }
+}
+
+@media screen and (max-width: 2000px) and (min-width: 700px) {
+  header {
+    height: 20%;
+    border: 1px dotted;
+  }
+
+  body {
+    border: 1px dotted;
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .coinData-div {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .coinData-div li {
+    float: left;
+    height: 60px;
+    list-style: none;
+    padding: 1%;
+    border: 1px dotted;
+  }
+
+  .main-div {
+    display: flex;
+    height: 70%;
+  }
+
+  .main-div > .chart-div {
+    clear: both;
+    width: 60%;
+  }
+
+  .main-div > .flexTable-div {
+    flex: 1;
+    border: 1px dotted;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .flexTable-div .section {
+    width: 50%;
+    height: 50%;
+    border: 1px dotted;
+  }
+
+  .orderbook-div {
+    overflow: auto;
+  }
+
+  .orderbookLable {
+    text-align: center;
+    height: 70px;
+  }
+
+  .flexTable-div > .section > .orderbookTable-div {
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  table {
+    flex: 1;
+  }
+
+  .marketTradesTable-div {
+    overflow: auto;
+    display: flex;
+    text-align: right;
+  }
+
+  .marketTradesTable-div > table > caption {
+    margin: 20px;
+  }
+  .transactionTable-div li {
+    float: left;
+    height: 30px;
+    width: 50%;
+    text-align: center;
+    list-style: none;
+    padding: 1%;
+    border: 1px dotted;
+  }
+  #amount {
+    font-size: large;
+    clear: both;
+    margin: 20px;
+    margin-top: 40px;
+    height: 40px;
+    width: 90%;
+  }
+
+  .coinTotalPrice {
+    margin: 20px;
+    height: 40px;
+    width: 90%;
+  }
+
+  .trade_button {
+    margin: 20px;
+    height: 40px;
+    width: 90%;
+    text-align: center;
+    background-color: #f23005;
+    border-radius: 2px;
+  }
+
+  .coinTransactionDataTable-div > table {
+    width: 100%;
+    height: 50%;
+  }
+
+  .coinTransactionDataTable-div > table > caption {
+    margin: 20px;
+  }
+}
