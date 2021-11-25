@@ -22,17 +22,23 @@
     flex-direction: column;
   }
 
+  .main-div > .chart-div {
+    border: solid 1px;
+    height: 300px;
+    width: 100%;
+    overflow: auto;
+  }
+
   .flexTable-div {
     display: flex;
     flex-direction: column;
   }
 
-  .main-div > .chart-div,
-  .section {
+  .main-div .section {
     border: solid 1px;
     padding: 20px;
     height: 300px;
-    width: 90%;
+    width: 100%;
     overflow: auto;
   }
 
@@ -58,24 +64,55 @@
   .marketTradesTable-div > table td {
     padding: 0px 20px;
   }
+
+  .transactionTable-div li {
+    float: left;
+    height: 30px;
+    width: 50%;
+    text-align: center;
+    list-style: none;
+    padding: 1%;
+    border: 1px dotted;
+  }
+  #amount {
+    font-size: large;
+    clear: both;
+    margin: 20px;
+    margin-top: 40px;
+    height: 40px;
+    width: 90%;
+  }
+
+  .coinTotalPrice {
+    margin: 20px;
+    height: 40px;
+    width: 90%;
+  }
+
+  .trade_button {
+    margin: 20px;
+    height: 40px;
+    width: 90%;
+    text-align: center;
+    background-color: #f23005;
+    border-radius: 2px;
+  }
+
+  .coinTransactionDataTable-div > table {
+    width: 100%;
+    height: 50%;
+  }
+
+  .coinTransactionDataTable-div > table > caption {
+    margin: 20px;
+  }
 }
 
 @media screen and (max-width: 2000px) and (min-width: 700px) {
-  header {
-    height: 20%;
-    border: 1px dotted;
-  }
-
   body {
-    border: 1px dotted;
     width: 100%;
-    height: auto;
+    height: 900px;
   }
-
-  h1 {
-    font-size: 20px;
-  }
-
   .coinData-div {
     display: inline-block;
     width: 100%;
@@ -91,12 +128,13 @@
 
   .main-div {
     display: flex;
-    height: 70%;
+    height: 100%;
   }
 
   .main-div > .chart-div {
     clear: both;
     width: 60%;
+    height: auto;
   }
 
   .main-div > .flexTable-div {
