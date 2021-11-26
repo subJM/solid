@@ -44,7 +44,6 @@
     <!-- 네이버 아이디로 로그인 api 참조 스크립트 -->
     <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8">
     </script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
     <script>
     //전화번호 최대길이
@@ -82,10 +81,9 @@
 
     // 가입버튼 눌렀을 때
     function action_signup() {
+        alert("가입번튼");
         document.member_form.action = "member_data.php";
-        document
-            .member_form
-            .submit();
+        document.member_form.submit();
     }
 
     function action_update() {
@@ -476,13 +474,15 @@
                                 if ($mode === "") {
                                     ?>
                             <div id="signup">
-                                <input type="button" id="button_submit" value="가 입" onclick="action_signup()">
+                                <input type="submit" id="button_submit" value="가 입"  onclick="action_signup()"
+                                 disabled="true">
                             </div>
                             <?php
                                 } else {
                                     ?>
                             <div id="signup">
-                                <input type="button" id="button_submit" value="수정완료" onclick="action_update()">
+                                <input type="button" id="button_submit" value="수정완료" onclick="action_update()"
+                                    disabled="true">
                             </div>
                             <?php
                                 }
