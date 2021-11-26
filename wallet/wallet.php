@@ -24,8 +24,8 @@
             <div class="column_side">
                 <div class="side_list_container">
                     <ul>
-                        <li class="walletList"><button>수익현황</button></li>
-                        <li class="walletList"><button>이용내역</button></li>
+                        <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/wallet.php">수익현황</a></li>
+                        <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/purchasehistory.php?.asdfakjl">이용내역</a></li>
                     </ul>
                 </div>
             </div>

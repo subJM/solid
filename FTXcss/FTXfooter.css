@@ -1,13 +1,20 @@
 .footer-1 {
   width: 1056px;
   height: 150px;
-  margin-left: 350px;
+  margin: 0 auto;
 }
 #footer-icon {
   margin-top: 70px;
   float: left;
   width: 168.96px;
   height: 150px;
+}
+
+.footerimg {
+  float: left;
+  margin-top: 6px;
+  width: 150px;
+  height: 50px;
 }
 #footer-terms {
   margin-top: 90px;
@@ -35,6 +42,7 @@ h4 {
 .tag {
   color: rgb(145, 144, 144);
 }
+
 a {
   text-decoration: none;
   color: inherit;

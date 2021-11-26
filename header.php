@@ -13,9 +13,8 @@ else $userlevel = "";
 
 <div class="top1">
     <div class="top1-1">
-        <span><img class="icon" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/logo1.svg" /></span>
+        <span><img class="top1-1_icon" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/logo1.svg" /></span>
         <ul class="top1-1table">
-
             <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coin/coin.php">거래소</a>
             </li>
             <li class="top1-1tabletd">
@@ -31,28 +30,31 @@ else $userlevel = "";
             <?php
 			if (!$userid) {
                 ?>
+
             <li class="top1-2tabletd"><a
                     href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php">회원가입</a></li>
             <li class="top1-2tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/login_form.php">로그인</a>
             </li>
+            <li class="top1-2tabletd"></li>
             <?php
 			} else {
 				$logged = $username . "(" . $userid . ")님 환영합니다.";
 			?>
             <li><?= $logged ?></li>
-            <li>
-                < class="top1-2tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃
+            <li class="top1-2tabletd">
+                < href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함
             </li>
             <?php
 			}
             if ($userid && $userlevel == 1) { ?>
-            <li>
-                < href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">관리자모드
+            <li class="top1-2tabletd">
+                < class="top1-2tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃
             </li>
+
             <?php
 			} else if ($userid) {
 			?>
-            <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_mypage.php">마이페이지
+            <li class="top1-2tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃
             </li>
             <?php
 			}
