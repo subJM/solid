@@ -24,6 +24,7 @@ function create_table($con, $table_name)
                     `name` char(10) NOT NULL,
                     `phone` char(13) NOT NULL,
                     `email` char(80) DEFAULT NULL,
+                    `address` char(50) DEFAULT NULL,
                     `regist_day` char(20) NOT NULL,
                     `level` int(11) DEFAULT NULL,
                     PRIMARY KEY (`num`)
@@ -37,6 +38,7 @@ function create_table($con, $table_name)
                     `name` char(10) NOT NULL,
                     `phone` char(13) NOT NULL,
                     `email` char(80) DEFAULT NULL,
+                    `address` char(50) DEFAULT NULL,
                     `regist_day` char(20) NOT NULL,
                     `level` int(11) DEFAULT NULL,
                     `deleted_date` date,

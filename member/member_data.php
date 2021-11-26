@@ -9,7 +9,7 @@
 
     if ($type === "insert") {
         $id = $_POST["id"];
-        $password = $_POST["password"];
+        $password = base64_encode($_POST["password"]);
         $password = base64_encode($password);
         $name = $_POST["name"];
         $phone_one = $_POST["phone_one"];
@@ -43,7 +43,8 @@
 
         echo "
       <script>
-        location.href = '../index.php'
+        alert('가입되셨습니다.');
+        location.replace('../index.php'); 
       </script>
     ";
     } elseif ($type === "delete") {
@@ -108,7 +109,7 @@
         echo "
       <script>
         alert('정보가 변경되셨습니다.');
-        location.href = '../index.php';
+        location.replace('../index.php'); 
       </script>
     ";
     }
