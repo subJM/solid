@@ -1,6 +1,8 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
+}else {
+    
 }
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
 // echo $_SERVER['DOCUMENT_ROOT']

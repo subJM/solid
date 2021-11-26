@@ -19,9 +19,8 @@ if (!$num_match) {
 } else {
   $row = mysqli_fetch_array($result);
   $db_pass = $row["password"];
-  $db_pass = base64_decode($db_pass);
 
-  if ($password != $db_pass) {
+  if (!$db_pass) {
     echo ("
             <script>
               console.log('$db_pass');

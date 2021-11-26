@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?.asdas">
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?.5sda">
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/css/login.css">
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+>>>>>>> c2aa399aa22a6118118e61bc91517e2806db43a0
     <link
         href="https://fonts.googleapis.com/css?family=Gothic+A1:400,500,700|Nanum+Gothic+Coding:400,700|Nanum+Gothic:400,700,800|Noto+Sans+KR:400,500,700,900&display=swap&subset=korean"
         rel="stylesheet">
