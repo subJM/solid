@@ -33,7 +33,7 @@
             </script>
             ";
         }
-    } 
+    }
 
     //5. 데이터베이스 접속하기($con -> 데이터베이스 연결함.)
     $dbcon = mysqli_select_db($con, "solid") or die("Error".mysqli_error($con));

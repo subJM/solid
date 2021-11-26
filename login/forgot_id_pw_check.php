@@ -1,6 +1,5 @@
 <?php
   include $_SERVER['DOCUMENT_ROOT']."/solid/db/db_connector.php";
-
   $find_type = $_POST["find_type"];
 
   if($find_type === "id") {
