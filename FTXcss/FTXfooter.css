@@ -9,6 +9,12 @@
   width: 168.96px;
   height: 150px;
 }
+.footerimg {
+  float: left;
+  margin-top: 6px;
+  width: 150px;
+  height: 50px;
+}
 #footer-terms {
   margin-top: 90px;
   float: left;

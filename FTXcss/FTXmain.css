@@ -8,8 +8,8 @@ body {
 }
 .container {
   background-color: white;
-  width: 1920px;
-  height: auto;
+  width: 1900px;
+  min-height: 650px;
 }
 header {
   width: 1920px;
