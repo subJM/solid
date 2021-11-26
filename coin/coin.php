@@ -137,8 +137,6 @@
                             .then(response => {
                                 response.json().then((coin) => {
                                     callbackFunc(coin.data)
-                                    console.log(coin.data)
-
                                 })
                             })
 
@@ -163,6 +161,23 @@
                             }
                         }
                     }
+
+                    async function getOrderBook(coinName) {
+                        let orderBookUrl = "getOrderBook.php?name="+coinName
+                        await fetch(orderBookUrl, {
+                                cache: "no-store",
+                                headers: {
+                                     'Content-Type': 'application/json; charset=utf-8'
+                                 }
+                            })
+                            .then(response => {
+                                response.json().then(data=>{
+                                    console.log(data.data);
+                                })
+
+
+                            })
+                    }
                     </script>
 
                     <script type="text/javascript">
@@ -174,8 +189,10 @@
                         document.write("<td>" + txt1 + "</td>");
                     } //end for j
                     document.write("</tr>");
+
                     setInterval(() => {
                         getTransactionHistory("BTC", setTransactionHistoryData)
+                        getOrderBook("BTC")
                     }, 1000);
                     </script>
                 </table>
