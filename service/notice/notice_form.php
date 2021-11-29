@@ -40,7 +40,7 @@
 					</li>
 				</ul>
 				<ul class="buttons">
-					<li><button type="button" onclick="location.href='notice_list.php'","check_input()">등록</button></li>
+					<li><button type="button" onclick="insert()">등록</button></li>
 					<li><button type="button" onclick="location.href='notice_list.php'">목록</button></li>
 				</ul>
 			</form>
@@ -49,6 +49,12 @@
 	<footer>
 	<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php"; ?>
         </footer>
+
+		<script>
+			function insert(){
+				alert("안녕하세요");
+			}
+		</script>
 </body>
 
 </html>
