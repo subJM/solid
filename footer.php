@@ -1,6 +1,6 @@
 <div class="footer-1">
-    <div id="footer-icon">
-        <img class="footerimg" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/logo1.svg">
+    <div id="footer-icon"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/index.php">
+            <img class="footerimg" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/logo1.svg"></a>
     </div>
     <div id="footer-terms">
         <a class="tag" href="">이용약관</a> | <a class="tag" href="">개인정보처리방침</a>

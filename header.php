@@ -13,7 +13,8 @@ else $userlevel = "";
 
 <div class="top1">
     <div class="top1-1">
-        <span><img class="top1-1_icon" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/logo1.svg" /></span>
+        <span><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/index.php"><img class="top1-1_icon"
+                    src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/logo1.svg" /></a></span>
         <ul class="top1-1table">
             <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coin/coin.php">거래소</a>
             </li>
@@ -35,30 +36,37 @@ else $userlevel = "";
                     href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php">회원가입</a></li>
             <li class="top1-2tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/login_form.php">로그인</a>
             </li>
-            <li class="top1-2tabletd"></li>
             <?php
 			} else {
 				$logged = $username . "(" . $userid . ")님 환영합니다.";
 			?>
-            <li><?= $logged ?></li>
-            <li class="top1-2tabletd">
-                < href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함
-            </li>
-            <?php
+            <li id="welcome_message" class="optionmenutable"><?= $logged ?></li>
+            <li id="headermenu" class="optionmenutable">
+                <img id=optionmenu" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/optionmenu.png">
+
+                <ul class="submenu">
+                    <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">마이페이지</a></li>
+                    <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함</a></li>
+                    <?php
 			}
             if ($userid && $userlevel == 1) { ?>
-            <li class="top1-2tabletd">
-                < class="top1-2tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃
-            </li>
+                    <li>
+                        < class="top1-2tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">관리자
+                    </li>
 
-            <?php
+                    <?php
 			} else if ($userid) {
 			?>
-            <li class="top1-2tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃
-            </li>
-            <?php
+                    <li>
+                        <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃</a>
+                    </li>
+
+                    <?php
 			}
 			?>
+                </ul>
+            </li>
+
         </ul>
     </div>
 </div>

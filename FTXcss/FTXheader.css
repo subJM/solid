@@ -35,9 +35,13 @@
   transform: translate(-50%, -50%);
 }
 
-ul {
-  list-style-type: none;
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
 ul > li.top1-1tabletd {
   color: white;
   display: inline;
@@ -50,12 +54,13 @@ ul > li.top1-1tabletd:hover {
 }
 .top1-2 {
   float: right;
-  width: 300px;
-  min-width: 300px;
+  width: 400px;
+  min-width: 220px;
   height: 65px;
 }
 .top1-2table {
-  padding: 20px;
+  width: 100%;
+  padding: 8px;
 }
 ul > li.top1-2tabletd {
   color: white;
@@ -67,6 +72,47 @@ ul > li.top1-2tabletd {
 ul > li.top1-2tabletd:hover {
   cursor: pointer;
   color: rgb(104, 145, 231);
+}
+li.optionmenutable {
+  /* display: inline; */
+  float: left;
+  margin-left: 25px;
+  display: inline-block;
+  width: 80px;
+  /* padding-left: 10px; */
+  padding-right: 10px;
+  text-align: center;
+  position: relative;
+}
+li ul.submenu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: -8px;
+}
+li.optionmenutable:hover ul.submenu {
+  display: block;
+}
+li ul.submenu > li {
+  display: inline-block;
+  width: 90px;
+  padding: 5px 7.5px;
+  color: white;
+  background: #eee;
+  text-align: center;
+}
+li ul.submenu > li:hover {
+  color: rgb(104, 145, 231);
+}
+#optionmenu {
+  margin-top: -20px;
+}
+#welcome_message {
+  color: white;
+  width: auto;
+  padding-top: 15px;
+}
+.optionmenutable {
 }
 a {
   text-decoration: none;
