@@ -474,8 +474,8 @@
                                 if ($mode === "") {
                                     ?>
                             <div id="signup">
-                                <input type="submit" id="button_submit" value="가 입"  onclick="action_signup()"
-                                 disabled="true">
+                                <input type="submit" id="button_submit" value="가 입" onclick="action_signup()"
+                                    disabled="true">
                             </div>
                             <?php
                                 } else {
