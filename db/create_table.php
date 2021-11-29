@@ -52,7 +52,7 @@ function create_table($con, $table_name)
                     `trTime` char(15) NOT NULL,
                     `transaction` BIGINT(20) NOT NULL,
                     `price` char(20) NOT NULL,
-                    `among` int(20) DEFAULT NULL,
+                    `amount` int(20) DEFAULT NULL,
                     `totalPrice` char(20) DEFAULT NULL,
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
@@ -80,22 +80,6 @@ function create_table($con, $table_name)
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
-            //종목 게시판      
-            case 'review':
-                $sql = "CREATE TABLE `review` (
-                  `no` int(11) NOT NULL AUTO_INCREMENT,
-                  `hospital_id` char(10) NOT NULL,
-                  `member_num` int(11) NOT NULL,
-                  `star_rating` int(1) NOT NULL,
-                  `kindness` int(1) NOT NULL,
-                  `wait_time` int(1) NOT NULL,
-                  `expense` int(1) NOT NULL,
-                  `comment` text NOT NULL,
-                  `regist_day` char(20) NOT NULL,
-                  PRIMARY KEY (`no`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;";
-                break;
-            
                 //자유게시판
             case 'free':
                 $sql = "CREATE TABLE `free` (

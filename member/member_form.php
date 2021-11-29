@@ -251,13 +251,13 @@
 
                     $_POST['mode'] = 'modify';
                     $_POST['category'] = 'member';
-                    include "member_mypage.php";
+                    
                 } else {
                     $mode = "";
                 }
                 if ($mode === "") {
                     if ($userid) {
-                        alert_back("잘못된 접근입니다");
+                        // alert_back("잘못된 접근입니다");
                     }
                     ?>
         <div id="title_member">
