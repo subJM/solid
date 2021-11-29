@@ -45,6 +45,7 @@ function create_table($con, $table_name)
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;";
                 break;
+                //코인 데이타
             case 'coin_info':
                   $sql = "CREATE TABLE `coin_info` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
@@ -57,8 +58,9 @@ function create_table($con, $table_name)
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   break;
+                  //코인 즐겨찾기
             case 'favorite_coin':
-                  $sql = "CREATE TABLE `coin_info` (
+                  $sql = "CREATE TABLE `favorite_coin` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
                     `id` char(15) NOT NULL,
                     `coinName` char(15) NOT NULL,
