@@ -1,3 +1,6 @@
+let closing_price;
+let currentPrice;
+
 async function getTickerData(coinName, callbackFunc) {
     let orderBookUrl = "getTicker.php"
     await fetch(orderBookUrl, {
@@ -12,8 +15,6 @@ async function getTickerData(coinName, callbackFunc) {
             })
         })
 }
-
-
 function setTickerData(coinData) {
     let section = document.querySelectorAll(".coinTransactionDataTable-div td")
     let count=0
@@ -26,6 +27,8 @@ function setTickerData(coinData) {
             section[count++].innerText = coinData[key]
         }
     }
+
+    closing_price=coinData['closing_price']
 }
 
 
@@ -102,10 +105,28 @@ function setTransactionHistoryData(array) {
 
         }
     }
+
+    if (array.length!=0) {
+        
+    const currentPrice_span = document.querySelectorAll("span")
+    currentPrice = array[0].price
+    changeAmount()
+
+    currentPrice_span[1].innerText= currentPrice
+    let rate = parseInt(closing_price/currentPrice*100)/100
+    let ascent_rate = rate>0 ? '+'+rate : '-'+rate
+    currentPrice_span[2].innerText= ascent_rate+'%'
+  
+    }
+
+    
+
+
+
 }
 
-setInterval(() => {
-    getTransactionHistory(coinName, setTransactionHistoryData)
-    getOrderBook(coinName, setOrderBookData)
-    getTickerData(coinName, setTickerData)
-}, 1000);
+function changeAmount() {
+    const coinTotalPrice = document.querySelectorAll(".coinTotalPrice")
+    const coinAmount = document.querySelectorAll("#amount")
+    coinTotalPrice[0].innerText=coinAmount[0].value*currentPrice
+}

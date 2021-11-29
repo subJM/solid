@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
         content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./CSS/exchange.css?2322213">
+    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXmain.css?.afkqwesadkkster">
+    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXfooter.css?.aqwessadd">
+    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXheader.css?.5swqeasdsda">
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
     <script src="./JS/coinData.JS"></script>
-    <link rel="stylesheet" href="./CSS/exchange.css">
+    <script src="./JS/trade.JS"></script>
+    <script>
+
+<?php
+error_reporting(E_ALL ^ E_NOTICE);
+
+$coinName = $_GET['coinName'] ? $_GET['coinName'] : 'BTC';
+echo "const coinName = '$coinName';";
+?>
+
+    setInterval(() => {
+        getTransactionHistory(coinName, setTransactionHistoryData)
+        getOrderBook(coinName, setOrderBookData)
+        getTickerData(coinName, setTickerData)
+    }, 1000);
+
+    </script>
+
 </head>
 <body>
     <div class="coinData-div">
         <ul>
             <li><img src="" alt="즐겨찾기"></li>
-            <li><img src="" alt="코인이미지"></li>
             <li>
-                <h1>ETH-KOR</h1>
+              <?=$coinName?>-KRW
             </li>
             <li>
-                <p>Ethereum Perpetual Futures</p>
+                <span>현재 가격&nbsp;</span><span>  </span>&nbsp;<span>0%</span>
             </li>
         </ul>
     </div>
@@ -83,23 +104,31 @@
             </div>
 
             <div class="section transactionTable-div">
-                <div id="tradeSelect-tab">
+                <div class="tradeSelect-tab">
                         <ul>
-                            <li><a href="#">BUY COIN</a></li>
-                            <li><a href="#">SELL COIN</a></li>
+                            <li><a href="#" onClick='buy_coin()'>BUY COIN</a></li>
+                            <li><a href="#" onClick='sell_coin()'>SELL COIN</a></li>
                         </ul>
                 </div>
 
+                <p class='price-p'>price</p>
+
+                <span class="coinTotalPrice">
+
+</span>
+
+                <p class='amount-p'>Amount</p>
                 <div id="trade_form">
                     <form name="trade_form" action="" method="post">
-                        <input autocomplete="off" type="number" id="amount" name="amount" placeholder="갯수"> <br>
+                        <input autocomplete="off" type="number" id="amount" name="amount" placeholder="갯수" value='1' onClick='changeAmount()' min='1'> <br>
                     </form>
-                    <span class="coinTotalPrice">1개당가격*갯수</span>
-                    <div class="trade_button">
-                        <a href="#" onclick="check_input()">
-                            <p>거래</p>
-                        </a>
-                    </div>
+
+                    <a href="#" onclick="check_input()">
+                        <div class="trade_button">
+                        거래
+                       </div>
+                    </a>
+
                 </div>
             </div>
             <div class="section marketTradesTable-div">
@@ -111,7 +140,6 @@
                         <th>Time</th>
                     </tr>
                     <script type="text/javascript">
-                        const coinName = "BTC";
                     let txt1 = 1
                     for (var j = 0; j < 20; j++) {
                         document.write("<tr>");

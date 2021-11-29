@@ -3,17 +3,68 @@
   margin: 0;
   padding: 0;
 }
+
 @media screen and (max-width: 700px) {
   .coinData-div {
     width: 100%;
   }
 
+  #amount {
+    font-size: large;
+    clear: both;
+    margin: 20px;
+    height: 40px;
+    width: 90%;
+  }
+
+  .coinTotalPrice {
+    margin: 20px;
+    height: 40px;
+    width: 90%;
+  }
+
+  .trade_button {
+    margin: 20px;
+    height: 40px;
+    width: 90%;
+    text-align: center;
+    background-color: #f23005;
+    border-radius: 2px;
+  }
+  .price-p {
+    margin-top: 40px;
+  }
+
+  .amount-p {
+    margin-top: 20px;
+  }
+
+  table {
+    font-size: 13px;
+    flex: 1;
+  }
+
+  table td {
+    padding: 5px 0px;
+  }
   .coinData-div > ul > li:nth-child(n) {
     display: inline-block;
   }
 
   .coinData-div > ul > li:nth-child(n + 4) {
     display: none;
+  }
+
+  .orderbookTable-div td {
+    padding: 5px 10px;
+  }
+
+  .orderbookTable-div td:nth-child(4n-3) {
+    text-align: right;
+  }
+
+  .orderbookTable-div td:nth-child(4n-2) {
+    text-align: right;
   }
 
   .main-div {
@@ -113,7 +164,14 @@
     width: 100%;
     height: 900px;
   }
+  table {
+    font-size: 13px;
+    flex: 1;
+  }
 
+  table td {
+    padding: 5px 0px;
+  }
   .coinData-div {
     display: inline-block;
     width: 100%;
@@ -125,6 +183,7 @@
     list-style: none;
     padding: 1%;
     border: 1px dotted;
+    font-size: 20px;
   }
 
   .main-div {
@@ -134,7 +193,7 @@
 
   .main-div > .chart-div {
     clear: both;
-    width: 60%;
+    width: 55%;
     height: auto;
   }
 
@@ -160,21 +219,24 @@
     height: 70px;
   }
 
-  .orderbook-div {
-    text-align: center;
+  .orderbookTable-div td {
+    padding: 5px 10px;
+  }
+
+  .orderbookTable-div td:nth-child(4n-3) {
+    text-align: right;
+  }
+
+  .orderbookTable-div td:nth-child(4n-2) {
+    text-align: right;
   }
 
   .flexTable-div > .section > .orderbookTable-div {
     width: 100%;
     height: 100%;
-    font-weight: bold;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-  }
-
-  table {
-    flex: 1;
   }
 
   .marketTradesTable-div {
@@ -183,7 +245,7 @@
     text-align: right;
   }
 
-  .marketTradesTable-div > table > caption {
+  caption {
     margin: 20px;
   }
   .transactionTable-div li {
@@ -195,26 +257,42 @@
     padding: 1%;
     border: 1px dotted;
   }
+  .price-p {
+    margin-top: 60px;
+  }
+
+  .amount-p {
+    margin-top: 20px;
+  }
+
+  .transactionTable-div p {
+    clear: both;
+    width: 50%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
   #amount {
     font-size: large;
     clear: both;
-    margin: 20px;
-    margin-top: 40px;
+    margin: 0px 20px;
     height: 40px;
-    width: 90%;
+    width: 60%;
   }
 
   .coinTotalPrice {
     margin: 20px;
     height: 40px;
     width: 90%;
+    font-size: 20px;
   }
 
   .trade_button {
-    margin: 20px;
+    margin: 150px 20px;
     height: 40px;
     width: 90%;
     text-align: center;
+    padding: 10px;
     background-color: #f23005;
     border-radius: 2px;
   }
@@ -222,6 +300,7 @@
   .coinTransactionDataTable-div > table {
     width: 100%;
     height: 50%;
+    margin-top: 12%;
   }
 
   .coinTransactionDataTable-div > table > caption {
