@@ -53,6 +53,7 @@ ul > li.top1-1tabletd:hover {
   color: rgb(104, 145, 231);
 }
 .top1-2 {
+  position: relative;
   float: right;
   width: 400px;
   min-width: 220px;
@@ -60,7 +61,7 @@ ul > li.top1-1tabletd:hover {
 }
 .top1-2table {
   width: 100%;
-  padding: 8px;
+  padding: 20px;
 }
 ul > li.top1-2tabletd {
   color: white;
@@ -107,10 +108,13 @@ li ul.submenu > li:hover {
 #optionmenu {
   margin-top: -20px;
 }
+#headermenu {
+  margin-top: -10px;
+}
 #welcome_message {
   color: white;
   width: auto;
-  padding-top: 15px;
+  padding-top: 3px;
 }
 .optionmenutable {
 }
