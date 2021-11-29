@@ -81,7 +81,6 @@
 
     // 가입버튼 눌렀을 때
     function action_signup() {
-        alert("가입번튼");
         document.member_form.action = "member_data.php";
         document.member_form.submit();
     }
@@ -474,8 +473,8 @@
                                 if ($mode === "") {
                                     ?>
                             <div id="signup">
-                                <input type="submit" id="button_submit" value="가 입"  onclick="action_signup()"
-                                 disabled="true">
+                                <input type="submit" id="button_submit" value="가 입" onclick="action_signup()"
+                                    disabled="true">
                             </div>
                             <?php
                                 } else {

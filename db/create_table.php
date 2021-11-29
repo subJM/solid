@@ -65,6 +65,7 @@ function create_table($con, $table_name)
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   break;
+                   //즐겨찾기
             case 'notice':
                 $sql = "CREATE TABLE `notice` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
@@ -106,15 +107,6 @@ function create_table($con, $table_name)
                   `content` text NOT NULL,
                   `regist_day` char(20) DEFAULT NULL,
                   PRIMARY KEY (`num`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
-                break;
-                //즐겨찾기
-            case 'interest':
-                $sql = "CREATE TABLE `interest` (
-                  `no` int(11) NOT NULL AUTO_INCREMENT,
-                  `member_num` int(11) NOT NULL,
-                  `coin_id` char(10) NOT NULL,
-                  PRIMARY KEY (`no`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
                 //faq 테이블

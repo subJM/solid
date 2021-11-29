@@ -45,7 +45,9 @@ else $userlevel = "";
                 <img id=optionmenu" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/optionmenu.png">
 
                 <ul class="submenu">
-                    <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid//member/member_form.php?mode='mdify'">마이페이지</a></li>
+                    <li><a
+                            href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a>
+                    </li>
                     <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함</a></li>
                     <?php
 			}
