@@ -9,7 +9,6 @@ function buy_coin() {
     tab_li[1].style.backgroundColor = white
 }
 
-
 function sell_coin() {
     tradeStatus='sell';
     console.log(tradeStatus)
@@ -18,10 +17,12 @@ function sell_coin() {
 }
 
 function trade() {
-    if (tradeStatus===buy) {
-        //db에무언가?
-    }else{
+    const trade_form = document.trade_form;
+    let inputArray=document.querySelectorAll("#trade_form input");
+    inputArray[0].value=tradeStatus;
+    inputArray[1].value=currentPrice;
+    inputArray[2].value=totalPrice;
 
-    }
+    trade_form.submit();
 }
 

@@ -106,8 +106,8 @@ echo "const coinName = '$coinName';";
             <div class="section transactionTable-div">
                 <div class="tradeSelect-tab">
                         <ul>
-                            <li><a href="#" onClick='buy_coin()'>BUY COIN</a></li>
-                            <li><a href="#" onClick='sell_coin()'>SELL COIN</a></li>
+                            <li><a href="#a" onClick='buy_coin()'>BUY COIN</a></li>
+                            <li><a href="#a" onClick='sell_coin()'>SELL COIN</a></li>
                         </ul>
                 </div>
 
@@ -119,16 +119,20 @@ echo "const coinName = '$coinName';";
 
                 <p class='amount-p'>Amount</p>
                 <div id="trade_form">
-                    <form name="trade_form" action="" method="post">
+                    <form name="trade_form" action="./DB/trade.php" method="post">
+                        <input type="hidden" name="transaction">
+                        <input type="hidden" name="price">
+                        <input type="hidden" name="totalPrice" >
+                        <input type="hidden" name="name" value="<?=$coinName?>">
                         <input autocomplete="off" type="number" id="amount" name="amount" placeholder="갯수" value='1' onClick='changeAmount()' min='1'> <br>
-                    </form>
 
-                    <a href="#" onclick="check_input()">
+
+                        <button type="submit" onClick='trade()'>
                         <div class="trade_button">
                         거래
                        </div>
-                    </a>
-
+                       </button>
+                    </form>
                 </div>
             </div>
             <div class="section marketTradesTable-div">
