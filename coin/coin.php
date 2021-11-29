@@ -8,6 +8,7 @@
         content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
     <title>Document</title>
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="./JS/coinData.JS"></script>
     <link rel="stylesheet" href="./CSS/exchange.css">
 </head>
 <body>
@@ -20,20 +21,6 @@
             </li>
             <li>
                 <p>Ethereum Perpetual Futures</p>
-            </li>
-            <li><span>현재가격</span></li>
-            <li><span>상승률</span></li>
-            <li>
-                <p>Index Price</p> <span>현재가격</span>
-            </li>
-            <li>
-                <p>Predicted Funding Rate</p> <span>예상 펀딩레이트</span> <span>시간</span>
-            </li>
-            <li>
-                <p>Open Interest</p> <span>미결제 약정</span>
-            </li>
-            <li>
-                <p>24h volume</p><span>24시간 거래내역</span>
             </li>
         </ul>
     </div>
@@ -75,12 +62,13 @@
                     <span><img src="" alt="">price</span></caption>
                     <tr>
                         <th>Bid Size</th>
-                        <th>Bid Size</th>
-                        <th>Bid Size</th>
-                        <th>Bid Size</th>
+                        <th>Bid Price</th>
+                        <th>Ask Price</th>
+                        <th>Ask Size</th>
                     </tr>
-                        <script type="text/javascript">
-                        for (let j = 0; j < 15; j++) {
+
+                    <script type="text/javascript">
+                        for (let j = 0; j < 30; j++) {
                             let txt = 1;
                             document.write("<tr>");
                             document.write("<td>" + txt + "</td>");
@@ -97,10 +85,11 @@
             <div class="section transactionTable-div">
                 <div id="tradeSelect-tab">
                         <ul>
-                            <li><a href="">BUY COIN</a></li>
-                            <li><a href="">SELL COIN</a></li>
+                            <li><a href="#">BUY COIN</a></li>
+                            <li><a href="#">SELL COIN</a></li>
                         </ul>
                 </div>
+
                 <div id="trade_form">
                     <form name="trade_form" action="" method="post">
                         <input autocomplete="off" type="number" id="amount" name="amount" placeholder="갯수"> <br>
@@ -112,101 +101,41 @@
                         </a>
                     </div>
                 </div>
-
-
-                </div>
-
-
+            </div>
             <div class="section marketTradesTable-div">
                 <table>
                     <caption>Market Trades</caption>
                     <tr>
-                        <th>Bid Size</th>
-                        <th>Bid Size</th>
-                        <th>Bid Size</th>
-
+                        <th>Price</th>
+                        <th>Size</th>
+                        <th>Time</th>
                     </tr>
-                    <script>
-                    async function getTransactionHistory(coin, callbackFunc) {
-                        let transactionHistoryUrl = "https://api.bithumb.com/public/transaction_history/" +
-                            coin;
-                        let transactionHistoryResult
-                        await fetch(transactionHistoryUrl, {
-                                cache: "no-store"
-                            })
-                            .then(response => {
-                                response.json().then((coin) => {
-                                    callbackFunc(coin.data)
-                                })
-                            })
-
-                    }
-
-                    function setTransactionHistoryData(array) {
-                        const section = document.querySelectorAll(".marketTradesTable-div td")
-                        let count = 19
-                        for (let i = 0; i < section.length; i++) {
-                            section[i].innerText = ""
-                            if (i % 3 === 0) {
-                                section[i].innerText = array[count].price
-                            }
-
-                            if (i % 3 === 1) {
-                                section[i].innerText = array[count].total
-                            }
-
-                            if (i % 3 === 2) {
-                                section[i].innerText = array[count--].transaction_date.substring(11, 19)
-
-                            }
-                        }
-                    }
-
-                    async function getOrderBook(coinName) {
-                        let orderBookUrl = "getOrderBook.php?name="+coinName
-                        await fetch(orderBookUrl, {
-                                cache: "no-store",
-                                headers: {
-                                     'Content-Type': 'application/json; charset=utf-8'
-                                 }
-                            })
-                            .then(response => {
-                                response.json().then(data=>{
-                                    console.log(data.data);
-                                })
-
-
-                            })
-                    }
-                    </script>
-
                     <script type="text/javascript">
+                        const coinName = "BTC";
                     let txt1 = 1
                     for (var j = 0; j < 20; j++) {
                         document.write("<tr>");
                         document.write("<td>" + txt1 + "</td>");
                         document.write("<td>" + txt1 + "</td>");
                         document.write("<td>" + txt1 + "</td>");
+                        document.write("</tr>");
                     } //end for j
-                    document.write("</tr>");
 
-                    setInterval(() => {
-                        getTransactionHistory("BTC", setTransactionHistoryData)
-                        getOrderBook("BTC")
-                    }, 1000);
+
                     </script>
                 </table>
             </div>
             <div class="section coinTransactionDataTable-div">
                 <table>
-                    <caption>data</caption>
-                    <tr>
-                        <th>data</th>
-                        <th>data</th>
-                    </tr>
-
-
-
+                    <script type="text/javascript">
+                    let txt2 = 1
+                    for (var j = 0; j < 11; j++) {
+                        document.write("<tr>");
+                        document.write("<td>" + txt2 + "</td>");
+                        document.write("<td>" + txt2 + "</td>");
+                        document.write("</tr>");
+                    } //end for j
+                    </script>
                 </table>
 
             </div>
