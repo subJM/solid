@@ -2,7 +2,7 @@
 function create_procedure($con, $procedure_name)
 {
   $flag = "NO";
-  $sql = "SHOW PROCEDURE STATUS WHERE db = 'todagtodag';";
+  $sql = "SHOW PROCEDURE STATUS WHERE db = 'solid';";
   $result = mysqli_query($con, $sql) or die('Error: ' . mysqli_error($con));
 
   while ($row = mysqli_fetch_row($result)) {
