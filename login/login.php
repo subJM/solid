@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
+include "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/db/db_connector.php";
 
 if(!isset($_POST['client'])){
   $id   = $_POST["id"];

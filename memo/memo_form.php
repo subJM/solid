@@ -1,5 +1,5 @@
 <?php
-include("./dbconn.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
+include("../db/db_connector.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
 
 $me_recv_mb_id = $_GET['me_recv_mb_id']; // GET 방식으로 넘어온 받는 회원아이디
 ?>
@@ -7,7 +7,7 @@ $me_recv_mb_id = $_GET['me_recv_mb_id']; // GET 방식으로 넘어온 받는 �
 <html>
 <head>
 	<title>Memo Form</title>
-	<link href="./style.css" rel="stylesheet" type="text/css">
+	<link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body id="memo">
 	<!-- 쪽지 보내기 시작 { -->
