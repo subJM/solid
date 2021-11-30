@@ -80,7 +80,7 @@ function create_table($con, $table_name)
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
-            //종목 게시판      
+            //종목 게시판  코인 종목마다 게시판    
             case 'review':
                 $sql = "CREATE TABLE `review` (
                   `no` int(11) NOT NULL AUTO_INCREMENT,
