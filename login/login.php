@@ -1,6 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 
+if(!isset($_POST['client'])){
 $id   = $_POST["id"];
 $password = $_POST["password"];
 
@@ -44,6 +45,38 @@ if (!$num_match) {
           ");
 
     mysqli_close($con);
+  }
+}
+}else{
+  $id   = $_POST["id"];
+  $password = $_POST["password"];
+
+  $sql = "select * from members where id='$id'";
+  $result = mysqli_query($con, $sql);
+
+  $num_match = mysqli_num_rows($result);
+
+  if (!$num_match) {
+    echo false;
+  } else {
+    $row = mysqli_fetch_array($result);
+    $db_pass = $row["password"];
+
+    if (!$db_pass) {
+      echo false;
+
+      mysqli_close($con);
+      exit;
+    } else {
+      session_start();
+      $_SESSION["user_id"] = $row["id"];
+      $_SESSION["user_name"] = $row["name"];
+      $_SESSION["user_level"] = $row["level"];
+
+      echo true;
+
+      mysqli_close($con);
+    }
   }
 }
 ?>
