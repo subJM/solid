@@ -47,7 +47,7 @@
 				<li>&nbsp;</li>
 			</ul> <!-- page -->
 			<ul class="buttons">
-				<li><button onclick="location.href='notice_list.php'">글쓰기</button></li>
+				<li><button onclick="location.href='notice_form.php'">글쓰기</button></li>
 				<li><button onclick="location.href='notice_list.php'">목록</button></li>
 			</ul>
 		</div> <!-- board_box -->
