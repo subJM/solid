@@ -1,5 +1,7 @@
 <?php
+@Headers("Content-Type: application/json")
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
+
 
 if(!isset($_POST['client'])){
   $id   = $_POST["id"];
@@ -59,7 +61,6 @@ if(!isset($_POST['client'])){
     if (!$num_match) {
         echo json_encode(array(
           "status" => "false",
-          "message" => "ID missing!"
       ));
     } else {
       $row = mysqli_fetch_array($result);
@@ -68,7 +69,6 @@ if(!isset($_POST['client'])){
       if (!$db_pass) {
         echo json_encode(array(
           "status" => "false",
-          "message" => "Password missing!"
         ));
 
         mysqli_close($con);
@@ -80,8 +80,7 @@ if(!isset($_POST['client'])){
         $_SESSION["user_level"] = $row["level"];
 
         echo json_encode(array(
-          "status" => "true",
-          "message" => "Success!"
+          'status' => 'true',
         ));
 
         mysqli_close($con);
