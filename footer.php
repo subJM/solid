@@ -8,9 +8,9 @@
     <div id="service-center">
         <h4>고객센터</h4>
         <br>
-        <a class="tag" href="">공지사항</a><br>
-        <a class="tag" href="">자주 묻는 질문</a><br>
-        <a class="tag" href="">문의하기</a>
+        <a class="tag" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/notice/notice_list.php">공지사항</a><br>
+        <a class="tag" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/faq/faq_list.php">자주 묻는 질문</a><br>
+        <a class="tag" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/question/question_list.php">문의하기</a>
     </div>
     <div id="other">
         <h4>기타 문의</h4>
