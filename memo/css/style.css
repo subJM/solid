@@ -1,0 +1,133 @@
+* {
+	padding:0;
+	margin:0;
+}
+body {
+	padding-top:20px;
+	font-family: 'NanumGothic','맑은 고딕',MalgunGothic,sans-serif,굴림,verdana,tahoma;
+	font-size:14px;
+	text-align:center;
+	color:#333;
+	background:#cee2f3;
+}
+caption {
+	text-align:left;
+	padding-bottom:10px;
+	font-size:14px;
+	font-weight:500;
+}
+table {
+	max-width:90%;
+	margin:20px auto;
+	border-collapse:collapse;
+}
+th,td {
+	padding:10px 20px;
+	min-height:40px;
+	font-size:14px;
+	border:1px solid #a0b5c7;
+}
+th {
+	width:120px;
+	color:#fff;
+	background:#0369bb;
+}
+td {
+	padding:10px 20px;
+	font-size:14px;
+	border:1px solid #a0b5c7;
+	background:#fff;
+}
+td.td_center {
+	text-align:center;
+	border:none;
+	background:none;
+}
+td span {
+	display:block;
+	text-align:left;
+	font-size:12px;
+}
+label {
+	line-height:40px;
+	vertical-align:top;
+}
+input,select {
+	padding:0 10px;
+	height:40px;
+	line-height:40px;
+	border:1px solid #a0b5c7;
+	background:#fff;
+}
+textarea {
+	width:100%;
+}
+a {
+	display:inline-block;
+	padding:0 10px;	
+	margin:0 1px;
+	height:38px;
+	line-height:38px;
+	font-size:13px;
+	color:#0369bb;
+	text-decoration:none;
+	border:1px solid #a0b5c7;
+	background:#fff;
+}
+table a {
+	border:none; 
+	padding:0;
+	text-decoration:underline;
+}
+table a.td_btn {
+	padding:0 5px;
+	border:none; 
+	border-radius:5px;
+	background:#e4eef7;
+}
+.pg strong {
+    display: inline-block;
+    padding: 0 10px;
+	margin:0 1px;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+    border: 1px solid #a0b5c7;
+    background: #0369bb;
+	vertical-align:bottom;
+}
+button {
+	display:inline-block;
+	padding:0 10px;
+	height:40px;
+	line-height:38px;
+	font-size:13px;
+	color:#0369bb;
+	text-decoration:none;
+	border:1px solid #a0b5c7;
+	background:#fff;	
+}
+#memo {
+	padding:30px;
+}
+#memo ul {
+	font-size:0;
+}
+#memo ul li {
+	display:inline-block;
+	width:33.33%;
+	margin-bottom:10px;
+	font-size:14px;
+	vertical-align:middle;
+} 
+#memo ul li a {
+	width:100%;
+	padding:0;
+}
+#memo table {
+	max-width:100%;
+}
+#memo table td {
+	padding:3px 20px;
+	text-align:center;
+}
