@@ -75,12 +75,10 @@ ul > li.top1-2tabletd:hover {
   color: rgb(104, 145, 231);
 }
 li.optionmenutable {
-  /* display: inline; */
   float: left;
   margin-left: 25px;
   display: inline-block;
   width: 80px;
-  /* padding-left: 10px; */
   padding-right: 10px;
   text-align: center;
   position: relative;
@@ -115,8 +113,6 @@ li ul.submenu > li:hover {
   color: white;
   width: auto;
   padding-top: 3px;
-}
-.optionmenutable {
 }
 a {
   text-decoration: none;
