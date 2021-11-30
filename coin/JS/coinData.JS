@@ -1,8 +1,9 @@
 let closing_price;
 let currentPrice;
+let totalPrice;
 
 async function getTickerData(coinName, callbackFunc) {
-    let orderBookUrl = "getTicker.php"
+    let orderBookUrl = "./getData/getTicker.php"
     await fetch(orderBookUrl, {
             cache: "no-store",
             headers: {
@@ -34,7 +35,7 @@ function setTickerData(coinData) {
 
 
 async function getOrderBook(coinName,  callbackFunc) {
-    let orderBookUrl = "getOrderBook.php?name="+coinName
+    let orderBookUrl = "./getData/getOrderBook.php?name="+coinName
     await fetch(orderBookUrl, {
             cache: "no-store",
             headers: {
@@ -71,7 +72,7 @@ function setOrderBookData(array) {
 }
 
 async function getTransactionHistory(coinName, callbackFunc) {
-    let transactionHistoryUrl =  "getTransaction.php?name="+coinName;
+    let transactionHistoryUrl =  "./getData/getTransaction.php?name="+coinName;
     await fetch(transactionHistoryUrl, {
             cache: "no-store",
             headers: {
@@ -128,5 +129,6 @@ function setTransactionHistoryData(array) {
 function changeAmount() {
     const coinTotalPrice = document.querySelectorAll(".coinTotalPrice")
     const coinAmount = document.querySelectorAll("#amount")
-    coinTotalPrice[0].innerText=coinAmount[0].value*currentPrice
+    totalPrice=coinAmount[0].value*currentPrice
+    coinTotalPrice[0].innerText=totalPrice
 }

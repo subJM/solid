@@ -81,7 +81,6 @@
 
     // 가입버튼 눌렀을 때
     function action_signup() {
-        alert("가입번튼");
         document.member_form.action = "member_data.php";
         document.member_form.submit();
     }
@@ -251,13 +250,13 @@
 
                     $_POST['mode'] = 'modify';
                     $_POST['category'] = 'member';
-                    include "member_mypage.php";
+                    
                 } else {
                     $mode = "";
                 }
                 if ($mode === "") {
                     if ($userid) {
-                        alert_back("잘못된 접근입니다");
+                        // alert_back("잘못된 접근입니다");
                     }
                     ?>
         <div id="title_member">

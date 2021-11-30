@@ -45,26 +45,29 @@ function create_table($con, $table_name)
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;";
                 break;
+                //코인 데이타
             case 'coin_info':
                   $sql = "CREATE TABLE `coin_info` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
                     `coinName` char(15) NOT NULL,
                     `trTime` char(15) NOT NULL,
-                    `transaction` BIGINT(20) NOT NULL,
-                    `price` char(20) NOT NULL,
-                    `among` int(20) DEFAULT NULL,
-                    `totalPrice` char(20) DEFAULT NULL,
+                    `transaction` char(20) NOT NULL,
+                    `price` int(20) NOT NULL,
+                    `amount` int(20) DEFAULT NULL,
+                    `totalPrice` int(20) DEFAULT NULL,
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   break;
+                  //코인 즐겨찾기
             case 'favorite_coin':
-                  $sql = "CREATE TABLE `coin_info` (
+                  $sql = "CREATE TABLE `favorite_coin` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
                     `id` char(15) NOT NULL,
                     `coinName` char(15) NOT NULL,
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   break;
+                   //즐겨찾기
             case 'notice':
                 $sql = "CREATE TABLE `notice` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
@@ -80,6 +83,7 @@ function create_table($con, $table_name)
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
+<<<<<<< HEAD
             //종목 게시판  코인 종목마다 게시판    
             case 'review':
                 $sql = "CREATE TABLE `review` (
@@ -96,6 +100,8 @@ function create_table($con, $table_name)
                 ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;";
                 break;
             
+=======
+>>>>>>> a6bd0f4f954e5ab673fa6ae89aa8b95096c6faa6
                 //자유게시판
             case 'free':
                 $sql = "CREATE TABLE `free` (
@@ -122,15 +128,6 @@ function create_table($con, $table_name)
                   `content` text NOT NULL,
                   `regist_day` char(20) DEFAULT NULL,
                   PRIMARY KEY (`num`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
-                break;
-                //즐겨찾기
-            case 'interest':
-                $sql = "CREATE TABLE `interest` (
-                  `no` int(11) NOT NULL AUTO_INCREMENT,
-                  `member_num` int(11) NOT NULL,
-                  `coin_id` char(10) NOT NULL,
-                  PRIMARY KEY (`no`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
                 //faq 테이블
