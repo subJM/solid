@@ -86,7 +86,7 @@ li.optionmenutable {
 li ul.submenu {
   display: none;
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: -8px;
 }
 li.optionmenutable:hover ul.submenu {
@@ -94,10 +94,11 @@ li.optionmenutable:hover ul.submenu {
 }
 li ul.submenu > li {
   display: inline-block;
+  font-weight: bold;
   width: 90px;
   padding: 5px 7.5px;
-  color: white;
-  background: #eee;
+  color: black;
+  /* background: #eee; */
   text-align: center;
 }
 li ul.submenu > li:hover {
@@ -107,7 +108,7 @@ li ul.submenu > li:hover {
   margin-top: -20px;
 }
 #headermenu {
-  margin-top: -10px;
+  margin-top: -15px;
 }
 #welcome_message {
   color: white;

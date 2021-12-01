@@ -69,7 +69,7 @@ img {
   width: 80%;
 }
 .notice_FAQ {
-  margin: 20px auto;
+  margin: 50px auto;
   width: 980px;
   height: auto;
 }
@@ -100,14 +100,16 @@ img {
 .notice_FAQ_right {
   text-align: right;
 }
-.subframe {
-  margin-left: 240px;
-  width: 1440px;
-}
+/* .subframe {
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+} */
 
 #subpic {
-  margin-top: 20px;
-  width: 1440px;
+  margin-left: 192px;
+  margin-top: 50px;
+  width: 1536px;
 }
 a {
   text-decoration: none;
