@@ -1,3 +1,7 @@
+<?php
+include("./notice_insert.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,49 +16,58 @@
 
 <body>
 	<header>
-	<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
 	</header>
 	<section>
 		<div id="board_box">
 			<h3 id="board_title">
 				공지사항 > 글 쓰기
 			</h3>
-				<ul id="board_form">
-					<!-- <li>
-						<span class="col1">이름 : </span>
-						<span class="col2"><?= $name ?></span>
-					</li> -->
+			<ul id="board_form">
+				<form name="notice_form" id="notice_form_id" method="POST">
 					<li>
 						<span class="col1">제목 : </span>
-						<span class="col2"><input autocomplete="off" name="subject" type="text"></span>
+						<span class="col2"><input autocomplete="off" id="subject_id" name="subject" type="text"></span>
 					</li>
 					<li id="text_area">
 						<span class="col1">내용 : </span>
 						<span class="col2">
-							<textarea name="content"></textarea>
+							<textarea id="content_id" name="content"></textarea>
 						</span>
 					</li>
 					<li>
 						<span class="col1"> 첨부 파일</span>
-						<span class="col2"><input type="file" name="upfile"></span>
+						<span class="col2"><input type="file" id="file_id" name="upfile"></span>
 					</li>
-				</ul>
-				<ul class="buttons">
-					<li><button type="button" onclick="insert()">등록</button></li>
-					<li><button type="button" onclick="location.href='notice_list.php'">목록</button></li>
-				</ul>
+			</ul>
+			<ul class="buttons">
+				<li><input type="button" onclick="notice()">등록</input></li>
+				<li><button type="button" onclick="location.href='notice_list.php'">목록</button></li>
+			</ul>
 			</form>
 		</div> <!-- board_box -->
 	</section>
 	<footer>
-	<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php"; ?>
-        </footer>
-
-		<script>
-			function insert(){
-				alert("안녕하세요");
-			}
-		</script>
+		<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php"; ?>
+	</footer>
+	<?php
+	if ($con === "") {
+	?>
+		<input type="text" name="subject" class="form_control" placeholder="제목입력">
+		<br>
+		<p id="input_subject_confirm"></p>
+		<input type="text" name="content" class="form_control" placeholder="내용입력">
+		<br>
+		<p id="input_content_confirm"></p>
+		<input type="file" name="upfile" class="form_control" placeholder="파일첨부">
+		<br>
+		<p id="input_file_confirm"></p>
+	<?php
+		} else {
+			?>
+	<?php
+	}
+	?>
 </body>
 
 </html>

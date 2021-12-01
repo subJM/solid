@@ -83,6 +83,23 @@ function create_table($con, $table_name)
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
+
+            //종목 게시판  코인 종목마다 게시판    
+            case 'review':
+                $sql = "CREATE TABLE `review` (
+                  `no` int(11) NOT NULL AUTO_INCREMENT,
+                  `hospital_id` char(10) NOT NULL,
+                  `member_num` int(11) NOT NULL,
+                  `star_rating` int(1) NOT NULL,
+                  `kindness` int(1) NOT NULL,
+                  `wait_time` int(1) NOT NULL,
+                  `expense` int(1) NOT NULL,
+                  `comment` text NOT NULL,
+                  `regist_day` char(20) NOT NULL,
+                  PRIMARY KEY (`no`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;";
+                break;
+            
                 //자유게시판
             case 'free':
                 $sql = "CREATE TABLE `free` (
@@ -125,7 +142,7 @@ function create_table($con, $table_name)
                 break;
                 //faq 리플테이블
             case 'faq_ripple':
-                $sql = "CREATE TABLE `free_ripple` (
+                $sql = "CREATE TABLE `faq_ripple` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `parent` int(11) NOT NULL,
                   `id` char(15) NOT NULL,
@@ -162,6 +179,18 @@ function create_table($con, $table_name)
                   `content` text NOT NULL,
                   `regist_day` char(20) DEFAULT NULL,
                   PRIMARY KEY (`num`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+                break;
+            case 'memo':
+                $sql = "CREATE TABLE IF NOT EXISTS 'memo' (
+                  me_id int(11) NOT NULL AUTO_INCREMENT,
+                  me_recv_mb_id varchar(20) NOT NULL DEFAULT '',
+                  me_send_mb_id varchar(20) NOT NULL DEFAULT '',
+                  me_send_datetime datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                  me_read_datetime datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+                  me_memo text NOT NULL,
+                  PRIMARY KEY (me_id),
+                  KEY me_recv_mb_id (me_recv_mb_id)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
             
