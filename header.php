@@ -16,7 +16,7 @@ else $userlevel = "";
         <span><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/index.php"><img class="top1-1_icon"
                     src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/logo1.svg" /></a></span>
         <ul class="top1-1table">
-            <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coin/coin.php">거래소</a>
+            <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coinList/coinList.php">거래소</a>
             </li>
             <li class="top1-1tabletd">
                 <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/notice/notice.php">공지사항</a>

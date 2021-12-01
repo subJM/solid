@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXfooter.css?.aqwessadd">
     <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXheader.css?.5swqeasdsda">
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-    <script src="./JS/coinData.JS"></script>
+    <script src="./JS/coinData.JS?123123131"></script>
     <script src="./JS/trade.JS"></script>
     <script>
  const imgTag= document.querySelector(".favorit_img")
@@ -43,7 +43,7 @@ if ($result_record) {
         getTransactionHistory(coinName, setTransactionHistoryData)
         getOrderBook(coinName, setOrderBookData)
         getTickerData(coinName, setTickerData)
-    }, 1000);
+    }, 2000);
 
     </script>
 </head>
@@ -76,7 +76,7 @@ if ($result_record) {
                 let tradingview = new TradingView.widget({
                     "width": width,
                     "height": height,
-                    "symbol": "BITHUMB:BTCKRW",
+                    "symbol": "BITHUMB:"+coinName+"KRW",
                     "interval": "D",
                     "timezone": "BTC/KRW",
                     "style": "1",
