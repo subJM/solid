@@ -1,6 +1,11 @@
+<?php
+	session_start();
+	include ("../../db/db_connector.php");
+    include ("../../db/create_table.php");
+    create_table($con,'notice'); 
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<title>Solid</title>
@@ -14,107 +19,128 @@
 	<header>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
 	</header>
+	<?php
+         if (!$userid) {
+            alert_back("회원가입사용자만 입력가능합니다.");
+            exit(); 
+         }
+    ?>
 	<section>
 		<div id="board_box">
 			<h3>
-				공지사항
+				공지사항 > 내용
 			</h3>
+			<!-- 에러메세지 출력 -->
+			<?php if(isset($_GET['error'])){ ?>
+			<div id="check" style="color: red">
+				<?= $_GET['error']; ?>
+            </div>
+            <?php } ?>
+            <!--성공메세지 출력 -->
+            <?php if(isset($_GET['success'])){ ?>
+            <div id="check" style="color: blue">
+				<?= $_GET['success']; ?>
+            </div>
+            <?php } ?>
 			<?php
+			//1. 클라이언트로부터 전송해온 값이 존재하는지 점검
+			if(isset($_GET["num"]) && isset($_GET["page"])){
 
-			include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
-			include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_table.php";
+				//2. mysqli injection 함수 사용
+				$num = mysqli_real_escape_string($con, $_GET["num"]);				
+				$page = mysqli_real_escape_string($con, $_GET["page"]);
+				
+				//3. 공백이 있는지 점검
+				if(empty($num)){
+					header("location: notice_list.php?error=번호가 비어있어요");
+					exit(); 
+				}else if(empty($page)){
+					header("location: notice_list.php?error=페이지가 비어있어요");
+					exit(); 
+				}else{
+					//해당되는 공지사항 내용 가져오기
+					$sql = "select * from notice where num = '$num'";
+					$select_result = mysqli_query($con, $sql);
+					$row = mysqli_fetch_array($select_result);
 
-			create_table($con, 'notice');
+					if($row){
+						header("location: notice_list.php?error=해당되는 공지글을 찾을수 없습니다.");
+						exit(); 
+					}else{
+						$id = $row["id"];
+						$name = $row["name"];
+						$regist_day = $row["regist_day"];
+						$subject = $row["subject"];
+						$content = $row["content"];
+						$content = str_replace(" ", "&nbsp;", $content);
+						$content = str_replace("\n", "<br>", $content);
+						$hit = $row["hit"];
+					}
 
-			$sql = "select * from notice where num=";
-			$result = mysqli_query($con, $sql);
+					//다른회원이 내 공지사항을 클릭했을 경우 hit 1을 증가
+					if($userid !== $id){
+						$new_hit = $hit + 1;
+						$sql = "update notice set hit = {$new_hit} where num = {$num} ";
+						mysqli_query($con, $sql);
+					}
+					mysqli_close($con);
 
-			$row = mysqli_query($con, $sql);
-			$num      = $row["num"];
-			$id      = $row["id"];
-			$name      = $row["name"];
-			$regist_day = $row["regist_day"];
-			$subject    = $row["subject"];
-			$content    = $row["content"];
-			$file_name    = $row["file_name"];
-			$file_type    = $row["file_type"];
-			$file_copied  = $row["file_copied"];
-			$hit          = $row["hit"];
+				}
+			}else{
+				mysqli_close($con);
+				header("location: notice_list.php?error=번호,페이지 오류발생!");
+				exit(); 
+			}	
+				
+			// $sql = "select * from notice where num=";
+			// $result = mysqli_query($con, $sql);
 
-			$content = str_replace(" ", "&nbsp;", $content);
-			$content = str_replace("\n", "<br>", $content);
+			// $row = mysqli_query($con, $sql);
+			// $num      = $row["num"];
+			// $id      = $row["id"];
+			// $name      = $row["name"];
+			// $regist_day = $row["regist_day"];
+			// $subject    = $row["subject"];
+			// $content    = $row["content"];
+			// $file_name    = $row["file_name"];
+			// $file_type    = $row["file_type"];
+			// $file_copied  = $row["file_copied"];
+			// $hit          = $row["hit"];
 
-			$new_hit = $hit + 1;
+			// $content = str_replace(" ", "&nbsp;", $content);
+			// $content = str_replace("\n", "<br>", $content);
 
-			mysqli_query($con, $sql);
+			// $new_hit = $hit + 1;
+
+			// mysqli_query($con, $sql);
 			?>
+
 			<ul id="view_content">
 				<li>
-					<span class="col1">
-						제목 : 코로나바이러스감염증-19 대응 집단시설.다중이용시설 소독 안내(제3-4판)<?= $subject ?>
-					</span>
+					<span class="col1"><b>제목 :<b><?= $subject ?></span>
+					<span class="col1"><?= $name ?><?= $regist_day ?></span>
 				</li>
 				<li>
-				<span>
-					코로나바이러스감염증-19 대응 집단시설·다중이용시설 소독 안내 (제3-4판)을 올려드리니 업무에 활용하시기 바랍니다.
-					* 소독제 관련 세부정보 및 붙임 7. 코로나19 살균·소독제품의 안전한 사용을 위한 세부지침의 최신 개정안 자료는 환경부(화학제품관리과) 초록누리(http://ecolife.me.go.kr) 에서 확인 가능
-				</span>
-				</li>
-				<li>
-					<?php
-					if ($file_name) {
-						$real_name = $file_copied;
-						$file_path = "./data/" . $real_name;
-						$file_size = filesize($file_path); //php 함수
-
-						echo "▷ 첨부파일 : $file_name ($file_size Byte) &nbsp;&nbsp;&nbsp;&nbsp;
-			       		<a href='notice_download.php?num=$num&real_name=$real_name&file_name=$file_name&file_type=$file_type'>[저장]</a><br><br>";
-					}
-					?>
 					<?= $content ?>
 				</li>
 			</ul>
 			<ul class="buttons">
-				<li><button onclick="location.href='notice_list.php'">목록</button></li>
-				<li>
-					<?php
-					if ($userid === "admin") {
-					?>
-						<button onclick="location.href='notice_modify_form.php?num=<?= $num ?>&page=<?= $page ?>'">수정</button>
-					<?php
-					} else {
-					?>
-						<button onclick="location.href='notice_modify_form.php'">수정</button>
-					<?php
+				<?php 
+					$writer = $row["id"];
+					//회원인데 내 글이 아닌경우, 회원등록하지 않는경우
+					if($userid !== $writer || !$userid){
+				?>	
+					<li><button type="button" onclick="location.href='notice_list.php'">목록</button></li>
+				<?php
+					}else{
+				?>
+					<li><button type="button" onclick="location.href='notice_list.php?page=<?= $page ?>'">목록</button></li>
+					<li><button type="button" onclick="location.href='notice_modify_form.php?num=<?= $num ?>&page=<?= $page ?>'">수정</button></li>
+					<li><button type="button" onclick="location.href='notice_delete.php?num=<?= $num ?>&page=<?= $page ?>'">삭제</button></li>
+					<li><button type="button" onclick="location.href='notice_form.php'">글쓰기</button></li>
+				<?php
 					}
-					?>
-				</li>
-				<li>
-					<?php
-					if ($userid === "admin") {
-					?>
-						<button onclick="location.href='dmi_notice.php?num=<?= $num ?>&page=<?= $page ?>&mode=delete'">삭제</button>
-					<?php
-					} else {
-					?>
-						<button delete onclick="location.href='notice_list.php'">삭제</button>
-					<?php
-					}
-					?>
-				</li>
-				<li>
-					<?php
-					if ($userid === "admin") {
-					?>
-						<button onclick="location.href='notice_form.php'">글쓰기</button>
-					<?php
-					} else {
-					?>
-						<button style="display: none;">글쓰기</button>
-					<?php
-					}
-					?>
-				</li>
+				?>
 			</ul>
 		</div> <!-- board_box -->
 	</section>

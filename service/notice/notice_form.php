@@ -1,7 +1,3 @@
-<?php
-include("./notice_insert.php");
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -12,62 +8,68 @@ include("./notice_insert.php");
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css">
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css">
 	<link rel="stylesheet" type="text/css" href="./css/notice.css">
+	<script src="http://<?=$_SERVER['HTTP_HOST']?>/solid/service/notice/js/notice.js?156"></script>
+	<script>
+		function notice_input() {
+			console.log("눌림");
+			if (!document.board_form.subject.value) {
+				alert("제목을 입력하세요!");
+				document.board_form.subject.focus();
+				return;
+			}
+			if (!document.board_form.content.value) {
+				alert("내용을 입력하세요!");
+				document.board_form.content.focus();
+				return;
+			}
+			document.board_form.submit();
+		}
+	</script>
 </head>
 
 <body>
 	<header>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
 	</header>
+	<?php
+	if (!$userid) {
+		alert_back("회원가입 후 이용하세요.");
+		exit;
+	}
+	?>
 	<section>
 		<div id="board_box">
 			<h3 id="board_title">
-				공지사항 > 글 쓰기
+				공지사항 > 게시물 작성
 			</h3>
-			<ul id="board_form">
-				<form name="notice_form" id="notice_form_id" method="POST">
+
+			<form name="board_form" method="post" action="notice_insert.php" enctype="multipart/form-data">
+				<ul id="board_form">
+					<li>
+						<span class="col1">이름 : </span>
+						<span class="col2"><?= $username ?></span>
+					</li>
 					<li>
 						<span class="col1">제목 : </span>
-						<span class="col2"><input autocomplete="off" id="subject_id" name="subject" type="text"></span>
+						<span class="col2"><input name="subject" type="text"></span>
 					</li>
 					<li id="text_area">
 						<span class="col1">내용 : </span>
 						<span class="col2">
-							<textarea id="content_id" name="content"></textarea>
+							<textarea name="content"></textarea>
 						</span>
 					</li>
-					<li>
-						<span class="col1"> 첨부 파일</span>
-						<span class="col2"><input type="file" id="file_id" name="upfile"></span>
-					</li>
-			</ul>
-			<ul class="buttons">
-				<li><input type="button" onclick="notice()">등록</input></li>
-				<li><button type="button" onclick="location.href='notice_list.php'">목록</button></li>
-			</ul>
+				</ul>
+				<ul class="buttons">
+					<li><button type="button" onclick="notice_input()">등록</button></li>
+					<li><button type="button" onclick="location.href='notice_list.php'">목록</button></li>
+				</ul>
 			</form>
 		</div> <!-- board_box -->
 	</section>
 	<footer>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php"; ?>
 	</footer>
-	<?php
-	if ($con === "") {
-	?>
-		<input type="text" name="subject" class="form_control" placeholder="제목입력">
-		<br>
-		<p id="input_subject_confirm"></p>
-		<input type="text" name="content" class="form_control" placeholder="내용입력">
-		<br>
-		<p id="input_content_confirm"></p>
-		<input type="file" name="upfile" class="form_control" placeholder="파일첨부">
-		<br>
-		<p id="input_file_confirm"></p>
-	<?php
-		} else {
-			?>
-	<?php
-	}
-	?>
 </body>
 
 </html>
