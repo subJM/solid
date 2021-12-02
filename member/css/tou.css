@@ -1,0 +1,11 @@
+#section_tou {
+  width: 100%;
+}
+h1 {
+  font-weight: bold;
+}
+#tou_main_content {
+  width: 1400px;
+  margin: 0 auto;
+  font-size: 1.5em;
+}

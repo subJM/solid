@@ -81,8 +81,7 @@ function create_table($con, $table_name)
                       `available_count` int(10) unsigned NOT NULL,
                       `price` int(7) NOT NULL,
                       `method` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-                      PRIMARY KEY (`num`),
-                      KEY `purchase_id_fk` (`member_id`),
+                      PRIMARY KEY (`num`)
                       ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
                     break;      
                   //코인 즐겨찾기

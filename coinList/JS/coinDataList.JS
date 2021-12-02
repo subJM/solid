@@ -1,4 +1,3 @@
-
 let coinName=0;
 let coin_price_map = new Map();
 let closing_price_map = new Map();
