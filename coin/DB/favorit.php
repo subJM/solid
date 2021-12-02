@@ -19,7 +19,7 @@ if (isset($_POST["coinName"])) {
             echo "
           <script>
             alert('즐겨찾기 성공.');
-            location.replace('../coin.php');
+            location.replace('../coin.php?name=$coinName');
           </script>w
         ";
         } else {
@@ -29,7 +29,7 @@ if (isset($_POST["coinName"])) {
             echo "
           <script>
             alert('즐겨찾기 삭제성공.');
-            location.replace('../coin.php');
+            location.replace('../coin.php?name=$coinName');
           </script>
         ";
 

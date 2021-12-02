@@ -13,27 +13,25 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css?.ra">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?.ad">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?.ada">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coinList/css/coinlist.css?.ada">
-  <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coinList/JS/coinDataList.JS?156"></script>
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXmain.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXfooter.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXheader.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/coinList/css/coinlist.css">
+  <script src="http://<?=$_SERVER['HTTP_HOST']?>/solid/coinList/JS/coinDataList.JS"></script>
   <script>
   getTickerListData();
   getTransaction();
-
-
   setInterval(() => {
     getTickerListData();
     getTransaction();
-  }, 6000);
+  }, 3000);
   </script>
 </head>
 
 <body>
   <div class="container">
     <header>
-      <?php include "../header.php"; ?>
+      <?php include "../header.php";?>
     </header>
     <section id="coinList">
       <div id="coinListTable">
@@ -48,7 +46,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
             <th>Daily Change</th>
 
             <script type="text/javascript">
-            for (let j = 0; j < 180; j++) {
+            for (let j = 0; j < 60; j++) {
               let txt = 1;
               document.write("<tr>");
               document.write("<td>" + j * 1000 + "</td>"); //name왼쪽
@@ -63,7 +61,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
       </div>
     </section>
     <footer>
-      <?php include "../footer.php"; ?>
+      <?php include "../footer.php";?>
     </footer>
   </div>
 </body>
