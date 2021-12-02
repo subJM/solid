@@ -3,8 +3,8 @@ let currentPrice;
 let totalPrice;
 
 async function getTickerData(coinName, callbackFunc) {
-    let orderBookUrl = "./getData/getTicker.php"
-    await fetch(orderBookUrl, {
+    let tickerUrl = "./getData/getTicker.php"
+    await fetch(tickerUrl, {
             cache: "no-store",
             headers: {
                  'Content-Type': 'application/json; charset=utf-8'
@@ -16,6 +16,9 @@ async function getTickerData(coinName, callbackFunc) {
             })
         })
 }
+
+
+
 function setTickerData(coinData) {
     let section = document.querySelectorAll(".coinTransactionDataTable-div td")
     let count=0
@@ -84,7 +87,6 @@ async function getTransactionHistory(coinName, callbackFunc) {
                 callbackFunc(coin.data)
             })
         })
-
 }
 
 
@@ -119,12 +121,10 @@ function setTransactionHistoryData(array) {
     currentPrice_span[2].innerText= ascent_rate+'%'
   
     }
-
-    
-
-
-
 }
+
+
+
 
 function changeAmount() {
     const coinTotalPrice = document.querySelectorAll(".coinTotalPrice")

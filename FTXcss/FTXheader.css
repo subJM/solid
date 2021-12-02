@@ -75,12 +75,10 @@ ul > li.top1-2tabletd:hover {
   color: rgb(104, 145, 231);
 }
 li.optionmenutable {
-  /* display: inline; */
   float: left;
   margin-left: 25px;
   display: inline-block;
   width: 80px;
-  /* padding-left: 10px; */
   padding-right: 10px;
   text-align: center;
   position: relative;
@@ -88,7 +86,7 @@ li.optionmenutable {
 li ul.submenu {
   display: none;
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: -8px;
 }
 li.optionmenutable:hover ul.submenu {
@@ -96,10 +94,11 @@ li.optionmenutable:hover ul.submenu {
 }
 li ul.submenu > li {
   display: inline-block;
+  font-weight: bold;
   width: 90px;
   padding: 5px 7.5px;
-  color: white;
-  background: #eee;
+  color: black;
+  /* background: #eee; */
   text-align: center;
 }
 li ul.submenu > li:hover {
@@ -109,14 +108,12 @@ li ul.submenu > li:hover {
   margin-top: -20px;
 }
 #headermenu {
-  margin-top: -10px;
+  margin-top: -15px;
 }
 #welcome_message {
   color: white;
   width: auto;
   padding-top: 3px;
-}
-.optionmenutable {
 }
 a {
   text-decoration: none;

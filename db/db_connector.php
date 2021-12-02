@@ -49,12 +49,12 @@
 
     //경고 메시지
     function alert_back($message){
-        echo ("
+        echo "
 		<script>
         alert('$message');
         history.go(-1)
 		</script>
-        ");
+        ";
         exit;
     }   
 

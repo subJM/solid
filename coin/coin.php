@@ -8,35 +8,53 @@
     <meta name="viewport"
         content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./CSS/exchange.css?2322213">
+    <link rel="stylesheet" href="./CSS/exchange.css">
+    <link rel="stylesheet" href="./CSS/exchange_mobile.css">
     <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXmain.css?.afkqwesadkkster">
     <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXfooter.css?.aqwessadd">
     <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXheader.css?.5swqeasdsda">
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-    <script src="./JS/coinData.JS"></script>
+    <script src="./JS/coinData.JS?123123131"></script>
     <script src="./JS/trade.JS"></script>
     <script>
+ const imgTag= document.querySelector(".favorit_img")
+ console.log(imgTag);
 
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 error_reporting(E_ALL ^ E_NOTICE);
 
 $coinName = $_GET['coinName'] ? $_GET['coinName'] : 'BTC';
 echo "const coinName = '$coinName';";
+
+$sql = "SELECT * FROM favorite_coin WHERE coinName ='$coinName'";
+$result = mysqli_query($con, $sql) or die("검색 ERROR" . mysqli_error($con));
+$result_record = mysqli_num_rows($result);
+if ($result_record) {
+    echo "console.log('왜 여기만안됨?')";
+    // echo "imgTag.src=\"\";";
+} else {
+    echo "console.log('몰?루')";
+    // echo "imgTag.src=\" \";";
+}
 ?>
 
     setInterval(() => {
         getTransactionHistory(coinName, setTransactionHistoryData)
         getOrderBook(coinName, setOrderBookData)
         getTickerData(coinName, setTickerData)
-    }, 1000);
+    }, 2000);
 
     </script>
-
 </head>
 <body>
     <div class="coinData-div">
         <ul>
-            <li><img src="" alt="즐겨찾기"></li>
+            <li><form name="favorit_form" action="./DB/favorit.php" method="post">
+                <input type="hidden" name="coinName" value="<?=$coinName?>">
+                <button type="submit"><img src="" alt="즐겨찾기" class="favorit_img"></button>
+
+            </form></li>
             <li>
               <?=$coinName?>-KRW
             </li>
@@ -58,9 +76,9 @@ echo "const coinName = '$coinName';";
                 let tradingview = new TradingView.widget({
                     "width": width,
                     "height": height,
-                    "symbol": "BITHUMB:BTCKRW",
+                    "symbol": "BITHUMB:"+coinName+"KRW",
                     "interval": "D",
-                    "timezone": "Etc/UTC",
+                    "timezone": "BTC/KRW",
                     "style": "1",
                     "locale": "kr",
                     "toolbar_bg": "#f1f3f6",
@@ -113,9 +131,7 @@ echo "const coinName = '$coinName';";
 
                 <p class='price-p'>price</p>
 
-                <span class="coinTotalPrice">
-
-</span>
+                <span class="coinTotalPrice"> </span>
 
                 <p class='amount-p'>Amount</p>
                 <div id="trade_form">
@@ -127,8 +143,8 @@ echo "const coinName = '$coinName';";
                         <input autocomplete="off" type="number" id="amount" name="amount" placeholder="갯수" value='1' onClick='changeAmount()' min='1'> <br>
 
 
-                        <button type="submit" onClick='trade()'>
-                        <div class="trade_button">
+                        <button type="submit" onClick='trade()' class='trade_button'>
+                        <div >
                         거래
                        </div>
                        </button>

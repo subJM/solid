@@ -23,9 +23,11 @@ body {
   margin: 0 auto;
 }
 header {
+  z-index: 1;
   width: 100%;
   min-width: 1080px;
   height: 65px;
+  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
