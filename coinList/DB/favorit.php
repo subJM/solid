@@ -13,6 +13,6 @@ while ($row = mysqli_fetch_array($result)) {
     $list[$count++] = $row['coinName'];
 }
 
-echo "let coinName = " . json_encode($list);
+echo "let favorit_coinName = " . json_encode($list);
 
 mysqli_close($con);

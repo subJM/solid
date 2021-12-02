@@ -18,7 +18,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/coinList/DB/favorit.php";
         setInterval(() => {
             getTickerList_favoritData();
             getTransaction_favorit();
-         }, 6000);
+         }, 1000);
     </script>
 </head>
 <body>
@@ -31,7 +31,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/coinList/DB/favorit.php";
                 <th>Daily Change</th>
 
                 <script type="text/javascript">
-                        for (let j = 0; j < coinName.length; j++) {
+                        for (let j = 0; j < favorit_coinName.length; j++) {
                             let txt = 1;
                             document.write("<tr>");
                             document.write("<td>" + 1 + "</td>");
