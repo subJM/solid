@@ -8,6 +8,8 @@ create_table($con, "members");
 create_table($con, "deleted_members");
 create_table($con, "coin_info");
 create_table($con, "favorite_coin");
+create_table($con, "recruit_plan");
+create_table($con, "purchase");
 create_table($con, "notice");
 create_table($con, "free");
 create_table($con, "free_ripple");
