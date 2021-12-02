@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./JS/coinDataList.JS"></script>
     <script>
+        <?php
+include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/coinList/DB/favorit.php";
+?>
+    </script>
+    <script src="./JS/coinDataList_favorit.JS?123"></script>
+    <script>
+        getTickerList_favoritData();
+        getTransaction_favorit();
 
-
-        getTickerListData();
-        getTransaction();
-        
         setInterval(() => {
-            getTickerListData();
-            getTransaction();
+            getTickerList_favoritData();
+            getTransaction_favorit();
          }, 6000);
     </script>
 </head>
@@ -28,13 +31,13 @@
                 <th>Daily Change</th>
 
                 <script type="text/javascript">
-                        for (let j = 0; j < 180; j++) {
+                        for (let j = 0; j < coinName.length; j++) {
                             let txt = 1;
                             document.write("<tr>");
-                            document.write("<td>" + txt + "</td>");
-                            document.write("<td>" + txt + "</td>");
-                            document.write("<td>" + txt + "</td>");
-                            document.write("<td>" + txt + "</td>");
+                            document.write("<td>" + 1 + "</td>");
+                            document.write("<td>" + 1 + "</td>");
+                            document.write("<td>" + 1 + "</td>");
+                            document.write("<td>" + 1 + "</td>");
                             document.write("</tr>");
                         }
 

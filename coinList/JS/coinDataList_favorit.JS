@@ -1,9 +1,11 @@
 
-let coinName=0;
+let coinNameCount=20;
 let coin_price_map = new Map();
 let closing_price_map = new Map();
 let count=0
-async function getTickerListData() {
+
+
+async function getTickerList_favoritData() {
     let tickerUrl = "../coin/getData/getTicker.php"
     await fetch(tickerUrl, {
             cache: "no-store",
@@ -13,17 +15,16 @@ async function getTickerListData() {
         })
         .then(response => {
             response.json().then(coinData=>{
-                setCoinListTicker(coinData.data);
+                setCoinList_favoritTicker(coinData.data);
             })
         })
 }
 
-function setCoinListTicker(coinData) {
+function setCoinList_favoritTicker(coinData) {
     const section = document.querySelectorAll(".coinList-div td")
+    console.log(section);
     let count=0
-    coinName = Object.keys(coinData);  
     for(let i=0; i<section.length; i++){
-
         if (i % 4 === 0) {
             section[i].innerText = coinName[count]
         }
@@ -34,7 +35,7 @@ function setCoinListTicker(coinData) {
         }
     }
 
-    getTransaction()
+    getTransaction_favorit()
     const section_tr = document.querySelectorAll(".coinList-div tr")
     for (let i = 1; i < section_tr.length; i++) {
         section_tr[i].addEventListener('click', function() {
@@ -44,13 +45,13 @@ function setCoinListTicker(coinData) {
     }                  
 }
 
-function getTransaction() {
+function getTransaction_favorit() {
     for (let i=0; i < coinName.length; i++){
-        getTransactionHistory(coinName[i])
+        getTransactionHistory_favorit(coinName[i])
     }
 }
 
-async function getTransactionHistory(coinName) {
+async function getTransactionHistory_favorit(coinName) {
     let transactionHistoryUrl =  "../coin/getData/getTransaction.php?name="+coinName;
     await fetch(transactionHistoryUrl, {
             cache: "no-store",
@@ -66,7 +67,7 @@ async function getTransactionHistory(coinName) {
 
                 count++
                 if (count==30||count==180) {
-                    setTransactionHistoryData()
+                    setTransactionHistory_favoritData()
                     count=0;
                 }
             })
@@ -74,7 +75,7 @@ async function getTransactionHistory(coinName) {
 }
 
 
-function setTransactionHistoryData() {
+function setTransactionHistory_favoritData() {
     const section = document.querySelectorAll(".coinList-div td")
     let count=0;
     for (let i = 0; i < section.length; i++) {
