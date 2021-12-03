@@ -22,6 +22,8 @@ header { position: relative; color: rgb(44, 55, 68); }
 #board_box .buttons li { display: inline; }
 #board_box .buttons button { width: 80px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
     color: rgb(44, 55, 68); cursor: pointer; border-radius: 20px;}
+.rebutton {width: 90px; height: 100px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
+    color: rgb(44, 55, 68); cursor: pointer; border-radius: 20px; float: right;}    
 #board_box .buttons button:hover { background-color: rgb(44, 55, 68); color: white; border: 1px solid rgb(44, 55, 68); }
 
 

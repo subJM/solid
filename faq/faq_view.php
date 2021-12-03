@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css">
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css">
-	<link rel="stylesheet" type="text/css" href="./css/faq.css">
+	<link rel="stylesheet" type="text/css" href="./css/faq.css?.asdasd">
 </head>
 
 <body>
@@ -113,7 +113,18 @@
 					<li><button type="button" onclick="location.href='faq_form.php'">글쓰기</button></li>
 				<?php
 					}
-				?>
+					?>
+					</ul>
+				<ul>
+			<li>
+				<span class="col1">댓글 : <?= $id ?><br></span>
+				<span class="col2">
+				<textarea name="content" style="width:1000px; height:100px; resize: none;"></textarea>
+				</span>
+				<span>
+					<button class="rebutton" type="button" onclick="location.href='faq_view.php'">등록</button>
+				</span>
+			</li>
 			</ul>
 		</div> <!-- board_box -->
 	</section>
