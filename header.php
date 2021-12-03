@@ -18,11 +18,13 @@
       <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coinList/coinList.php">거래소</a>
       </li>
       <li class="top1-1tabletd">
-        <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/notice/notice_list.php">공지사항</a>
+        <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/notice/notice_list.php">공지사항</a>
       </li>
-      <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/wallet.php">자산</a></li>
-      <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/question/question_list.php">1:1문의</a>
+      <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/wallet.php">자산</a></li>
+      <li class="top1-1tabletd"><a
+          href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/question/question_list.php">1:1문의</a>
       </li>
+      <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/point_purchase.php">포인트구매</a></li>
     </ul>
   </div>
   <div class="top1-2">
