@@ -18,7 +18,7 @@
       <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/coinList/coinList.php">거래소</a>
       </li>
       <li class="top1-1tabletd">
-        <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/notice/notice_list.php">공지사항</a>
+        <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/notice/notice_list.php">공지사항</a>
       </li>
       <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/wallet.php">자산</a></li>
       <li class="top1-1tabletd"><a
