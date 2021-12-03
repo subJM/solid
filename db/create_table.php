@@ -193,7 +193,6 @@ function create_table($con, $table_name)
                   KEY me_recv_mb_id (me_recv_mb_id)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
-            
             default:
                 echo "<script>alert('해당테이블명이 없습니다. 점검요망!');</script>";
                 break;
