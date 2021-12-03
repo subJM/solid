@@ -46,7 +46,7 @@ else $userlevel = "";
         <ul class="submenu">
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a>
           </li>
-          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함</a></li>
+          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/memo/memo_view.php" target='_blank'>>쪽지함</a></li>
           <?php
 			}
             if ($userid && $userlevel == 1) { ?>

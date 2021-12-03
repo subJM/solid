@@ -1,7 +1,7 @@
 <?php
 include("./dbconn.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
 
-$mb_id = $_SESSION['ss_mb_id'];
+$mb_id = $_SESSION["user_id"] ;
 $me_send_datetime = date('Y-m-d H:i:s', time()); // 메모 작성일
 
 $recv_list = explode(',', trim($_POST['me_recv_mb_id']));

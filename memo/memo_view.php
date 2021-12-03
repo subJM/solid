@@ -1,7 +1,8 @@
 <?php
-include("./dbconn.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
+session_start();
+include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
 
-$mb_id = $_SESSION['ss_mb_id'];
+$mb_id = $_SESSION["user_id"] ;
 $kind = $_GET['kind'] ? $_GET['kind'] : 'recv';
 
 if (!$mb_id) {
@@ -47,7 +48,7 @@ mysqli_close($conn); // 데이터베이스 접속 종료
 <html>
 <head>
 	<title>Memo View</title>
-	<link href="./style.css" rel="stylesheet" type="text/css">
+	<link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body id="memo">
 	<!-- 쪽지보기 시작 { -->
