@@ -18,6 +18,7 @@ create_table($con, "faq");
 create_table($con, "faq_ripple");
 create_table($con, "question");
 create_table($con, "question_ripple");
+create_table($con, "memo");
 
 insert_init_data($con, 'recruit_plan');
 

@@ -67,10 +67,14 @@
           <?php
 			}
 			?>
-
-        </ul>
       </li>
-
     </ul>
   </div>
 </div>
+<script>
+var win_memo = function() { // 쪽지 팝업창
+  href = "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/memo/memo.php?kind=";
+  var new_win = window.open(href, 'win_memo', 'left=100,top=100,width=620,height=600,scrollbars=1');
+  new_win.focus();
+}
+</script>
