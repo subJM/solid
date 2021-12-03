@@ -50,7 +50,6 @@
 					<span class="col5">등록일</span>
 					<span class="col6">조회</span>
 				</li>
-<<<<<<< HEAD
 				<?php 
 					//1. 현재페이지가 없다면 1페이지로 셋팅
 					$page = isset($_GET["page"]) ? $_GET["page"] : 1;
@@ -85,10 +84,6 @@
 
 					for($i=0; $i<count($list); $i++){
 				?>
-=======
-					<?php
-for ($i = 0; $i < 10; $i++) {?>
->>>>>>> 35d214a8b857299de2d2a9a0370595138fc5e9f5
 				<li>
 						<span class="col1"><?= $list[$i]['no'] ?></span>
 						<span class="col2_1"><a
@@ -97,13 +92,9 @@ for ($i = 0; $i < 10; $i++) {?>
 						<span class="col5"><?= $list[$i]['regist_day'] ?></span>
 						<span class="col6"><?= $list[$i]['hit'] ?></span>
 					</li>
-<<<<<<< HEAD
 				<?php
 					}
 				?>
-=======
-					<?php }?>
->>>>>>> 35d214a8b857299de2d2a9a0370595138fc5e9f5
 			</ul>
 			<?php
 				//===========================================================
