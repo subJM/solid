@@ -6,7 +6,12 @@ $mb_id = $_SESSION["user_id"] ;
 $kind = $_GET['kind'] ? $_GET['kind'] : 'recv';
 
 if (!$mb_id) {
-	echo "<script>alert('회원만 이용하실 수 있습니다.');window.close();</script>";
+	echo "
+	<script>
+	alert('회원만 이용가능합니다.');
+	history.go(-1)
+	</script>
+	";
 	exit;
 }
 

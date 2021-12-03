@@ -55,9 +55,35 @@ function create_table($con, $table_name)
                     `price` int(20) NOT NULL,
                     `amount` int(20) DEFAULT NULL,
                     `totalPrice` int(20) DEFAULT NULL,
+                    `bank` int(20) DEFAULT NULL,
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   break;
+                //포인트 결제내역
+            case 'recruit_plan' :
+              $sql = "CREATE TABLE `recruit_plan` (
+                `num` int(11) NOT NULL AUTO_INCREMENT,
+                `name` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+                `count` int(10) unsigned NOT NULL,
+                `price` int(7) NOT NULL,
+                PRIMARY KEY (`num`),
+                UNIQUE KEY `name` (`name`)
+              ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
+              break;
+                //포인트 구매
+            case 'purchase' :
+              $sql = "CREATE TABLE `purchase` (
+                `num` int(11) NOT NULL AUTO_INCREMENT,
+                `date` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+                `member_id` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+                `plan_num` tinyint(3) NOT NULL,
+                `plan_name` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+                `available_count` int(10) unsigned NOT NULL,
+                `price` int(7) NOT NULL,
+                `method` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+                PRIMARY KEY (`num`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
+              break;      
                   //코인 즐겨찾기
             case 'favorite_coin':
                   $sql = "CREATE TABLE `favorite_coin` (
@@ -77,9 +103,6 @@ function create_table($con, $table_name)
                     `content` text NOT NULL,
                     `regist_day` char(20) NOT NULL,
                     `hit` int(11) NOT NULL,
-                    `file_name` char(40) DEFAULT NULL,
-                    `file_type` char(40) DEFAULT NULL,
-                    `file_copied` char(40) DEFAULT NULL,
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
@@ -137,6 +160,7 @@ function create_table($con, $table_name)
                   `subject` char(200) NOT NULL,
                   `content` text NOT NULL,
                   `regist_day` char(20) NOT NULL,
+                  `hit` int(11) NOT NULL,
                   PRIMARY KEY (`num`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
@@ -162,10 +186,6 @@ function create_table($con, $table_name)
                   `content` text NOT NULL,
                   `regist_day` char(20) NOT NULL,
                   `hit` int(11) NOT NULL,
-                  `file_name_0` char(40) DEFAULT NULL,
-                  `file_type_0` char(40) DEFAULT NULL,
-                  `file_copied_0` char(40) DEFAULT NULL,
-                  `read_pw` int(4) NOT NULL,
                   PRIMARY KEY (`num`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
@@ -181,8 +201,9 @@ function create_table($con, $table_name)
                   PRIMARY KEY (`num`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
+                //쪽지함
             case 'memo':
-                $sql = "CREATE TABLE IF NOT EXISTS 'memo' (
+                $sql = "CREATE TABLE IF NOT EXISTS memo (
                   me_id int(11) NOT NULL AUTO_INCREMENT,
                   me_recv_mb_id varchar(20) NOT NULL DEFAULT '',
                   me_send_mb_id varchar(20) NOT NULL DEFAULT '',
@@ -193,7 +214,6 @@ function create_table($con, $table_name)
                   KEY me_recv_mb_id (me_recv_mb_id)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
-            
             default:
                 echo "<script>alert('해당테이블명이 없습니다. 점검요망!');</script>";
                 break;

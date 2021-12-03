@@ -1,7 +1,10 @@
 <?php
-include("../db/db_connector.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
-
-$me_recv_mb_id = $_GET['me_recv_mb_id']; // GET 방식으로 넘어온 받는 회원아이디
+	include("../db/db_connector.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
+	if(isset($_GET['me_recv_mb_id'])){
+		$me_recv_mb_id = $_GET['me_recv_mb_id']; // GET 방식으로 넘어온 받는 회원아이디
+	}else {
+		$me_recv_mb_id = "받는사람 아이디를 입력해주세요";
+	}
 ?>
 
 <html>

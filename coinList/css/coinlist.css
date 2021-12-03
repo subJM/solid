@@ -1,0 +1,53 @@
+#coinList {
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+}
+#marketDiv {
+  margin-top: 150px;
+  margin-bottom: 30px;
+}
+#markets {
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: 105px;
+}
+#coinListTable {
+  width: 1200px;
+  margin: 0 auto;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+tr:hover {
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+th {
+  padding: 10px;
+}
+tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+td,
+th {
+  padding: 10px 20px;
+  width: 250px;
+  text-align: right;
+}
+
+td:nth-child(4n + 1) {
+  text-align: left;
+}
+
+th {
+  text-align: right;
+}
+th:first-child {
+  text-align: left;
+}
+
+#coinName {
+  text-align: left;
+}

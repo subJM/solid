@@ -19,6 +19,7 @@ function create_procedure($con, $procedure_name)
             CREATE PROCEDURE `members_procedure`()
             BEGIN
             INSERT INTO `members` (`id`,`password`,`name`,`phone`,`email`,`address`,`regist_day`,`level`) VALUES ('master','123456','관리자','010-0000-0000','user1001@gmail.com','10000\$서울특별시 강남구 강남동\$1001동 101호','2021-11-29', 1);
+            INSERT INTO `members` (`id`,`password`,`name`,`phone`,`email`,`address`,`regist_day`,`level`) VALUES ('thswhdals','thswhdals','손종민','010-0000-1111','user12@gmail.com','10000\$서울특별시 강남구 강남동\$1001동 102호','2021-11-29', 2);
             END";
         break;
       
