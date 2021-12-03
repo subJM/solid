@@ -17,9 +17,10 @@ if(isset($_SESSION['user_id'])){
 		// echo "<script>location.replace('../index.php');</script>";
 		exit;
 	}
-
+	
 	$sql = " SELECT COUNT(*) AS cnt FROM memo WHERE me_{$kind}_mb_id = '{$mb_id}' ";
 	$result = mysqli_query($con, $sql);
+
 	if($result){
 	$row = mysqli_fetch_assoc($result);
 	$total_count = $row['cnt'];

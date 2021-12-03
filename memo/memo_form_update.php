@@ -9,6 +9,7 @@ $str_name_list = '';
 
 $error_list = array();
 $member_list = array();
+
 for ($i=0; $i<count($recv_list); $i++) {
 	$sql = " SELECT 'id', 'name' FROM members WHERE id = '{$recv_list[$i]}' ";
 	$result = mysqli_query($con, $sql);
