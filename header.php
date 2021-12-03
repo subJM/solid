@@ -10,7 +10,6 @@
         else $userlevel = "";
         ?> -->
 
-
 <div class="top1">
   <div class="top1-1">
     <span><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/index.php"><img class="top1-1_icon"
@@ -46,7 +45,7 @@
         <ul class="submenu">
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a>
           </li>
-          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함</a></li>
+          <li><a href="./memo.php" onclick="win_memo(); return false;">쪽지함</a></li>
           <?php
 			}
             if ($userid && $userlevel == 1) { ?>
@@ -64,9 +63,14 @@
           <?php
 			}
 			?>
-        </ul>
       </li>
-
     </ul>
   </div>
 </div>
+<script>
+var win_memo = function() { // 쪽지 팝업창
+  href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/memo/memo.php?kind=";
+  var new_win = window.open(href, 'win_memo', 'left=100,top=100,width=620,height=600,scrollbars=1');
+  new_win.focus();
+}
+</script>

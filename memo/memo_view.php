@@ -1,11 +1,17 @@
 <?php
-include("./dbconn.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
+session_start();
+include("../db/db_connector.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
 
-$mb_id = $_SESSION['ss_mb_id'];
+$mb_id = $_SESSION['user_id'];
 $kind = $_GET['kind'] ? $_GET['kind'] : 'recv';
 
 if (!$mb_id) {
-	echo "<script>alert('회원만 이용하실 수 있습니다.');window.close();</script>";
+	echo "
+	<script>
+	alert('회원만 이용가능합니다.');
+	history.go(-1)
+	</script>
+	";
 	exit;
 }
 

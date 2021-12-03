@@ -1,7 +1,8 @@
 <?php
+session_start();
 include $_SERVER['DOCUMENT_ROOT']."/solid/db/db_connector.php";  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
-if(isset($_SESSION['ss_mb_id'])){
-	$mb_id = $_SESSION['ss_mb_id'];
+if(isset($_SESSION['user_id'])){
+	$mb_id = $_SESSION['user_id'];
 
 	$kind = $_GET['kind'] ? $_GET['kind'] : 'recv';
 
@@ -13,12 +14,13 @@ if(isset($_SESSION['ss_mb_id'])){
 		$kind_title = '보낸';
 	} else {
 		echo "<script>alert(''.$kind .'값을 넘겨주세요.');</script>";
-		echo "<script>location.replace('./login.php');</script>";
+		// echo "<script>location.replace('../index.php');</script>";
 		exit;
 	}
 
 	$sql = " SELECT COUNT(*) AS cnt FROM memo WHERE me_{$kind}_mb_id = '{$mb_id}' ";
-	$result = mysqli_query($conn, $sql);
+	$result = mysqli_query($con, $sql);
+	if($result){
 	$row = mysqli_fetch_assoc($result);
 	$total_count = $row['cnt'];
 
@@ -89,6 +91,25 @@ if(isset($_SESSION['ss_mb_id'])){
 		$write_page = "";
 
 	mysqli_close($conn); // 데이터베이스 접속 종료
+	}else{
+	$row = 0;
+	$total_count = 0;
+
+	$page_rows = 5; // 페이지당 목록 수
+	$page = 1;
+
+	$total_page  = ceil($total_count / $page_rows);  // 전체 페이지 계산
+	if ($page < 1) { $page = 1; } // 페이지가 없으면 첫 페이지 (1 페이지)
+	$from_record = ($page - 1) * $page_rows; // 시작 열을 구함
+
+	$list = array();
+
+	$write_page = "";
+
+	}
+
+
+	
 }else{
 	alert_back("잘못된 접근입니다.");
 	
