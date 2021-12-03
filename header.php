@@ -24,7 +24,7 @@
       <li class="top1-1tabletd"><a
           href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/question/question_list.php">1:1문의</a>
       </li>
-      <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/point_purchase.php">포인트구매</a></li>
+
     </ul>
   </div>
   <div class="top1-2">
@@ -48,6 +48,8 @@
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a>
           </li>
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함</a></li>
+          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/point_purchase.php">포인트구매</a>
+          </li>
           <?php
 			}
             if ($userid && $userlevel == 1) { ?>
