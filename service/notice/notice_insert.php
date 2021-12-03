@@ -2,8 +2,6 @@
     // print_r($_POST);
     session_start();
     include ("../../db/db_connector.php");
-    include ("../../db/create_table.php");
-    create_table($con,'notice'); 
 
     //2. 세션이 등록되지 않았다면 다시 돌려보낸다.
     if(!isset($_SESSION["userid"]) && !isset($_SESSION["username"])){
