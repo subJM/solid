@@ -46,7 +46,7 @@
 
         <ul class="submenu">
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a></li>
-          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함</a></li>
+          <li><a href="./memo/memo.php" onclick="win_memo(this.href); return false;">쪽지함</a></li>
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/point_purchase.php">포인트구매</a></li>
           <?php
 			}
@@ -71,7 +71,7 @@
 </div>
 <script>
 var win_memo = function() { // 쪽지 팝업창
-  href = "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/memo/memo.php?kind=";
+  href = "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/memo/memo.php?kind=recv&page=1";
   var new_win = window.open(href, 'win_memo', 'left=100,top=100,width=620,height=600,scrollbars=1');
   new_win.focus();
 }

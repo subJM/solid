@@ -28,7 +28,7 @@ if ($kind == 'recv')
                 WHERE me_id = '$me_id'
                 AND me_recv_mb_id = '$mb_id'
                 AND me_read_datetime = '0000-00-00 00:00:00' ";
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($con, $sql);
 }
 else if ($kind == 'send')
 {
@@ -44,10 +44,10 @@ else
 $sql = " SELECT * FROM memo
             WHERE me_id = '$me_id'
             AND me_{$kind}_mb_id = '$mb_id' ";
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($con, $sql);
 $memo = mysqli_fetch_assoc($result);
 
-mysqli_close($conn); // 데이터베이스 접속 종료
+mysqli_close($con); // 데이터베이스 접속 종료
 ?>
 
 <html>
@@ -61,8 +61,8 @@ mysqli_close($conn); // 데이터베이스 접속 종료
 		<h1>쪽지 보기</h1>
 
 		<ul>
-			<li><a href="./memo.php?kind=recv">받은쪽지</a></li>
-			<li><a href="./memo.php?kind=send">보낸쪽지</a></li>
+			<li><a href="./memo.php?kind=recv&page=1">받은쪽지</a></li>
+			<li><a href="./memo.php?kind=send&page=1">보낸쪽지</a></li>
 			<li><a href="./memo_form.php">쪽지쓰기</a></li>
 		</ul>
 
@@ -91,7 +91,7 @@ mysqli_close($conn); // 데이터베이스 접속 종료
 
 		<div class="win_btn">
 			<?php if ($kind == 'recv') {  ?><a href="./memo_form.php?me_recv_mb_id=<?php echo $memo['me_send_mb_id'] ?>&amp;me_id=<?php echo $memo['me_id'] ?>">답장</a><?php }  ?>
-			<a href="./memo.php?kind=<?php echo $kind ?>">목록보기</a>
+			<a href="./memo.php?kind=<?php echo $kind ?>&page=1">목록보기</a>
 			<button type="button" onclick="window.close();">창닫기</button>
 		</div>
 	</div>
