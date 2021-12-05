@@ -11,3 +11,13 @@ function faq_input() {
     }
     document.board_form.submit();
 }
+
+function faq_insert() {
+    if (!document.board_form.subject.value) {
+        alert("내용을 입력하세요!");
+        document.board_form.subject.focus();
+        return;
+    }
+    document.board_form.submit();
+}
+
