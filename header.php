@@ -22,7 +22,7 @@
       </li>
       <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/wallet.php">자산</a></li>
       <li class="top1-1tabletd"><a
-          href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/question/question_list.php">1:1문의</a>
+          href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/question/question_list.php">1:1문의</a>
       </li>
 
     </ul>

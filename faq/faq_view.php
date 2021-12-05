@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css">
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css">
-	<link rel="stylesheet" type="text/css" href="./css/faq.css?.asdasd">
+	<link rel="stylesheet" type="text/css" href="./css/faq.css?.sdvcjkhv">
 </head>
 
 <body>
@@ -90,10 +90,10 @@
 
 			<ul id="view_content">
 				<li>
-					<span class="col1"><b>제목 :<b><?= $subject ?></span>
-					<span class="col1"><?= $name ?><?= $regist_day ?></span>
+					<span class="col1"><b>제목 : <b><?= $subject ?></span>
+					<span class="col1"></span>
 				</li>
-				<li>
+				<li class="li_content">
 					<?= $content ?>
 				</li>
 			</ul>
@@ -116,8 +116,23 @@
 					?>
 					</ul>
 				<ul>
+					<li>
+						<h2>댓글목록</h2>
+					</li>
+					<?php
+					for($i=0; $i< 3; $i++){
+					?>
+					<li>
+						<span class="col1"><?= $i+1 ?></span>
+						<span class="col2_1"><a
+									href="faq_view.php?parent=<?= $parent ?>"></a></span>
+						<span class="col3"><?= $name ?></span>
+						<span class="col4"><?= $content ?></span>
+						<span class="col5"><?= $regist_day ?></span>
+					</li>
+					<?php } ?>
 			<li>
-				<span class="col1">댓글 : <?= $id ?><br></span>
+				<span class="col1">댓글<br></span>
 				<span class="col2">
 				<textarea name="content" style="width:1000px; height:100px; resize: none;"></textarea>
 				</span>
