@@ -1,5 +1,4 @@
 <?php
-    // print_r($_POST);
     session_start();
     include ("../db/db_connector.php");
 
@@ -60,10 +59,12 @@
 
             }
         }
-    }else {
-        // echo "오류 발생 <br>" ;
-        mysqli_close($con);
-        header("location: faq_form.php?error=알수없는 오류발생");
-        exit;
-    }
-?>
+
+        }else {
+            // echo "오류 발생 <br>" ;
+            mysqli_close($con);
+            header("location: faq_form.php?error=알수없는 오류발생");
+            exit;
+        }
+
+    ?>

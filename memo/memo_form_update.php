@@ -1,7 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/solid/db/db_connector.php";  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
-
-$mb_id = $_SESSION['user_id'];
+session_start();
+$mb_id = $_SESSION["user_id"] ;
 $me_send_datetime = date('Y-m-d H:i:s', time()); // 메모 작성일
 
 $recv_list = explode(',', trim($_POST['me_recv_mb_id']));
@@ -11,7 +11,7 @@ $error_list = array();
 $member_list = array();
 
 for ($i=0; $i<count($recv_list); $i++) {
-	$sql = " SELECT 'id', 'name' FROM members WHERE id = '{$recv_list[$i]}' ";
+	$sql = " SELECT id, name FROM members WHERE id = '{$recv_list[$i]}' ";
 	$result = mysqli_query($con, $sql);
 	$row = mysqli_fetch_assoc($result);
 	if ($row) { // 해당 회원이 존재한다면
@@ -34,7 +34,7 @@ for ($i=0; $i<count($member_list['id']); $i++) {
     // 쪽지 INSERT
     $sql = " INSERT INTO memo 
 				SET	me_recv_mb_id		= '$recv_mb_id',
-					me_send_mb_id			= '$id',
+					me_send_mb_id			= '$mb_id',
 					me_send_datetime		= '$me_send_datetime',
 					me_memo				= '{$_POST['me_memo']}'	";
     $result = mysqli_query($con, $sql);

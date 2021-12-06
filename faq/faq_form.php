@@ -61,7 +61,7 @@
 					</li>
 				</ul>
 				<ul class="buttons">
-					<li><button type="submit" onclick="question_input()">등록</button></li>
+					<li><button type="submit" onclick="faq_input()">등록</button></li>
 					<li><button type="button" onclick="location.href='faq_list.php'">목록</button></li>
 				</ul>
 			</form>

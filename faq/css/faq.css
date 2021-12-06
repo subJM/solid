@@ -1,12 +1,8 @@
-/* body { background-image: url('http://127.0.0.1/todagtodag/img/background19.jpg');
-    background-size : cover; background-repeat : no-repeat;  background-position : 50% 50%;
-    background-attachment: fixed; }
-section { background-color: white; } */
-
 header { position: relative; color: rgb(44, 55, 68); }
 
 /* 게시판 글쓰기(board_form.php) */
 #board_box { position: relative; width: 1100px; margin: 0 auto; height: 100vh; margin-top: 50px;}
+#board_box h2 {	padding: 10px; margin: 10px; border-bottom: solid 2px rgb(44, 55, 68); font-size: 24px; color: rgb(44, 55, 68); }
 #board_box h3 {	padding: 10px; border-bottom: solid 2px rgb(44, 55, 68); font-size: 34px; color: rgb(44, 55, 68); }
 #board_form span { display: inline-block; }
 #board_form .col1 { width: 150px; }
@@ -22,6 +18,9 @@ header { position: relative; color: rgb(44, 55, 68); }
 #board_box .buttons li { display: inline; }
 #board_box .buttons button { width: 80px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
     color: rgb(44, 55, 68); cursor: pointer; border-radius: 20px;}
+.rebutton {width: 90px; height: 100px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
+    color: rgb(44, 55, 68); border-radius: 20px; float: right;}  
+.rebutton:hover {background-color: rgb(44, 55, 68); color: white; border: 1px solid rgb(44, 55, 68); cursor: pointer; }  
 #board_box .buttons button:hover { background-color: rgb(44, 55, 68); color: white; border: 1px solid rgb(44, 55, 68); }
 
 
@@ -45,8 +44,11 @@ header { position: relative; color: rgb(44, 55, 68); }
 #view_content .col2 { float: right; }
 #view_content li:nth-child(2) {	padding: 15px 15px 80px 15px; border-bottom: solid 1px #cccccc; }
 #view_content li:nth-child(3) button { padding: 5px 20px; margin: 15px 0 40px 720px; cursor: pointer; }
+#view_content .li_content {height: 200px; }
+#view_content .col1 {width: 80px; text-align: center; font-size: 20px;}
+.comment { width: 80px; text-align: center; font-size: 25px; }
+.ripple {padding: 14px; }
 
-#youTubePlayer1 {position:relative;width:100%;
-    /* padding-bottom:56.25%; */
-}
-#youTubePlayer1 iframe {position:absolute;width:100%;height:100%;}
+/* #youTubePlayer1 {position:relative;width:100%;
+    padding-bottom:56.25%;}
+#youTubePlayer1 iframe {position:absolute;width:100%;height:100%;} */

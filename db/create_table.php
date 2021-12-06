@@ -133,9 +133,6 @@ function create_table($con, $table_name)
                   `content` text NOT NULL,
                   `regist_day` char(20) NOT NULL,
                   `hit` int(11) NOT NULL,
-                  `file_name_0` char(40) DEFAULT NULL,
-                  `file_type_0` char(40) DEFAULT NULL,
-                  `file_copied_0` char(40) DEFAULT NULL,
                   PRIMARY KEY (`num`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                 break;
