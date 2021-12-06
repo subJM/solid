@@ -17,7 +17,7 @@ function create_table($con, $table_name)
     if ($flag === false) {
         switch ($table_name) {
             case 'members':
-                $sql = "CREATE TABLE `members` (
+                $sql = "CREATE TABLE IF NOT EXISTS `members` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
                     `id` char(15) NOT NULL,
                     `password` char(100) NOT NULL,
@@ -31,7 +31,7 @@ function create_table($con, $table_name)
                   ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;";
                 break;
             case 'deleted_members':
-                $sql = "CREATE TABLE `deleted_members` (
+                $sql = "CREATE TABLE IF NOT EXISTS `deleted_members` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
                     `id` char(15) NOT NULL,
                     `password` char(100) NOT NULL,
@@ -47,7 +47,7 @@ function create_table($con, $table_name)
                 break;
                 //코인 데이타
             case 'coin_info':
-                  $sql = "CREATE TABLE `coin_info` (
+                  $sql = "CREATE TABLE IF NOT EXISTS `coin_info` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
                     `coinName` char(15) NOT NULL,
                     `trTime` char(15) NOT NULL,
@@ -61,7 +61,7 @@ function create_table($con, $table_name)
                   break;
                 //포인트 결제내역
             case 'recruit_plan' :
-              $sql = "CREATE TABLE `recruit_plan` (
+              $sql = "CREATE TABLE IF NOT EXISTS `recruit_plan` (
                 `num` int(11) NOT NULL AUTO_INCREMENT,
                 `name` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                 `count` int(10) unsigned NOT NULL,
@@ -72,7 +72,7 @@ function create_table($con, $table_name)
               break;
                 //포인트 구매
             case 'purchase' :
-              $sql = "CREATE TABLE `purchase` (
+              $sql = "CREATE TABLE IF NOT EXISTS `purchase` (
                 `num` int(11) NOT NULL AUTO_INCREMENT,
                 `date` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                 `member_id` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -86,7 +86,7 @@ function create_table($con, $table_name)
               break;      
                   //코인 즐겨찾기
             case 'favorite_coin':
-                  $sql = "CREATE TABLE `favorite_coin` (
+                  $sql = "CREATE TABLE IF NOT EXISTS `favorite_coin` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
                     `id` char(15) NOT NULL,
                     `coinName` char(15) NOT NULL,
@@ -95,7 +95,7 @@ function create_table($con, $table_name)
                   break;
                    //즐겨찾기
             case 'notice':
-                $sql = "CREATE TABLE `notice` (
+                $sql = "CREATE TABLE IF NOT EXISTS `notice` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
                     `id` char(15) NOT NULL,
                     `name` char(10) NOT NULL,
@@ -109,7 +109,7 @@ function create_table($con, $table_name)
 
             //종목 게시판  코인 종목마다 게시판    
             case 'review':
-                $sql = "CREATE TABLE `review` (
+                $sql = "CREATE TABLE IF NOT EXISTS `review` (
                   `no` int(11) NOT NULL AUTO_INCREMENT,
                   `hospital_id` char(10) NOT NULL,
                   `member_num` int(11) NOT NULL,
@@ -125,7 +125,7 @@ function create_table($con, $table_name)
             
                 //자유게시판
             case 'free':
-                $sql = "CREATE TABLE `free` (
+                $sql = "CREATE TABLE IF NOT EXISTS `free` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `id` char(15) NOT NULL,
                   `name` char(10) NOT NULL,
@@ -138,7 +138,7 @@ function create_table($con, $table_name)
                 break;
                 //자유게시판 리플 테이블
             case 'free_ripple':
-                $sql = "CREATE TABLE `free_ripple` (
+                $sql = "CREATE TABLE IF NOT EXISTS `free_ripple` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `parent` int(11) NOT NULL,
                   `id` char(15) NOT NULL,
@@ -150,7 +150,7 @@ function create_table($con, $table_name)
                 break;
                 //faq 테이블
             case 'faq':
-                $sql = "CREATE TABLE `faq` (
+                $sql = "CREATE TABLE IF NOT EXISTS `faq` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `id` char(15) NOT NULL,
                   `name` char(10) NOT NULL,
@@ -163,7 +163,7 @@ function create_table($con, $table_name)
                 break;
                 //faq 리플테이블
             case 'faq_ripple':
-                $sql = "CREATE TABLE `faq_ripple` (
+                $sql = "CREATE TABLE IF NOT EXISTS `faq_ripple` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `parent` int(11) NOT NULL,
                   `id` char(15) NOT NULL,
@@ -175,7 +175,7 @@ function create_table($con, $table_name)
                 break;
                 //질문자 게시판
             case 'question':
-                $sql = "CREATE TABLE `question` (
+                $sql = "CREATE TABLE IF NOT EXISTS `question` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `id` char(15) NOT NULL,
                   `name` char(10) NOT NULL,
@@ -188,7 +188,7 @@ function create_table($con, $table_name)
                 break;
                 //질문자 게시판 리플 테이블
             case 'question_ripple':
-                $sql = "CREATE TABLE `question_ripple` (
+                $sql = "CREATE TABLE IF NOT EXISTS `question_ripple` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `parent` int(11) NOT NULL,
                   `id` char(15) NOT NULL,

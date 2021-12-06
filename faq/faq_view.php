@@ -20,7 +20,7 @@ include("../db/db_connector.php");
 			document.ripple_form.content.focus();
 			return;
 		}
-		document.ripple_form.submit();
+		document.ripple_form.action.submit();
 	}
 	</script>
 </head>
@@ -155,7 +155,7 @@ include("../db/db_connector.php");
 							<textarea class="content" style="width:960px; height:100px; resize: none;"></textarea>
 						</span>
 						<span>
-							<button class="rebutton" type="submit" onclick="faq_insert()">등록</button>
+							<input class="rebutton" type="submin" >등록</input>
 						</span>
 			</li>
 			</ul>
