@@ -23,7 +23,7 @@ create_table($con, "memo");
 insert_init_data($con, 'recruit_plan');
 
 create_procedure($con, 'members_procedure');
-//create_procedure($con, 'media_procedure');
+create_procedure($con, 'notice_procedure');
 //create_procedure($con, 'notice_procedure');
 //create_procedure($con, 'faq_procedure');
 //create_procedure($con, 'question_procedure');

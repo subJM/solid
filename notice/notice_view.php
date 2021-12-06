@@ -8,10 +8,16 @@
 <head>
 	<meta charset="utf-8">
 	<title>Solid</title>
+<<<<<<< HEAD
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.3">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.3">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.3">
 	<link rel="stylesheet" type="text/css" href="./css/notice.css?.sd">
+=======
+	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.cs">
+	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css">
+	<link rel="stylesheet" type="text/css" href="./css/notice.css">
+>>>>>>> 26c0139b64527df8a873218843c1c07b1e438024
 </head>
 
 <body>

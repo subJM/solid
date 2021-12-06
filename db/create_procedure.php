@@ -11,18 +11,24 @@ function create_procedure($con, $procedure_name)
       break;
     }
   } //end of while
-
   if ($flag === "NO") {
     switch ($procedure_name) {
       case 'members_procedure':
         $sql = "
-            CREATE PROCEDURE `members_procedure`()
+            CREATE PROCEDURE IF NOT EXISTS `members_procedure`()
             BEGIN
             INSERT INTO `members` (`id`,`password`,`name`,`phone`,`email`,`address`,`regist_day`,`level`) VALUES ('master','123456','관리자','010-0000-0000','user1001@gmail.com','10000\$서울특별시 강남구 강남동\$1001동 101호','2021-11-29', 1);
             INSERT INTO `members` (`id`,`password`,`name`,`phone`,`email`,`address`,`regist_day`,`level`) VALUES ('thswhdals','thswhdals','손종민','010-0000-1111','user12@gmail.com','10000\$서울특별시 강남구 강남동\$1001동 102호','2021-11-29', 2);
             END";
         break;
-      
+      case 'notice_procedure':
+        $sql = "
+        CREATE PROCEDURE IF NOT EXISTS `notice_procedure`()
+            BEGIN
+            INSERT INTO `notice` (`id`,`name`,`subject`,`content`,`regist_day`,`hit`) VALUES ('master','관리자','이용사항','처음 이용하시는 분은 500만 포인트가 주어지고 더 필요하신분은 결제창을 이용해 포인트를 살 수 있습니다.','2021-12-06', 0);
+            END";
+        break;
+ 
         default : 
         echo "<script>alert('해당 프로지서명이 없습니다. 점검요망!');</script>";
       break;
