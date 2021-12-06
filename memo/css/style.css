@@ -8,7 +8,7 @@ body {
 	font-size:14px;
 	text-align:center;
 	color:#333;
-	background:#cee2f3;
+	background:#ffffff;
 }
 caption {
 	text-align:left;
@@ -25,17 +25,17 @@ th,td {
 	padding:10px 20px;
 	min-height:40px;
 	font-size:14px;
-	border:1px solid #a0b5c7;
+	border:1px solid #000000;
 }
 th {
 	width:120px;
-	color:#fff;
-	background:#0369bb;
+	color:rgb(0, 0, 0);
+	background:#97bbd8;
 }
 td {
 	padding:10px 20px;
 	font-size:14px;
-	border:1px solid #a0b5c7;
+	border:1px solid #000000;
 	background:#fff;
 }
 td.td_center {
@@ -56,11 +56,14 @@ input,select {
 	padding:0 10px;
 	height:40px;
 	line-height:40px;
-	border:1px solid #a0b5c7;
+	border:1px solid #000000;
 	background:#fff;
 }
 textarea {
 	width:100%;
+}
+h1 {
+	margin-bottom: 30px;
 }
 a {
 	display:inline-block;
@@ -71,7 +74,7 @@ a {
 	font-size:13px;
 	color:#0369bb;
 	text-decoration:none;
-	border:1px solid #a0b5c7;
+	border:1px solid #000000;
 	background:#fff;
 }
 table a {
@@ -92,7 +95,7 @@ table a.td_btn {
     height: 38px;
     line-height: 38px;
     color: #fff;
-    border: 1px solid #a0b5c7;
+    border: 1px solid #000000;
     background: #0369bb;
 	vertical-align:bottom;
 }
@@ -104,7 +107,7 @@ button {
 	font-size:13px;
 	color:#0369bb;
 	text-decoration:none;
-	border:1px solid #a0b5c7;
+	border:1px solid #000000;
 	background:#fff;	
 }
 #memo {

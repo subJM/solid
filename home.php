@@ -20,7 +20,8 @@
   <div id="notice">
     <table>
       <th id="notice-1" class="notice_FAQ_left">공지사항</th>
-      <th class="notice_FAQ_right">전체보기</th>
+      <th class="notice_FAQ_right"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/notice/notice_list.php">전체보기</a>
+      </th>
       <tr>
         <td class="notice_FAQ_left">코로나바이러스감염증-19 대응 집</td>
         <td class="notice_FAQ_right">2020-08-19 (15:03)</td>
@@ -47,7 +48,8 @@
   <div id="FAQ">
     <table>
       <th id="FAQ-1" class="notice_FAQ_left">FAQ</th>
-      <th class="notice_FAQ_right">전체보기</th>
+      <th class="notice_FAQ_right"><a class="tag" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/faq/faq_list.php">전체보기
+        </a></th>
       <tr>
         <td class="notice_FAQ_left">코로나바이러스감염증-19 대응 집</td>
         <td class="notice_FAQ_right">2020-08-19 (15:03)</td>

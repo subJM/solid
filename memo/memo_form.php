@@ -1,7 +1,10 @@
 <?php
-include("../db/db_connector.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
-
-$me_recv_mb_id = $_GET['me_recv_mb_id']; // GET 방식으로 넘어온 받는 회원아이디
+	include("../db/db_connector.php");  // DB연결을 위한 같은 경로의 dbconn.php를 인클루드합니다.
+	if(isset($_GET['me_recv_mb_id'])){
+		$me_recv_mb_id = $_GET['me_recv_mb_id']; // GET 방식으로 넘어온 받는 회원아이디
+	}else {
+		$me_recv_mb_id= "";
+	}
 ?>
 
 <html>
@@ -15,8 +18,8 @@ $me_recv_mb_id = $_GET['me_recv_mb_id']; // GET 방식으로 넘어온 받는 �
 		<h1>쪽지 보내기</h1>
 
 		<ul>
-			<li><a href="./memo.php?kind=recv">받은쪽지</a></li>
-			<li><a href="./memo.php?kind=send">보낸쪽지</a></li>
+			<li><a href="./memo.php?kind=recv&page=1">받은쪽지</a></li>
+			<li><a href="./memo.php?kind=send&page=1">보낸쪽지</a></li>
 			<li><a href="./memo_form.php">쪽지쓰기</a></li>
 		</ul>
 
@@ -25,9 +28,9 @@ $me_recv_mb_id = $_GET['me_recv_mb_id']; // GET 방식으로 넘어온 받는 �
 			<table>
 			<tbody>
 			<tr>
-				<th>받는 회원아이디</th>
+				<th>받는사람</th>
 				<td>
-					<input type="text" name="me_recv_mb_id" value="<?php echo $me_recv_mb_id ?>" id="me_recv_mb_id" required class="frm_input required" size="47"></br>
+					<input type="text" name="me_recv_mb_id" value="<?= $me_recv_mb_id ?>" id="me_recv_mb_id" required class="frm_input required" size="47"></br>
 					<span>※ 여러 회원에게 보낼때는 콤마(,)로 구분하세요.</span>
 				</td>
 			</tr>

@@ -1,0 +1,118 @@
+#main-section {
+  width: 1920px;
+  height: 1250px;
+  margin: 0 auto;
+}
+
+.slideshow {
+  height: 465px;
+  min-width: 960px;
+  overflow: hidden;
+  position: relative;
+}
+.slideshow_slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.slideshow_slides a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.slideshow_slides .animated {
+  -webkit-transition: left 1s ease-in;
+  transition: left 1s ease-in;
+}
+.slideshow_nav a {
+  width: 71px;
+  height: 71px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url("../img/sprites.png") no-repeat;
+  text-indent: -9999em;
+}
+.slideshow_nav a.prev {
+  background-position: 0 -20px;
+  margin-left: -750px;
+}
+.slideshow_nav a.next {
+  background-position: -80px -20px;
+  margin-left: 675px;
+}
+.slide_indicator {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  bottom: 20px;
+  text-align: center;
+}
+.slide_indicator a {
+  background: url("../img/sprites.png") no-repeat -113px -4px;
+  width: 9px;
+  height: 8px;
+  text-indent: -9999em;
+  display: inline-block;
+  margin-right: 14px;
+}
+.slide_indicator a.active {
+  background: url("../img/sprites.png") no-repeat -133px -4px;
+}
+img {
+  width: 80%;
+}
+.notice_FAQ {
+  margin: 50px auto;
+  width: 980px;
+  height: auto;
+}
+#notice {
+  width: 470.4px;
+  float: left;
+  height: 100%;
+  margin-right: 10px;
+  border-right: gray solid 1px;
+}
+#notice-1 {
+  font-weight: bold;
+  font-size: 27px;
+}
+.notice_FAQ_left {
+  text-align: left;
+  width: 300px;
+}
+#FAQ {
+  width: 470.4px;
+  float: left;
+  height: 100%;
+  margin-left: 15px;
+}
+#FAQ-1 {
+  font-weight: bold;
+  font-size: 27px;
+}
+.notice_FAQ_right {
+  text-align: right;
+}
+/* .subframe {
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+} */
+
+#subpic {
+  margin-left: 192px;
+  margin-top: 50px;
+  width: 1536px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
