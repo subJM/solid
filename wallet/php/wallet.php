@@ -23,8 +23,7 @@
           <ul>
             <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/wallet.php">수익현황</a>
             </li>
-            <li class="walletList"><a
-                href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/purchasehistory.php?.asdfakjl">이용내역</a>
+            <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/purchasehistory.php?.asdfakjl">거래내역</a>
             </li>
           </ul>
         </div>
@@ -81,23 +80,23 @@
               </thead>
               <tbody>
                 <?php
-                                include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
+                include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 
-                                $sql = "SELECT * FROM coin_info";
-                                $result = mysqli_query($con, $sql);
-                                while ($row = @mysqli_fetch_assoc($result)) {
-                                ?>
-                <tr class="trtr">
-                  <td class="td_l"><?= $row['coinName'] ?></td>
-                  <td><?= $row['among'] ?></td>
-                  <td><?= $row['trTime'] ?></td>
-                  <td><?= $row['transaction'] ?></td>
-                  <td><?= $row['price'] ?>원</td>
-                  <td><?= $row['among'] ?>%</td>
-                  <td><?= $row['totalPrice'] ?>원</td>
-                </tr>
+                $sql = "SELECT * FROM coin_info";
+                $result = mysqli_query($con, $sql);
+                while ($row = @mysqli_fetch_assoc($result)) {
+                ?>
+                  <tr class="trtr">
+                    <td class="td_l"><?= $row['coinName'] ?></td>
+                    <td><?= $row['among'] ?></td>
+                    <td><?= $row['trTime'] ?></td>
+                    <td><?= $row['transaction'] ?></td>
+                    <td><?= $row['price'] ?>원</td>
+                    <td><?= $row['among'] ?>%</td>
+                    <td><?= $row['totalPrice'] ?>원</td>
+                  </tr>
                 <?php
-                                } ?>
+                } ?>
               </tbody>
             </table>
           </div>
