@@ -4,20 +4,20 @@ header { position: relative; color: rgb(44, 55, 68); }
 #board_box { position: relative; width: 1100px; margin: 0 auto; height: 100vh; margin-top: 50px;}
 #board_box h3 {	padding: 10px; border-bottom: solid 2px rgb(44, 55, 68); font-size: 34px; color: rgb(44, 55, 68); }
 #board_form span { display: inline-block; }
-#board_form .col1 { width: 150px; }
-#board_form li { padding: 12px; border-bottom: solid 1px #dddddd; }
+#board_form .col1 { width: 150px; font-size: 18px; font-weight: bold;}
+#board_form li { padding: 12px; }
 #board_form #read_pw input {width: 70px;}
 #board_form #read_subject input {width: 500px;}
-#board_form input { width: 500px; height: 25px; }
-#board_form textarea { width: 500px;	height: 130px; resize: none;}
+#board_form input { width: 700px; height: 30px; font-size: 18px;}
+#board_form textarea { width: 700px; height: 230px; resize: none; font-size: 18px;}
 #board_form #text_area {	position: relative;	height: 158px; }
 #board_form #text_area .col1 { position: absolute; top: 10px; }
 #board_form #text_area .col2 { position: absolute; left: 166px; }
-#board_box .buttons { text-align: right; margin: 20px 0 40px 0; }
+#board_box .buttons { text-align: right; margin: 100px 0 40px 0; }
 #board_box .buttons li { display: inline; }
 #board_box .buttons button { width: 80px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
     color: rgb(44, 55, 68); cursor: pointer; border-radius: 20px;}
-#board_box .buttons button:hover { background-color: rgb(44, 55, 68); color: white; border: 1px solid rgb(44, 55, 68); }
+#board_box .buttons button:hover { background-color: black; color: white; border: 1px solid rgb(44, 55, 68); }
 
 
 /* 게시판 목록보기(board_list.php) */
@@ -40,45 +40,5 @@ header { position: relative; color: rgb(44, 55, 68); }
 #view_content .col2 { float: right; }
 #view_content li:nth-child(2) {	padding: 15px 15px 80px 15px; border-bottom: solid 1px #cccccc; }
 #view_content li:nth-child(3) button { padding: 5px 20px; margin: 15px 0 40px 720px; cursor: pointer; }
-#ripple { padding: 15px; }
-#ripple #ripple_head{ position: relative; margin-top: 5px;}
-#ripple #ripple_head #span1{ font-weight: bold;}
-#ripple #ripple_head #span2{ position: absolute; top: 5px; left: 635px; font-size: 14px; color: gray;}
-#ripple #ripple_content{ margin-bottom: 10px; color: darkslategray; font-size: 14px; margin-top: 5px;}
-#ripple #ripple_insert #ripple_textarea textarea { width: 770px; height: 70px; resize: none; margin-top: 10px;}
+#view_content .li_content {height: 220px;}
 
-
-button {cursor: pointer;}
-
-/*======================리뷰작성 팝업===============================*/
-#popup {display: none; z-index: 999; width: 100%; height: 100%;}
-#popup #popup_content { width: 300px;height: 120px;background-color: white;color: black;position: absolute; 
-	left: 50%; top: 40%; transform: translate(-50%, -50%);text-align: center;
-	border-radius: 15px;
-}
-
-#popup_content div:first-child {text-align: start;}
-
-/* #popup_content h2 {position: absolute; top: 50%;} */
-
-#popup #popup_btn {width: 400px;left: 50%; position: absolute; top: 37%; transform: translate(-50%, -50%); display: flex; justify-content: center;}
-
-#popup_btn {width: 100%; }
-#popup_btn button {padding: 10px 15px;font-size: 16px;border-radius: 20px; border: 1px solid #d5d6e0;background-color: white;font-family: "S-CoreDream-4Regular";margin-right: 10px;}
-
-#popup_btn input {
-	margin-left: 15px;
-	width: 100px;
-}
-
-#popup_btn #popup_write {
-	position: absolute;
-	margin-top: 40px;
-	left: 32%;
-}
-
-#popup_btn #close {
-	position: absolute;
-	margin-top: 41px;
-	margin-left: 90px;
-}

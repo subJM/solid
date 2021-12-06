@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("../db/db_connector.php");
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,19 +8,19 @@ include("../db/db_connector.php");
 <head>
 	<meta charset="utf-8">
 	<title>Solid</title>
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css">
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css">
-	<link rel="stylesheet" type="text/css" href="./css/faq.css?.sdvcjkhvssdfsad">
+	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.3">
+	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.3">
+	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.3">
+	<link rel="stylesheet" type="text/css" href="./css/faq.css?.dss">
 	<script>
 		function faq_insert() {
-		if (!document.ripple_form.content.value) {
-			alert("내용을 입력하세요!");
-			document.ripple_form.content.focus();
-			return;
-		}
-		document.ripple_form.action.submit();
-	}
+    if (!document.board_form.subject.value) {
+        alert("내용을 입력하세요!");
+        document.board_form.subject.focus();
+        return;
+    }
+    document.board_form.action.submit();
+}
 	</script>
 </head>
 
@@ -90,14 +89,9 @@ include("../db/db_connector.php");
 						mysqli_query($con, $sql);
 					}
 				}
-				$sql = "select * from faq_ripple order by num desc";
-				$ripple_result = mysqli_query($con, $sql);
-				$ripple = mysqli_fetch_assoc($ripple_result);
-				
-				mysqli_close($con);
 			} else {
-				mysqli_close($con);
 				// var_dump($ripple);
+				mysqli_close($con);
 				header("location: faq_view.php?error=번호 오류발생!");
 				exit();
 			}
@@ -133,33 +127,22 @@ include("../db/db_connector.php");
 			<h2>
 				댓글목록
 			</h2>
-			<?php
 
-			for ($i = 0; $i <= count($ripple); $i++) {
-			?>
-				<li class="ripple">
-					<span class="col1" ><?= $userid ?></span>
-					<span class="col1"><?= $regist_day?></span>
-					<span class="col10"><?= $content ?></span><b>
+			<form name="board_form" method="post" action="faq_ripple_insert">
+				<ul id="board_form">
+				<li>
+					<span class="col12">댓글</span>
 				</li>
-
-			<?php
-			} 
-			
-			?>
-				<form name="ripple_form" method="post" action="faq_ripple_insert.php" enctype="multipart/form-data">
-					<ul id="board_form">
-						<li>
-							<span class="col1">댓글<br></span>
-						<span class="col2">
-							<textarea class="content" style="width:960px; height:100px; resize: none;"></textarea>
-						</span>
-						<span>
-							<input class="rebutton" type="submit" >등록</input>
-						</span>
-			</li>
+				<li>
+					<span class="col2">
+						<textarea class="content" style="width:960px; height:100px; resize: none;"></textarea>
+					</span>
+					<span>
+						<button class="rebutton" type="submit" onclick="faq_insert()">등록</button>
+					</span>
+				</li>
 			</ul>
-			</form>
+		</form>
 		</div> <!-- board_box -->
 	</section>
 	<footer>

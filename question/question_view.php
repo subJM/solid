@@ -8,10 +8,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Solid</title>
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css">
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css">
-	<link rel="stylesheet" type="text/css" href="./css/question.css">
+	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.3">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.3">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.3">
+	<link rel="stylesheet" type="text/css" href="./css/question.css?.as">
 </head>
 
 <body>
@@ -93,7 +93,7 @@
 					<span class="col1"><b>제목 :<b><?= $subject ?></span>
 					<span class="col1"><?= $name ?><?= $regist_day ?></span>
 				</li>
-				<li>
+				<li class="li_content">
 					<?= $content ?>
 				</li>
 			</ul>
