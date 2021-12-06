@@ -1,4 +1,4 @@
-header { position: relative; color: rgb(44, 55, 68); }
+/* header { position: relative; color: rgb(44, 55, 68); } */
 
 /* 게시판 글쓰기(board_form.php) */
 #board_box { position: relative; width: 1100px; margin: 0 auto; height: 100vh; margin-top: 50px;}

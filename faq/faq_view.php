@@ -2,6 +2,56 @@
 session_start();
 include("../db/db_connector.php");
 
+	$userid = $_SESSION["user_id"];
+
+	//1.클 라이언트로부터 전송해온 값이 존재하는지 점검
+	if (isset($_GET["num"])) {
+
+		//2. mysqli injection 함수 사용
+		$num = mysqli_real_escape_string($con, $_GET["num"]);
+
+		//3. 공백이 있는지 점검
+		if (empty($num)) {
+			header("location: faq_list.php?error=번호가 비어있어요");
+			exit();
+		} else {
+			//해당되는 공지사항 내용 가져오기
+			$sql = "select * from faq where num = '$num'";
+			$select_result = mysqli_query($con, $sql);
+			$row = mysqli_fetch_array($select_result);
+
+			if (!$row) {
+				header("location: faq_list.php?error=해당되는 공지글을 찾을수 없습니다.");
+				exit();
+			} else {
+				$id = $row["id"];
+				$name = $row["name"];
+				$regist_day = $row["regist_day"];
+				$subject = $row["subject"];
+				$content = $row["content"];
+				$content = str_replace(" ", "&nbsp;", $content);
+				$content = str_replace("\n", "<br>", $content);
+				$hit = $row["hit"];
+			}
+
+			//다른회원이 내 공지사항을 클릭했을 경우 hit 1을 증가
+			if ($userid !== $id) {
+				$new_hit = $hit + 1;
+				$sql = "update faq set hit = {$new_hit} where num = {$num} ";
+				mysqli_query($con, $sql);
+			}
+		}
+		$sql = "select * from faq_ripple order by num desc";
+		$ripple_result = mysqli_query($con, $sql);
+		$ripple = mysqli_fetch_assoc($ripple_result);
+		
+		mysqli_close($con);
+	} else {
+		mysqli_close($con);
+		// var_dump($ripple);
+		header("location: faq_view.php?error=번호 오류발생!");
+		exit();
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +59,9 @@ include("../db/db_connector.php");
 <head>
 	<meta charset="utf-8">
 	<title>Solid</title>
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css">
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
 	<link rel="stylesheet" type="text/css" href="./css/faq.css?.sdvcjkhvssdfsad">
 	<script>
 		function faq_insert() {
@@ -20,7 +70,8 @@ include("../db/db_connector.php");
 			document.ripple_form.content.focus();
 			return;
 		}
-		document.ripple_form.action.submit();
+		document.ripple_form.action
+		document.ripple_form.submit();
 	}
 	</script>
 </head>
@@ -52,56 +103,7 @@ include("../db/db_connector.php");
 					<?= $_GET['success']; ?>
 				</div>
 			<?php } ?>
-			<?php
-			//1. 클라이언트로부터 전송해온 값이 존재하는지 점검
-			if (isset($_GET["num"])) {
-
-				//2. mysqli injection 함수 사용
-				$num = mysqli_real_escape_string($con, $_GET["num"]);
-
-				//3. 공백이 있는지 점검
-				if (empty($num)) {
-					header("location: faq_list.php?error=번호가 비어있어요");
-					exit();
-				} else {
-					//해당되는 공지사항 내용 가져오기
-					$sql = "select * from faq where num = '$num'";
-					$select_result = mysqli_query($con, $sql);
-					$row = mysqli_fetch_array($select_result);
-
-					if (!$row) {
-						header("location: faq_list.php?error=해당되는 공지글을 찾을수 없습니다.");
-						exit();
-					} else {
-						$id = $row["id"];
-						$name = $row["name"];
-						$regist_day = $row["regist_day"];
-						$subject = $row["subject"];
-						$content = $row["content"];
-						$content = str_replace(" ", "&nbsp;", $content);
-						$content = str_replace("\n", "<br>", $content);
-						$hit = $row["hit"];
-					}
-
-					//다른회원이 내 공지사항을 클릭했을 경우 hit 1을 증가
-					if ($userid !== $id) {
-						$new_hit = $hit + 1;
-						$sql = "update faq set hit = {$new_hit} where num = {$num} ";
-						mysqli_query($con, $sql);
-					}
-				}
-				$sql = "select * from faq_ripple order by num desc";
-				$ripple_result = mysqli_query($con, $sql);
-				$ripple = mysqli_fetch_assoc($ripple_result);
-				
-				mysqli_close($con);
-			} else {
-				mysqli_close($con);
-				// var_dump($ripple);
-				header("location: faq_view.php?error=번호 오류발생!");
-				exit();
-			}
-			?>
+			
 
 			<ul id="view_content">
 				<li>
@@ -147,18 +149,18 @@ include("../db/db_connector.php");
 			} 
 			
 			?>
-				<form name="ripple_form" method="post" action="faq_ripple_insert.php" enctype="multipart/form-data">
-					<ul id="board_form">
-						<li>
-							<span class="col1">댓글<br></span>
+				<ul id="board_form">
+					<li>
+						<span class="col1">댓글<br></span>
 						<span class="col2">
-							<textarea class="content" style="width:960px; height:100px; resize: none;"></textarea>
-						</span>
-						<span>
-							<input class="rebutton" type="submin" >등록</input>
-						</span>
-			</li>
-			</ul>
+						<form name="ripple_form" method="post" action="faq_ripple_insert.php" enctype="multipart/form-data">
+						<textarea class="content" name="content" style="width:960px; height:100px; resize: none;"></textarea>
+						<button class="rebutton" type="button" onclick="faq_insert();" >등록</button>
+					</span>
+					<span>
+					</span>
+					</li>
+				</ul>
 			</form>
 		</div> <!-- board_box -->
 	</section>
