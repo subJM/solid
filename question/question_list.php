@@ -6,48 +6,48 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Solid</title>
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css">
-    <link rel="stylesheet" type="text/css" href="./css/question.css">
+  <meta charset="utf-8">
+  <title>Solid</title>
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.afkqwesadkkster">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.aqwessadd">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.5ssaassasasa12sdda">
+  <link rel="stylesheet" type="text/css" href="./css/question.css">
 </head>
 
 <body>
-    <header>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
-    </header>
+  <header>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
+  </header>
 
-    <section>
-        <div id="board_box">
-            <br><br><br>
-            <h3>
-                문의게시판 > 목록
-            </h3>
-            <!-- 에러메세지 출력 -->
-			<?php if(isset($_GET['error'])){?>
-			<div id="check" style="color:red">
-				<?= $_GET['error']; ?>
-			</div>
-			<?php } ?>
+  <section>
+    <div id="board_box">
+      <br><br><br>
+      <h3>
+        문의게시판 > 목록
+      </h3>
+      <!-- 에러메세지 출력 -->
+      <?php if(isset($_GET['error'])){?>
+      <div id="check" style="color:red">
+        <?= $_GET['error']; ?>
+      </div>
+      <?php } ?>
 
-			<!-- 성공메세지 출력 -->
-			<?php if(isset($_GET['success'])){?>
-			<div id="check" style="color:blue">
-				<?= $_GET['success']; ?>
-			</div>
-			<?php } ?>
-            <ul id="board_list">
-                <li>
-                    <span class="col1">번호</span>
-                    <span class="col2">제목</span>
-                    <span class="col3">글쓴이</span>
-                    <span class="col4">첨부</span>
-                    <span class="col5">등록일</span>
-                    <span class="col6">조회</span>
-                </li>
-                <?php 
+      <!-- 성공메세지 출력 -->
+      <?php if(isset($_GET['success'])){?>
+      <div id="check" style="color:blue">
+        <?= $_GET['success']; ?>
+      </div>
+      <?php } ?>
+      <ul id="board_list">
+        <li>
+          <span class="col1">번호</span>
+          <span class="col2">제목</span>
+          <span class="col3">글쓴이</span>
+          <span class="col4">첨부</span>
+          <span class="col5">등록일</span>
+          <span class="col6">조회</span>
+        </li>
+        <?php 
 					//1. 현재페이지가 없다면 1페이지로 셋팅
 					$page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
@@ -81,17 +81,17 @@
 
 					for($i=0; $i<count($list); $i++){
 				?>
-				<li>
-						<span class="col1"><?= $i+1 ?></span>
-						<span class="col2_1"><a
-									href="question_view.php?num=<?= $list[$i]['num'] ?>"><?= $list[$i]['subject'] ?></a></span>
-						<span class="col3"><?= $list[$i]['name'] ?></span>
-						<span class="col5"><?= $list[$i]['regist_day'] ?></span>
-						<span class="col6"><?= $list[$i]['hit'] ?></span>
-					</li>
-                <?php } ?>
-                </ul>
-                <?php
+        <li>
+          <span class="col1"><?= $i+1 ?></span>
+          <span class="col2_1"><a
+              href="question_view.php?num=<?= $list[$i]['num'] ?>"><?= $list[$i]['subject'] ?></a></span>
+          <span class="col3"><?= $list[$i]['name'] ?></span>
+          <span class="col5"><?= $list[$i]['regist_day'] ?></span>
+          <span class="col6"><?= $list[$i]['hit'] ?></span>
+        </li>
+        <?php } ?>
+      </ul>
+      <?php
 				//===========================================================
 				//7. 현재 페이지 처리 함수
 				$url = "./question_list.php?page=";
@@ -100,29 +100,31 @@
 				//데이터베이스 접속 종료
 				mysqli_close($con);
 			?>
-			<!-- page  -->
-			<ul id="page_num"><li><?= $write_page ?></li></ul>
-				<ul class="buttons">
-			<?php
+      <!-- page  -->
+      <ul id="page_num">
+        <li><?= $write_page ?></li>
+      </ul>
+      <ul class="buttons">
+        <?php
 				//회원일 경우에만 목록과 글쓰기 버튼을 사용할 수 있다.
 				if(!$userid){
 			?>
-					<li><button onclick="location.href='question_list.php'">목록</button></li>
-					<?php
+        <li><button onclick="location.href='question_list.php'">목록</button></li>
+        <?php
 				}else{
 					?>
-					<li><button onclick="location.href='question_list.php'">목록</button></li>
-					<li><button type="button" onclick="location.href='question_form.php'">글쓰기</button></li>
-			<?php
+        <li><button onclick="location.href='question_list.php'">목록</button></li>
+        <li><button type="button" onclick="location.href='question_form.php'">글쓰기</button></li>
+        <?php
 				}
 			?>
-				</ul>
-			</div> <!-- board_box -->
-		</section>
-	<footer>
-		<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php";?>
-	</footer>
-	</div>
+      </ul>
+    </div> <!-- board_box -->
+  </section>
+  <footer>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php";?>
+  </footer>
+  </div>
 </body>
 
 </html>

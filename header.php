@@ -21,8 +21,7 @@
         <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/notice/notice_list.php">공지사항</a>
       </li>
       <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/wallet.php">자산</a></li>
-      <li class="top1-1tabletd"><a
-          href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/service/question/question_list.php">1:1문의</a>
+      <li class="top1-1tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/question/question_list.php">1:1문의</a>
       </li>
 
     </ul>
@@ -48,7 +47,7 @@
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a>
           </li>
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함</a></li>
-          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/point_purchase.php">포인트구매</a>
+          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/purchase/point_purchase.php">포인트구매</a>
           </li>
           <?php
 			}
