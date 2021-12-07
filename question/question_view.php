@@ -4,16 +4,9 @@
 	$userid = $_SESSION['user_id'];
 
 	//1. 클라이언트로부터 전송해온 값이 존재하는지 점검
-	if(isset($_GET["num"])){
+	if(isset($_GET['num'])){
 
-		//2. mysqli injection 함수 사용
-		$num = mysqli_real_escape_string($con, $_GET["num"]);				
-		
-		//3. 공백이 있는지 점검
-		if(empty($num)){
-			header("location: question_list.php?error=번호가 비어있어요");
-			exit(); 
-		}else{
+		$num = $_GET['num'];				
 			//해당되는 공지사항 내용 가져오기
 			$sql = "select * from question where num = '$num'";
 			$select_result = mysqli_query($con, $sql);
@@ -38,36 +31,23 @@
 				$new_hit = $hit + 1;
 				$sql = "update question set hit = {$new_hit} where num = {$num} ";
 				mysqli_query($con, $sql);
-			}
+			
 
 		}
 	}else{
-		header("location: question_list.php?error=번호 오류발생!");
+		header("location: question_list.php?error=번호 오류발생!!!!");
 		exit(); 
 	}
+	// 댓글 등록
 
-	$sql_rip = "select * from question_ripple where parent = $id";
-	$select_ripple_result = mysqli_query($con, $sql_rip);
-			
-	$rip_result= mysqli_fetch_assoc($select_ripple_result);
-
-	for($i=0; $i >count($rip_result); $i++){ 
-		$rip_subject = $rip_result['parent'];
-		$rip_id = $rip_result['id'];
-		$rip_name = $rip_result['name'];
-		$rip_content = $rip_result['content'];
-		$rip_regist_day = $rip_result['regist_day'];
+	$sql_rip = "select * from question_ripple where parent = $id;";
+	$result = mysqli_query($con, $sql_rip);
+	$rip_row = array();
+	while($result = mysqli_query($con, $sql_rip)){
+		$rip_row = mysqli_fetch_assoc($result);
 	}
-			
-	var_dump(isset($rip_result));
-	// 'question_ripple':
-	// $sql = "CREATE TABLE IF NOT EXISTS `question_ripple` (
-	//   `num` int(11) NOT NULL AUTO_INCREMENT,
-	//   `parent` int(11) NOT NULL,
-	//   `id` char(15) NOT NULL,
-	//   `name` char(10) NOT NULL,
-	//   `content` text NOT NULL,
-	//   `regist_day` char(20) DEFAULT NULL;
+
+	var_dump($num);
 
 ?>
 <!DOCTYPE html>
@@ -75,17 +55,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Solid</title>
-<<<<<<< HEAD
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.3">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.3">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.3">
-	<link rel="stylesheet" type="text/css" href="./css/question.css?.as">
-=======
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.afkqwesadkkster">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.aqwessadd">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.5ssaassasasa12sdda">
-	<link rel="stylesheet" type="text/css" href="./css/question.css">
->>>>>>> 26c0139b64527df8a873218843c1c07b1e438024
+	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
+	<link rel="stylesheet" type="text/css" href="./css/question.css?.sd">
 </head>
 
 <body>
@@ -107,14 +80,14 @@
 			<?php if(isset($_GET['error'])){ ?>
 			<div id="check" style="color: red">
 				<?= $_GET['error']; ?>
-            </div>
-            <?php } ?>
-            <!--성공메세지 출력 -->
-            <?php if(isset($_GET['success'])){ ?>
-            <div id="check" style="color: blue">
+						</div>
+						<?php } ?>
+						<!--성공메세지 출력 -->
+						<?php if(isset($_GET['success'])){ ?>
+						<div id="check" style="color: blue">
 				<?= $_GET['success']; ?>
-            </div>
-            <?php } ?>
+						</div>
+						<?php } ?>
 			
 
 			<ul id="view_content">
@@ -146,21 +119,30 @@
 			</ul>
 			
 			<ul id="ripple_view">
-				<?php if(isset($rip_result)){ ?>
-				<li>
-					<span class="col1"><?= $rip_name ?><?= $rip_regist_day ?></span>
-					<span class="col2"><b>내용 :<b><?= $rip_subject ?></span>
-				</li>
-				<li>
-					<?= $content ?>
-				</li>
+				<?php for($i=0;$i>count($rip_row) ; $i++){ ?>
+					<li>
+						<span class="col1"><?= $rip_row[$i]['name'] ?><?= $rip_row[$i]['regist_day'] ?></span>
+						<span class="col2"><b>내용 :<b><?= $rip_row[$i]['content'] ?></span>
+						<button type="button" onclick="location.href='question_ripple_delete.php?num=<?= $rip_row[$i]['num'] ?>'">삭제</button>
+					</li>
 				<?php } ?>
 			</ul>
-			
-			<ul>
-				<li><button type="button" onclick="location.href='question_ripple_delete.php?num=<?= $num ?>&page=1'">삭제</button></li>
-				<li><button type="button" onclick="location.href='question_ripple_insert.php?num=<?= $id?>'">댓글작성</button></li>
-			</ul>
+				<form name="board_ripple" method="post" action="question_ripple_insert.php?num=<?=$num?>" enctype="multipart/form-data">
+			<ul id="board_ripple">
+					<li><?=$username ?>(<?= $userid ?>)</li>
+					<li>
+						<span class="col12">댓글작성</span>
+					</li>
+					<li>
+						<span class="col2">
+							<textarea class="rip_content" name="rip_content" style="width:960px; height:100px; resize: none;"></textarea>
+						</span>
+						<span>
+							<button class="rebutton" type="submit" require>등록</button>
+						</span>
+					</li>
+				</ul>
+			</form>
 		</div> <!-- board_box -->
 	</section>
 	<footer>

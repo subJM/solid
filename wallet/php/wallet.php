@@ -137,7 +137,7 @@ while ($row = @mysqli_fetch_array($coinNameResult)) {
   </div>
 
   <footer>
-    <?php include "../../footer.php";?>
+    <?php include "../../footer.php"; ?>
   </footer>
 </body>
 

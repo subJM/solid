@@ -44,25 +44,26 @@
         <img id="optionmenu" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/optionmenu.png">
 
         <ul class="submenu">
-   
-      <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a></li>
-      <li><a href="./memo/memo.php" onclick="win_memo(this.href); return false;">쪽지함</a></li>
-      <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/point_purchase.php">포인트구매</a></li>
-      <?php
+          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a>
+          </li>
+          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/admin/admin_members.php">쪽지함</a></li>
+          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/purchase/point_purchase.php">포인트구매</a>
+          </li>
+          <?php
 			}
             if ($userid && $userlevel == 1) { ?>
-      <li>
-        <a class="top1-2tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃</a>
-      </li>
+          <li>
+            <a class="top1-2tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃</a>
+          </li>
 
-      <?php
+          <?php
 			} else if ($userid) {
 			?>
-      <li>
-        <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃</a>
-      </li>
+          <li>
+            <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃</a>
+          </li>
 
-      <?php
+          <?php
 			}
 			?>
       </li>
