@@ -18,6 +18,6 @@ function faq_insert() {
         document.board_form.subject.focus();
         return;
     }
-    document.board_form.submit();
+    document.board_form.action.submit();
 }
 

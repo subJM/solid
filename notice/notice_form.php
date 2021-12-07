@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.1">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.1">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.1">
-  <link rel="stylesheet" type="text/css" href="./css/notice.css">
+  <link rel="stylesheet" type="text/css" href="./css/notice.css?.asdasd">
   <script src="http://<?=$_SERVER['HTTP_HOST']?>/solid/notice/js/notice.js"></script>
   <script>
   function notice_input() {
