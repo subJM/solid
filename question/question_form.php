@@ -51,12 +51,12 @@
           </li>
           <li>
             <span class="col1">제목 : </span>
-            <span class="col2"><input name="subject" type="text"></span>
+            <span class="col2"><input name="subject" type="text" placeholder="제목을 작성해주세요."></span>
           </li>
           <li id="text_area">
             <span class="col1">내용 : </span>
             <span class="col2">
-              <textarea name="content"></textarea>
+              <textarea name="content" placeholder="내용을 작성해주세요."></textarea>
             </span>
           </li>
         </ul>
