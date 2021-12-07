@@ -26,12 +26,7 @@
           <ul>
             <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/wallet.php">수익현황</a>
             </li>
-<<<<<<< HEAD
             <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/purchasehistory.php?.asdfakjl">거래내역</a>
-=======
-            <li class="walletList"><a
-                href="http://<?=$_SERVER['HTTP_HOST']?>/solid/wallet/php/purchasehistory.php?.asdfakjl">거래내역</a>
->>>>>>> 152f9db3fbe70cc42e6365eb10b23389130a28c8
             </li>
           </ul>
         </div>
@@ -127,8 +122,8 @@
                     <td class="td_l"><?= $row['coinName'] ?></td>
                     <td><?= $totalAmount ?></td>
                     <td><?= number_format($buyPrice / $buyAmount, 0) ?></td>
-                    <td><?= $totalAmount ?>*현재가격</td>
-                    <td><?= $row['totalPrice'] ?></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                 <?php
                 }
