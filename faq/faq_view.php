@@ -63,7 +63,7 @@ include("../db/db_connector.php");
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
-	<link rel="stylesheet" type="text/css" href="./css/faq.css?.sdvcjkhvssdfsad">
+	<link rel="stylesheet" type="text/css" href="./css/faq.css?.xs">
 	<script>
 		function faq_insert() {
 		if (!document.ripple_form.content.value) {
@@ -132,7 +132,7 @@ include("../db/db_connector.php");
 				}
 				?>
 			</ul>
-			<h2>
+			<!-- <h2>
 				댓글목록
 			</h2>
 
@@ -161,7 +161,7 @@ include("../db/db_connector.php");
 					</span>
 					</li>
 				</ul>
-			</form>
+			</form> -->
 		</div> <!-- board_box -->
 	</section>
 	<footer>

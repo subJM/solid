@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
-	<link rel="stylesheet" type="text/css" href="./css/faq.css">
+	<link rel="stylesheet" type="text/css" href="./css/faq.css?.sx">
 	<script src="http://<?=$_SERVER['HTTP_HOST']?>/solid/faq/js/notice.js"></script>
 	<script>
 		function faq_input() {
