@@ -28,10 +28,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css?.af">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?.a">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?.5a">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/point_purchase.css?.5a">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.4">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.4">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.4">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/purchase/css/point_purchase.css?.asd5a">
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
   <title>Document</title>
@@ -65,7 +65,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
 <body>
   <div class="container">
     <header>
-      <?php include "./header.php"; ?>
+      <?php include "../header.php"; ?>
     </header>
     <section id="manage_plan">
       <form action="purchase_form.php">
@@ -83,21 +83,23 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
                   ".$sec." name='recruit_plan' value='".$row[$i]['num']."' id='input_".$i."'/>
                   <label for='input_".$i."' onclick='select_plan(this);'>
                     <p class='plan_name' id='span_".$i."'>".$row[$i]['name']."</p>
-                    <img class='plan_point' src='./img/point.png'>
+                    <img class='plan_point' src='../img/point.png'>
                     <p class='plan_count'>포인트 ".$row[$i]['count']." 점</p>
                     <p class='plan_price'>".$row[$i]['price']."원</p>
                   </label>
-                  <img class='check_mark' src='./img/tick.png'>
+                  <img class='check_mark' src='../img/tick.png'>
                   </div>
                   ";
                 }
                 ?>
-        <input type="submit" class="btn btn-primary btn-block" id="purchase_plan" value="구매하기">
+        <div id="buy_button">
+          <input type="submit" class="btn btn-primary btn-block" id="purchase_plan" value="구매하기">
+        </div>
   </div>
   </form>
   </section>
   <footer>
-    <?php include "./footer.php"; ?>
+    <?php include "../footer.php"; ?>
   </footer>
 </body>
 

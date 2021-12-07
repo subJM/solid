@@ -2,7 +2,7 @@
   position: relative;
   top: 200px;
   width: 100%;
-  min-height: 700px;
+  min-height: 930px;
   display: inline-block;
 }
 
@@ -19,6 +19,7 @@
   height: 128px;
 }
 .col-sm-5 {
+  margin-top: 100px;
   padding: 0;
 }
 
@@ -58,7 +59,7 @@
 .check_mark {
   position: relative;
   float: right;
-  right: -2.5rem;
+  /* right: -2.5rem; */
   z-index: 1;
   top: -280px;
   left: 30px;
@@ -111,6 +112,32 @@ input[type="submit"].btn-block {
   background-color: rgb(133, 198, 241);
   width: 130px;
   padding: 0.5rem;
-  margin-left: 46.5%;
   border-radius: 10px;
 }
+#buy_button {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+h3 {
+  font-size: 40px;
+  font-weight: bold;
+}
+h5 {
+  font-size: 30px;
+  font-weight: bold;
+}
+h6 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.form-control {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  height: 100px;
+}
+/* .choice {
+  padding-top: 50px;
+} */

@@ -7,9 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../wallet/css/wallet.css.?sdfawefas">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css?.afkqwekkster">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?.aqwesd">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?.5swqesda">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.2">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.2">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.2">
 </head>
 
 <body>
@@ -82,17 +82,40 @@
                 <?php
                 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 
+                $totalAmount;
+                $asd;
+                $buyPrice;
                 $sql = "SELECT * FROM coin_info";
                 $result = mysqli_query($con, $sql);
-                while ($row = @mysqli_fetch_assoc($result)) {
+
+                $coinName = "SELECT DISTINCT coinName FROM coin_info";
+                $coinNameResult = mysqli_query($con, $coinName);
+
+                while ($row = @mysqli_fetch_array($coinNameResult)) {
+
+                  $totalAmount = 0;
+                  $asd = 0;
+                  $buyPrice = 0;
+                  $coinSql = "SELECT*FROM coin_info WHERE coinName = '$row[coinName]'";
+                  $coinData = mysqli_query($con, $coinSql);
+
+                  while ($row1 = mysqli_fetch_array($coinData)) {
+
+                    if ($row1['transaction'] == "buy") {
+                      $totalAmount = $totalAmount + $row1['amount'];
+                    } else {
+                      $totalAmount = $totalAmount - $row1['amount'];
+                    }
+
+                  }
+
                 ?>
                   <tr class="trtr">
                     <td class="td_l"><?= $row['coinName'] ?></td>
-                    <td><?= $row['among'] ?></td>
-                    <td><?= $row['trTime'] ?></td>
+                    <td><?= $totalAmount ?></td>
                     <td><?= $row['transaction'] ?></td>
                     <td><?= $row['price'] ?>원</td>
-                    <td><?= $row['among'] ?>%</td>
+                    <td><?= $row['amount'] ?>%</td>
                     <td><?= $row['totalPrice'] ?>원</td>
                   </tr>
                 <?php
@@ -107,7 +130,7 @@
   </div>
 
   <footer>
-    <?php include "../footer.php"; ?>
+    <?php include "../../footer.php"; ?>
   </footer>
 </body>
 

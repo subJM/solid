@@ -30,9 +30,9 @@
   <meta charset="utf-8">
   <title>No.1 가상자산 플랫폼, Solid</title>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXmain.css?sad">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXfooter.css?a">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/FTXcss/FTXheader.css?asd">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.3">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.3">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.3">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/css/member.css">
   <script src="./js/member_form.js" charset="utf-8"></script>
   <link rel="stylesheet" href="./css/member.css?asd">
