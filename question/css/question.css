@@ -16,10 +16,14 @@
 #board_box .buttons { text-align: right; margin: 100px 0 40px 0; }
 #board_box .buttons li { display: inline; }
 #board_box .buttons button { width: 80px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
-    color: rgb(44, 55, 68); cursor: pointer; border-radius: 20px;}
+color: rgb(44, 55, 68); cursor: pointer; border-radius: 20px;}
 #board_box .buttons button:hover { background-color: black; color: white; border: 1px solid rgb(44, 55, 68); }
-
-
+.rebutton {width: 100px; height: 100px; margin-left: 12px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
+    color: rgb(44, 55, 68); cursor: pointer; border-radius: 20px; float: right;}
+.rebutton:hover{ background-color: black; color: white; border: 1px solid rgb(44, 55, 68); }
+#rip_content .rip_content { width: 400px; height: 200px; resize: none; font-size: 18px;}
+#board_ripple li { padding: 12px; }
+        
 /* 게시판 목록보기(board_list.php) */
 #board_list li { padding: 10px 0; border-bottom: solid 1px #dddddd; }
 #board_list span { display: inline-block; text-align: center;}

@@ -1,8 +1,6 @@
 <?php
 session_start();
 include("../db/db_connector.php");
-<<<<<<< HEAD
-=======
 
 	$userid = $_SESSION["user_id"];
 
@@ -54,29 +52,14 @@ include("../db/db_connector.php");
 		header("location: faq_view.php?error=번호 오류발생!");
 		exit();
 	}
->>>>>>> 26c0139b64527df8a873218843c1c07b1e438024
 ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="utf-8">
 	<title>Solid</title>
-<<<<<<< HEAD
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.3">
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.3">
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.3">
-	<link rel="stylesheet" type="text/css" href="./css/faq.css?.dss">
-	<script>
-		function faq_insert() {
-    if (!document.board_form.subject.value) {
-        alert("내용을 입력하세요!");
-        document.board_form.subject.focus();
-        return;
-    }
-    document.board_form.action.submit();
-}
-=======
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
@@ -88,10 +71,8 @@ include("../db/db_connector.php");
 			document.ripple_form.content.focus();
 			return;
 		}
-		document.ripple_form.action
 		document.ripple_form.submit();
 	}
->>>>>>> 26c0139b64527df8a873218843c1c07b1e438024
 	</script>
 </head>
 
@@ -122,55 +103,7 @@ include("../db/db_connector.php");
 					<?= $_GET['success']; ?>
 				</div>
 			<?php } ?>
-<<<<<<< HEAD
-			<?php
-			//1. 클라이언트로부터 전송해온 값이 존재하는지 점검
-			if (isset($_GET["num"])) {
-
-				//2. mysqli injection 함수 사용
-				$num = mysqli_real_escape_string($con, $_GET["num"]);
-
-				//3. 공백이 있는지 점검
-				if (empty($num)) {
-					header("location: faq_list.php?error=번호가 비어있어요");
-					exit();
-				} else {
-					//해당되는 공지사항 내용 가져오기
-					$sql = "select * from faq where num = '$num'";
-					$select_result = mysqli_query($con, $sql);
-					$row = mysqli_fetch_array($select_result);
-
-					if (!$row) {
-						header("location: faq_list.php?error=해당되는 공지글을 찾을수 없습니다.");
-						exit();
-					} else {
-						$id = $row["id"];
-						$name = $row["name"];
-						$regist_day = $row["regist_day"];
-						$subject = $row["subject"];
-						$content = $row["content"];
-						$content = str_replace(" ", "&nbsp;", $content);
-						$content = str_replace("\n", "<br>", $content);
-						$hit = $row["hit"];
-					}
-
-					//다른회원이 내 공지사항을 클릭했을 경우 hit 1을 증가
-					if ($userid !== $id) {
-						$new_hit = $hit + 1;
-						$sql = "update faq set hit = {$new_hit} where num = {$num} ";
-						mysqli_query($con, $sql);
-					}
-				}
-			} else {
-				// var_dump($ripple);
-				mysqli_close($con);
-				header("location: faq_view.php?error=번호 오류발생!");
-				exit();
-			}
-			?>
-=======
 			
->>>>>>> 26c0139b64527df8a873218843c1c07b1e438024
 
 			<ul id="view_content">
 				<li>
@@ -216,15 +149,6 @@ include("../db/db_connector.php");
 						<button class="rebutton" type="submit" onclick="faq_insert()">등록</button>
 					</span>
 				</li>
-<<<<<<< HEAD
-			</ul>
-		</form>
-=======
-
-			<?php
-			} 
-			
-			?>
 				<ul id="board_form">
 					<li>
 						<span class="col1">댓글<br></span>
@@ -238,7 +162,6 @@ include("../db/db_connector.php");
 					</li>
 				</ul>
 			</form>
->>>>>>> 26c0139b64527df8a873218843c1c07b1e438024
 		</div> <!-- board_box -->
 	</section>
 	<footer>
