@@ -45,6 +45,9 @@
       </tr>
     </table>
   </div>
+  <div id="updown">
+
+  </div>
   <div id="FAQ">
     <table>
       <th id="FAQ-1" class="notice_FAQ_left">FAQ</th>

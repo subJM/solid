@@ -24,7 +24,8 @@
           <ul>
             <li class="walletList"><a href="http://<?=$_SERVER['HTTP_HOST']?>/solid/wallet/php/wallet.php">수익현황</a>
             </li>
-            <li class="walletList"><a href="http://<?=$_SERVER['HTTP_HOST']?>/solid/wallet/php/purchasehistory.php?.asdfakjl">거래내역</a>
+            <li class="walletList"><a
+                href="http://<?=$_SERVER['HTTP_HOST']?>/solid/wallet/php/purchasehistory.php?.asdfakjl">거래내역</a>
             </li>
           </ul>
         </div>
@@ -113,19 +114,19 @@ while ($row = @mysqli_fetch_array($coinNameResult)) {
     }
 
     ?>
-                  <tr class="trtr">
-                    <td class="td_l"><?=$row['coinName']?></td>
-                    <td><?=$totalAmount?></td>
-                    <td><?=number_format($buyPrice / $buyAmount, 0)?></td>
-                    <td><?=$totalAmount?>*현재가격</td>
-                    <td><?=$row['totalPrice']?>원</td>
-                  </tr>
+                <tr class="trtr">
+                  <td class="td_l"><?=$row['coinName']?></td>
+                  <td><?=$totalAmount?></td>
+                  <td><?=number_format($buyPrice / $buyAmount, 0)?></td>
+                  <td><?=$totalAmount?>*현재가격</td>
+                  <td><?=$row['totalPrice']?>원</td>
+                </tr>
                 <?php
 }
 ?>
-<script>
-   getTransactions(<?=json_encode($coinNameArray)?>);
-</script>
+                <script>
+                getTransactions(<?=json_encode($coinNameArray)?>);
+                </script>
 
               </tbody>
             </table>

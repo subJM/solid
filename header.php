@@ -46,7 +46,7 @@
         <ul class="submenu">
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a>
           </li>
-          <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/memo/memo.php">쪽지함</a></li>
+          <li><a href="#" onclick="win_memo();">쪽지함</a></li>
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/purchase/point_purchase.php">포인트구매</a>
           </li>
           <?php
