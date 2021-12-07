@@ -45,6 +45,9 @@
       </tr>
     </table>
   </div>
+  <div id="updown">
+
+  </div>
   <div id="FAQ">
     <table>
       <th id="FAQ-1" class="notice_FAQ_left">FAQ</th>
@@ -74,5 +77,5 @@
   </div>
 </div>
 <div class="subframe">
-  <img id="subpic" src="https://ftx.com/static/media/climateBanner.3fc5b882.jpg" />
+  <img id="subpic" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_main_sub.png" />
 </div>
