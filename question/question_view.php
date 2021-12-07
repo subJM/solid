@@ -116,7 +116,7 @@
 			<ul id="ripple_view">
 				<?php for($i=0; $rip_row[$i]= mysqli_fetch_assoc($result) ; $i++){ ?>
 					<li>
-						<span class="col1"><?= $rip_row[$i]['name'] ?><?= $rip_row[$i]['regist_day'] ?></span>
+						<span class="col1"><?= $rip_row[$i]['name'] ?>(<?= $rip_row[$i]['id'] ?>)<?= $rip_row[$i]['regist_day'] ?></span>
 						<span class="col2"><b>내용 :<b><?= $rip_row[$i]['content'] ?></span>
 						<button type="button" onclick="location.href='question_ripple_delete.php?num=<?= $rip_row[$i]['num'] ?>&id=<?= $rip_row[$i]['id'] ?>&parent=<?=$num?>'">삭제</button>
 					</li>
