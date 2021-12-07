@@ -2,19 +2,8 @@
 	session_start();
 	include ("../db/db_connector.php");
 
-<<<<<<< HEAD
-<head>
-  <meta charset="utf-8">
-  <title>Solid</title>
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.3">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.3">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.3">
-  <link rel="stylesheet" type="text/css" href="./css/faq.css">
-</head>
-=======
     //1. 현재페이지가 없다면 1페이지로 셋팅
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
->>>>>>> 26c0139b64527df8a873218843c1c07b1e438024
 
     //2. 전체 레코드 수
     $sql = "select * from faq order by num desc";
