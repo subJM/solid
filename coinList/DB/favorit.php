@@ -1,6 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
-
+session_start();
 // $user_id = $_SESSION['user_id'];
 $user_id = "master";
 $sql = "SELECT * FROM favorite_coin";
