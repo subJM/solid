@@ -40,12 +40,10 @@
 	}
 	// 댓글 등록
 
-	$sql_rip = "select * from question_ripple where parent = $id;";
+	$sql_rip = "select * from question_ripple where parent = $num;";
 	$result = mysqli_query($con, $sql_rip);
 	$rip_row = array();
-	while($result = mysqli_query($con, $sql_rip)){
-		$rip_row = mysqli_fetch_assoc($result);
-	}
+
 
 	var_dump($num);
 
@@ -119,7 +117,7 @@
 			</ul>
 			
 			<ul id="ripple_view">
-				<?php for($i=0;$i>count($rip_row) ; $i++){ ?>
+				<?php for($i=0; $rip_row[$i]= mysqli_fetch_assoc($result) ; $i++){ ?>
 					<li>
 						<span class="col1"><?= $rip_row[$i]['name'] ?><?= $rip_row[$i]['regist_day'] ?></span>
 						<span class="col2"><b>내용 :<b><?= $rip_row[$i]['content'] ?></span>
@@ -127,18 +125,18 @@
 					</li>
 				<?php } ?>
 			</ul>
-				<form name="board_ripple" method="post" action="question_ripple_insert.php?num=<?=$num?>" enctype="multipart/form-data">
 			<ul id="board_ripple">
-					<li><?=$username ?>(<?= $userid ?>)</li>
-					<li>
-						<span class="col12">댓글작성</span>
-					</li>
+				<li><?=$username ?>(<?= $userid ?>)</li>
+				<li>
+					<span class="col12">댓글작성</span>
+				</li>
+				<form name="board_ripple" method="post" action="question_ripple_insert.php?num=<?=$num?>" enctype="multipart/form-data">
 					<li>
 						<span class="col2">
-							<textarea class="rip_content" name="rip_content" style="width:960px; height:100px; resize: none;"></textarea>
+							<textarea class="rip_content" name="rip_content" style="width:960px; height:100px; resize: none;" require></textarea>
 						</span>
 						<span>
-							<button class="rebutton" type="submit" require>등록</button>
+							<button class="rebutton" type="submit" >등록</button>
 						</span>
 					</li>
 				</ul>

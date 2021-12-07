@@ -11,7 +11,7 @@
         $username = $_SESSION['user_name'];
     }
     $rip_num = $_GET['num'];
-    alert_back(isset($_POST['rip_content']));
+    
     // echo "세션 등록 성공 <br>" ; 
     //2. 클라이언트로부터 전송해온 값이 존재하는지 점검
     if(isset($_POST['rip_content'])){
@@ -45,12 +45,12 @@
                 if(!$insert_result){
                     // echo "insert 등록 실패 <br>" ;
                     mysqli_close($con);
-                    header("location: question_view.php?error=댓글등록에 실패했습니다!");
+                    header("location: question_view.php?num={$rip_num}&error=댓글등록에 실패했습니다!");
                     exit();
                 }else{
                     // echo "insert 등록 성공 <br>" ;
                     mysqli_close($con);
-                    header("location: question_view.php?success=댓글등록에 성공했습니다!");
+                    header("location: question_view.php?num={$rip_num}&success=댓글등록에 성공했습니다!");
                     exit();
                 }
 
