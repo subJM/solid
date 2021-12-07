@@ -35,6 +35,8 @@ function setTransactionHistoryData() {
   let coinName = 0;
   let amount = 0;
   let avgPrice = 0;
+  let totalValue1 = 0;
+  var totalValue = new Array();
 
   for (let i = 0; i < section.length; i++) {
     if (i % 5 === 0) {
@@ -47,7 +49,13 @@ function setTransactionHistoryData() {
       avgPrice = section[i].innerText;
     }
     if (i % 5 === 3) {
-      section[i].innerText = AddComma(amount * coin_price_map.get(coinName));
+      section[i].innerText = amount * coin_price_map.get(coinName);
+      totalValue[i] = i;
+      totalValue[i] = parseInt(section[i].innerText);
+      totalValue1 += totalValue[i];
+      document.getElementById("totalValue").innerHTML = AddComma(
+        totalValue1 + "원"
+      );
     }
     if (i % 5 === 4) {
       avgPrice = avgPrice.replace(/,/g, "");
@@ -67,15 +75,4 @@ function setTransactionHistoryData() {
 function AddComma(num) {
   var regexp = /\B(?=(\d{3})+(?!\d))/g;
   return num.toString().replace(regexp, ",");
-}
-
-function setTotalValue() {
-  const section = document.querySelectorAll("table td");
-  let totalValue = 0;
-  for (let i = 0; i < section.length; i++) {
-    if (i % 5 === 3) {
-      totalValue += parseInt(amount * section[i].innerText);
-    }
-  }
-  window.getElementById("totalValue").innerHTML = totalValue;
 }
