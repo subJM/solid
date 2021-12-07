@@ -82,7 +82,7 @@
         </div>
 
         <footer>
-            <?php include "../../footer.phpㄴ"; ?>
+            <?php include "../../footer.php"; ?>
         </footer>
 </body>
 
