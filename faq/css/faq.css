@@ -16,6 +16,7 @@
 #board_box .buttons button { width: 50px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
 color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px;}
 #board_box .buttons button:hover { background-color: black; color: white; border: 1px solid rgb(44, 55, 68); }
+
 /* 게시판 목록보기(board_list.php) */
 #board_list li { padding: 10px 0; border-bottom: solid 1px #dddddd; }
 #board_list span { display: inline-block; text-align: center;}

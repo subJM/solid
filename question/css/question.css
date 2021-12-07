@@ -18,7 +18,7 @@
 #board_box .buttons button { width: 50px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
 color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px;}
 #board_box .buttons button:hover { background-color: black; color: white; border: 1px solid rgb(44, 55, 68); }
-.buttons .delete_button:hover { background-color: rgb(252, 4, 4); color: white; }
+
 /* 댓글입력칸 & 등록버튼 */
 .re_button {width: 100px; height: 100px; margin-left: 12px; font-size: 14px;  background-color: white; 
     color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px; float: right;}

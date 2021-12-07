@@ -106,7 +106,7 @@
 				?>
 					<li><button type="button" onclick="location.href='question_list.php?page=1'">목록</button></li>
 					<li><button type="button" onclick="location.href='question_modify_form.php?num=<?= $num ?> &userid=<?= $id ?>'">수정</button></li>
-					<li><button class="delete_button" type="button" onclick="location.href='question_delete.php?num=<?= $num ?>&page=1'">삭제</button></li>
+					<li><button type="button" onclick="location.href='question_delete.php?num=<?= $num ?>&page=1'">삭제</button></li>
 					<li><button type="button" onclick="location.href='question_form.php'">글쓰기</button></li>
 				<?php
 					}
