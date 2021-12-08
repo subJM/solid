@@ -4,7 +4,6 @@
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <title>Solid</title>
@@ -13,7 +12,6 @@
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.5ssaassasasa12sdda">
   <link rel="stylesheet" type="text/css" href="./css/notice.css">
 </head>
-
 <body>
   <div class="container">
     <header>
@@ -32,7 +30,6 @@
           <?= $_GET['error']; ?>
         </div>
         <?php } ?>
-
         <!-- 성공메세지 출력 -->
         <?php if(isset($_GET['success'])){?>
         <div id="check" style="color:blue">
