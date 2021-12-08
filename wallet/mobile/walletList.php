@@ -1,8 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 session_start();
-// $user_id = $_SESSION['user_id'];
-// $user_id = "master";
+$user_id = $_SESSION['user_id'];
 $totalAmount;
 $buyPrice;
 $sql = "SELECT * FROM coin_info";
@@ -12,8 +11,7 @@ $coinName = "SELECT DISTINCT coinName FROM coin_info";
 $coinNameResult = mysqli_query($con, $coinName);
 
 $walletList = array();
-// $sqlBuy = "SELECT * FROM purchase WHERE member_id ='$user_id'";
-$sqlBuy = "SELECT * FROM purchase";
+$sqlBuy = "SELECT * FROM purchase WHERE member_id ='$user_id'";
 $resultBuy = mysqli_query($con, $sqlBuy);
 $myMoney = 0;
 while ($rowBuy = mysqli_fetch_assoc($resultBuy)) {

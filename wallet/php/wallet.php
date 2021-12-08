@@ -81,14 +81,22 @@
               <tbody>
                 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
-
 $totalAmount;
 $asd;
 $buyPrice;
-$sql = "SELECT * FROM coin_info";
-$result = mysqli_query($con, $sql);
+// $sql = "SELECT * FROM coin_info";
+// $result = mysqli_query($con, $sql);
 $coinNameArray = array();
-$coinName = "SELECT DISTINCT coinName FROM coin_info";
+if (!isset($_SESSION["user_id"])) {
+    echo "
+              <script>
+              alert('로그인이 필요합니다.');
+              </script>";
+    exit();
+}
+
+$user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : "";
+$coinName = "SELECT DISTINCT coinName FROM coin_info WHERE $user_id";
 $coinNameResult = mysqli_query($con, $coinName);
 
 while ($row = @mysqli_fetch_array($coinNameResult)) {
@@ -137,7 +145,7 @@ while ($row = @mysqli_fetch_array($coinNameResult)) {
   </div>
 
   <footer>
-    <?php include "../../footer.php"; ?>
+    <?php include "../../footer.php";?>
   </footer>
 </body>
 
