@@ -87,7 +87,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
                     <p class='plan_count'>포인트 ".$row[$i]['count']." 점</p>
                     <p class='plan_price'>".$row[$i]['price']."원</p>
                   </label>
-                  <img class='check_mark' src='../img/tick.png'>
                   </div>
                   ";
                 }

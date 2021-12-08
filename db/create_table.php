@@ -49,13 +49,13 @@ function create_table($con, $table_name)
             case 'coin_info':
                   $sql = "CREATE TABLE IF NOT EXISTS `coin_info` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
+                    `id` char(15) NOT NULL,
                     `coinName` char(15) NOT NULL,
                     `trTime` char(15) NOT NULL,
                     `transaction` char(20) NOT NULL,
                     `price` int(20) NOT NULL,
                     `amount` int(20) DEFAULT NULL,
                     `totalPrice` int(20) DEFAULT NULL,
-                    `bank` int(20) DEFAULT NULL,
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   break;

@@ -113,11 +113,11 @@ include $_SERVER["DOCUMENT_ROOT"]."/solid/db/db_connector.php";
           <tr class="choice">
             <td style="width: 30%">
               <input type="radio" class="form-control" name="purchase_method" value="무통장" id="mutong">
-              <label for="mutong"><span class="choice">무통장 입금</span></label>
+              <label for="mutong"><span id="choice1" class="form-control">무통장 입금</span></label>
             </td>
             <td style="width: 70%">
               <input type="radio" class="form-control" value="kakao" name="purchase_method" id="kakaopay">
-              <label for="kakaopay"><span class="choice">카카오페이</span></label>
+              <label for="kakaopay"><span id="choice2" class="form-control">카카오페이</span></label>
             </td>
           </tr>
           <tr class="hid">
@@ -178,9 +178,12 @@ include $_SERVER["DOCUMENT_ROOT"]."/solid/db/db_connector.php";
 
   #plan_purchase_button {
     background-color: rgb(133, 198, 241);
+    width: 100px;
+    height: 50px;
     border-radius: 10px;
     color: white;
     margin-top: 5rem;
+    font-size: 25px;
   }
 
   input[type="radio"] {
