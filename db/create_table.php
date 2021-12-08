@@ -49,6 +49,7 @@ function create_table($con, $table_name)
             case 'coin_info':
                   $sql = "CREATE TABLE IF NOT EXISTS `coin_info` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
+                    `id` char(15) NOT NULL,
                     `coinName` char(15) NOT NULL,
                     `trTime` char(15) NOT NULL,
                     `transaction` char(20) NOT NULL,
