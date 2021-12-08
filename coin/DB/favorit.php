@@ -15,26 +15,18 @@ if (isset($_POST["coinName"])) {
             $sql = "insert into favorite_coin values(null,'$user_id','$coinName')";
 
             mysqli_query($con, $sql) or die("삽입 ERROR" . mysqli_error($con));
-
-            echo "
-          <script>
-            alert('즐겨찾기 성공.');
-            location.replace('../coin.php?name=$coinName');
-          </script>w
-        ";
+            $message ='즐겨찾기 성공.';
+            mysqli_close($con);
+            alert_back($message);
         } else {
             $sql = "delete from favorite_coin where coinName='$coinName'";
 
             mysqli_query($con, $sql) or die("삭제 ERROR" . mysqli_error($con));
-            echo "
-          <script>
-            alert('즐겨찾기 삭제성공.');
-            location.replace('../coin.php?name=$coinName');
-          </script>
-        ";
-
+            $message ='즐겨찾기 삭제성공.';
+            mysqli_close($con);
+            alert_back($message);
         }
-        mysqli_close($con);
+      
     }
 } else {
     mysqli_close($con);

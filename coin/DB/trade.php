@@ -2,12 +2,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 session_start();
 if (!isset($_SESSION["user_id"])) {
-    echo "
-                <script>
-                alert('로그인이 필요합니다.');
-                location.replace('../coin.php');
-                </script>";
-                exit();
+    $message = '로그인이 필요합니다.';
+    alert_back($message);
 }
 
 $user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : "";
@@ -30,16 +26,12 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
             $resultBuy = mysqli_query($con, $sqlBuy);
 
             while ($rowBuy = mysqli_fetch_assoc($resultBuy)) {
-                $myMoney = $rowBuy['price'];
+                $myMoney = $rowBuy['available_count'];
             }
             if ($myMoney - $totalPrice < 0) {
-                echo "
-                <script>
-                alert('보유금액이 부족합니다.');
-                location.replace('../coin.php');
-                </script>";
+                $message = '보유금액이 부족합니다.';
                 mysqli_close($con);
-                exit();
+                alert_back($message);
             }
 
         } else {
@@ -56,13 +48,10 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
             }
 
             if ($totalAmount - $amount <= 0) {
-                echo "
-                <script>
-                alert('판매할수있는 코인이 부족합니다.');
-                location.replace('../coin.php');
-                </script>";
+                $message = '판매할수있는 코인이 부족합니다.';
                 mysqli_close($con);
-                exit();
+                alert_back($message);
+
             }
         }
         $sql = "insert into coin_info ";
@@ -71,20 +60,15 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
         mysqli_query($con, $sql) or die("삽입 ERROR" . mysqli_error($con)); // $sql 에 저장된 명령 실행
 
         if ($transaction === 'buy') {
-            $sql = "UPDATE purchase SET price = $myMoney - $totalPrice";
+            $sql = "UPDATE purchase SET available_count = $myMoney - $totalPrice";
             mysqli_query($con, $sql) or die("수정 ERROR" . mysqli_error($con));
         } else {
-            $sql = "UPDATE purchase SET price = '$myMoney + $totalPrice'";
+            $sql = "UPDATE purchase SET available_count = '$myMoney + $totalPrice'";
             mysqli_query($con, $sql) or die("수정 ERROR" . mysqli_error($con));
         }
-        echo "
-        <script>
-        alert('거래성공.');
-        location.replace('../coin.php');
-        </script>";
+        $message = '거래성공.';
         mysqli_close($con);
-        exit;
-
+        alert_back($message);
     }
 } else {
     mysqli_close($con);

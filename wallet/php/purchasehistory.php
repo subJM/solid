@@ -7,23 +7,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../wallet/css/purchasehistory.css.?sdfawefas">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.3">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.3">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.3">
+    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css?.3">
+    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css?.3">
+    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDheader.css?.3">
 </head>
 
 <body>
     <header>
-        <?php include "../../header.php"; ?>
+        <?php include "../../header.php";?>
     </header>
     <div class="row">
         <div class="row_container">
             <div class="column_side">
                 <div class="side_list_container">
                     <ul>
-                        <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/wallet.php">수익현황</a>
+                        <li class="walletList"><a href="http://<?=$_SERVER['HTTP_HOST']?>/solid/wallet/php/wallet.php">수익현황</a>
                         </li>
-                        <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/purchasehistory.php">거래내역</a>
+                        <li class="walletList"><a href="http://<?=$_SERVER['HTTP_HOST']?>/solid/wallet/php/purchasehistory.php">거래내역</a>
                         </li>
                     </ul>
                 </div>
@@ -49,30 +49,30 @@
                             </thead>
                             <tbody>
                                 <?php
-                                include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 
-                                $sql = "SELECT * FROM coin_info";
-                                $result = mysqli_query($con, $sql);
-                                while ($row = @mysqli_fetch_assoc($result)) {
-                                ?>
+$sql = "SELECT * FROM coin_info";
+$result = mysqli_query($con, $sql);
+while ($row = @mysqli_fetch_assoc($result)) {
+    ?>
                                     <tr class="trtr">
-                                        <td class="td_l"><?= $row['trTime'] ?></td>
-                                        <td><?= $row['coinName'] ?></td>
+                                        <td class="td_l"><?=$row['trTime']?></td>
+                                        <td><?=$row['coinName']?></td>
                                         <td>
                                             <?php
-                                            if ($row['transaction'] === "buy") {
-                                                echo "매수";
-                                            } else {
-                                                echo "매도";
-                                            }
-                                            ?>
+if ($row['transaction'] === "buy") {
+        echo "매수";
+    } else {
+        echo "매도";
+    }
+    ?>
                                         </td>
-                                        <td><?= $row['among'] ?></td>
-                                        <td><?= $row['price'] ?>원</td>
-                                        <td><?= $row['totalPrice'] ?>원</td>
+                                        <td><?=$row['amount']?></td>
+                                        <td><?=$row['price']?>원</td>
+                                        <td><?=$row['totalPrice']?>원</td>
                                     </tr>
                                 <?php
-                                } ?>
+}?>
                             </tbody>
                         </table>
                     </div>
@@ -82,7 +82,7 @@
         </div>
 
         <footer>
-            <?php include "../../footer.php"; ?>
+            <?php include "../../footer.php";?>
         </footer>
 </body>
 
