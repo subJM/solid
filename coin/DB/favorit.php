@@ -1,6 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
-
+session_start();
 if (isset($_POST["coinName"])) {
     $coinName = mysqli_real_escape_string($con, $_POST["coinName"]);
     if (empty($coinName)) {
@@ -8,7 +8,7 @@ if (isset($_POST["coinName"])) {
     } else {
         $user_id = $_SESSION['user_id'];
 
-        $sql = "SELECT coinName FROM favorite_coin WHERE coinName ='$coinName'";
+        $sql = "SELECT coinName FROM favorite_coin WHERE coinName ='$coinName' AND id='$user_id'";
         $result = mysqli_query($con, $sql) or die("검색 ERROR" . mysqli_error($con));
         $result_record = mysqli_num_rows($result);
         if (!$result_record) {

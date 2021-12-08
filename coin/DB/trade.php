@@ -1,7 +1,16 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 session_start();
-$user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : "master";
+if (!isset($_SESSION["user_id"])) {
+    echo "
+                <script>
+                alert('로그인이 필요합니다.');
+                location.replace('../coin.php');
+                </script>";
+                exit();
+}
+
+$user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : "";
 
 if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price"]) && isset($_POST["amount"]) && isset($_POST["totalPrice"])) {
     //2. mysql injection 함수 사용
@@ -63,7 +72,6 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
 
         if ($transaction === 'buy') {
             $sql = "UPDATE purchase SET price = $myMoney - $totalPrice";
-            var_dump($myMoney - $totalPrice);
             mysqli_query($con, $sql) or die("수정 ERROR" . mysqli_error($con));
         } else {
             $sql = "UPDATE purchase SET price = '$myMoney + $totalPrice'";

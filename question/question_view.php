@@ -40,14 +40,9 @@
 	}
 	// 댓글 등록
 
-	$sql_rip = "select * from question_ripple where parent = $id;";
+	$sql_rip = "select * from question_ripple where parent = $num;";
 	$result = mysqli_query($con, $sql_rip);
 	$rip_row = array();
-	while($result = mysqli_query($con, $sql_rip)){
-		$rip_row = mysqli_fetch_assoc($result);
-	}
-
-	var_dump($num);
 
 ?>
 <!DOCTYPE html>
@@ -58,7 +53,7 @@
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
-	<link rel="stylesheet" type="text/css" href="./css/question.css?.sd">
+	<link rel="stylesheet" type="text/css" href="./css/question.css?.sss">
 </head>
 
 <body>
@@ -119,26 +114,25 @@
 			</ul>
 			
 			<ul id="ripple_view">
-				<?php for($i=0;$i>count($rip_row) ; $i++){ ?>
+				<?php for($i=0; $rip_row[$i]= mysqli_fetch_assoc($result) ; $i++){ ?>
 					<li>
-						<span class="col1"><?= $rip_row[$i]['name'] ?><?= $rip_row[$i]['regist_day'] ?></span>
-						<span class="col2"><b>내용 :<b><?= $rip_row[$i]['content'] ?></span>
-						<button type="button" onclick="location.href='question_ripple_delete.php?num=<?= $rip_row[$i]['num'] ?>'">삭제</button>
+						<span class="col1"><?= $rip_row[$i]['name'] ?> &nbsp; (<?= $rip_row[$i]['id'] ?>) &nbsp; <?= $rip_row[$i]['regist_day'] ?> </span>
+						<span class="col2"> &nbsp; <?= $rip_row[$i]['content'] ?> </span>
 					</li>
+					<button class="de_button"type="button" onclick="location.href='question_ripple_delete.php?num=<?= $rip_row[$i]['num'] ?>&id=<?= $rip_row[$i]['id'] ?>&parent=<?=$num?>'">삭제</button>
 				<?php } ?>
 			</ul>
-				<form name="board_ripple" method="post" action="question_ripple_insert.php?num=<?=$num?>" enctype="multipart/form-data">
 			<ul id="board_ripple">
-					<li><?=$username ?>(<?= $userid ?>)</li>
-					<li>
-						<span class="col12">댓글작성</span>
-					</li>
+				<li>
+					<span class="col12">댓글작성 <?=$username ?> :&nbsp;(<?= $userid ?>)</span>
+				</li>
+				<form name="board_ripple" method="post" action="question_ripple_insert.php?num=<?=$num?>" enctype="multipart/form-data">
 					<li>
 						<span class="col2">
-							<textarea class="rip_content" name="rip_content" style="width:960px; height:100px; resize: none;"></textarea>
+							<textarea class="rip_content" name="rip_content" placeholder="이곳에 댓글을 작성해주세요." require></textarea>
 						</span>
 						<span>
-							<button class="rebutton" type="submit" require>등록</button>
+							<button class="re_button" type="submit" >등록</button>
 						</span>
 					</li>
 				</ul>
