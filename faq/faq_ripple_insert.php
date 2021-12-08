@@ -2,9 +2,6 @@
     session_start();
     include ("../db/db_connector.php");
 
-<<<<<<< HEAD
-?>
-=======
     //2. 세션이 등록되지 않았다면 다시 돌려보낸다.
     if(!isset($_SESSION["user_id"]) && !isset($_SESSION["user_name"])){
         alert_back("회원만 사용 가능합니다.");
@@ -68,4 +65,3 @@
         }
 
     ?>
->>>>>>> 26c0139b64527df8a873218843c1c07b1e438024

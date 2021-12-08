@@ -41,19 +41,18 @@
                 $regist_day = date("Y-m-d (H:i)");//현재의 '년-월-일-시-분' 저장
         
                 $sql = "insert into question (id, name, subject, content, regist_day, hit)";
-                $sql .= " values('$userid', '$username', '$_POST[subject]', '$_POST[content]', '$regist_day', 0 )";
+                $sql .= " values('$userid', '$username', '$subject', '$content', '$regist_day', 0 )";
                 
                 $insert_result = mysqli_query($con, $sql);
 
+                mysqli_close($con);
 
                 if(!$insert_result){
                     // echo "insert 등록 실패 <br>" ;
-                    mysqli_close($con);
                     header("location: question_form.php?error=글등록에 실패했습니다!");
                     exit();
                 }else{
                     // echo "insert 등록 성공 <br>" ;
-                    mysqli_close($con);
                     header("location: question_list.php?success=글등록에 성공했습니다!");
                     exit();
                 }

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
-  <link rel="stylesheet" type="text/css" href="./css/question.css">
+  <link rel="stylesheet" type="text/css" href="./css/question.css?.sdd">
   <script src="http://<?=$_SERVER['HTTP_HOST']?>/solid/question/js/notice.js"></script>
   <script>
   function question_input() {
@@ -51,12 +51,12 @@
           </li>
           <li>
             <span class="col1">제목 : </span>
-            <span class="col2"><input name="subject" type="text"></span>
+            <span class="col2"><input name="subject" type="text" placeholder="제목을 작성해주세요."></span>
           </li>
           <li id="text_area">
             <span class="col1">내용 : </span>
             <span class="col2">
-              <textarea name="content"></textarea>
+              <textarea name="content" placeholder="내용을 작성해주세요."></textarea>
             </span>
           </li>
         </ul>

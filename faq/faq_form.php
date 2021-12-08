@@ -4,16 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Solid</title>
-<<<<<<< HEAD
-	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.3">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.3">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.3">
-=======
 	<link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
->>>>>>> 26c0139b64527df8a873218843c1c07b1e438024
-	<link rel="stylesheet" type="text/css" href="./css/faq.css">
+	<link rel="stylesheet" type="text/css" href="./css/faq.css?.sx">
 	<script src="http://<?=$_SERVER['HTTP_HOST']?>/solid/faq/js/notice.js"></script>
 	<script>
 		function faq_input() {
@@ -57,12 +51,12 @@
 					</li>
 					<li>
 						<span class="col1">제목 : </span>
-						<span class="col2"><input name="subject" type="text"></span>
+						<span class="col2"><input name="subject" type="text" placeholder="제목을 작성해주세요."></span>
 					</li>
 					<li id="text_area">
 						<span class="col1">내용 : </span>
 						<span class="col2">
-							<textarea name="content"></textarea>
+							<textarea name="content" placeholder="내용을 작성해주세요."></textarea>
 						</span>
 					</li>
 				</ul>

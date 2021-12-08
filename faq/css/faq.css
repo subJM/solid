@@ -1,46 +1,43 @@
 /* 게시판 글쓰기(board_form.php) */
 #board_box { position: relative; width: 1100px; margin: 0 auto; height: 100vh; margin-top: 50px;}
-#board_box h2 {	padding: 10px; font-size: 25px; color: rgb(44, 55, 68); border-bottom: 1px solid black;}
 #board_box h3 {	padding: 10px; border-bottom: solid 2px rgb(44, 55, 68); font-size: 34px; color: rgb(44, 55, 68); }
 #board_form span { display: inline-block; }
 #board_form .col1 { width: 150px; font-size: 18px; font-weight: bold;}
-#board_form li { padding: 10px;}
+#board_form li { padding: 12px; }
+#board_form #read_pw input {width: 70px;}
+#board_form #read_subject input {width: 500px;}
 #board_form input { width: 700px; height: 30px; font-size: 18px;}
-#board_form textarea { width: 700px; height: 230px; resize: none; font-size: 18px;}
+#board_form textarea { width: 700px; height: 180px; resize: none; font-size: 18px;}
 #board_form #text_area {	position: relative;	height: 158px; }
 #board_form #text_area .col1 { position: absolute; top: 10px; }
 #board_form #text_area .col2 { position: absolute; left: 166px; }
-#board_box .buttons { text-align: right; margin: 100px 0 40px 0; }
+#board_box .buttons { text-align: right; margin: 10px 0 40px 0; }
 #board_box .buttons li { display: inline; }
-#board_box .buttons button { width: 80px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
-    color: rgb(44, 55, 68); cursor: pointer; border-radius: 20px;}
+#board_box .buttons button { width: 50px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
+color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px;}
 #board_box .buttons button:hover { background-color: black; color: white; border: 1px solid rgb(44, 55, 68); }
-.rebutton {width: 100px; height: 100px; margin-left: 12px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
-    color: rgb(44, 55, 68); cursor: pointer; border-radius: 20px; float: right;}
-.rebutton:hover{ background-color: black; color: white; border: 1px solid rgb(44, 55, 68); }
 
 /* 게시판 목록보기(board_list.php) */
 #board_list li { padding: 10px 0; border-bottom: solid 1px #dddddd; }
 #board_list span { display: inline-block; text-align: center;}
 #board_list .col1 { width: 80px; }
-#board_list .col2 { width: 670px; text-align: center; }
-#board_list .col2_1 { width: 670px; text-align: left; }
+#board_list .col2 { width: 630px; text-align: center; }
+#board_list .col2_1 { width: 630px; text-align: left; }
 #board_list .col2_1 a { color: black;}
 #board_list .col3 { width: 100px; }
 #board_list .col4 { width: 40px; }
 #board_list .col5 { width: 180px; }
 #board_list .col6 { width: 40px; }
-#page_num {	text-align: center;	margin: 30px 0; cursor: pointer; }
+#page_num {	text-align: center;	margin: 30px 0 }
 #page_num li { display: inline; }
 
 /* 게시판 내용보기(board_view.php) */
 #board_box .title { margin-top: 30px; padding: 10px; border-bottom: solid 2px #516e7f; font-size: 20px; }
 #view_content li:nth-child(1) {	padding: 15px; border-bottom: solid 1px #aaaaaa; }
 #view_content .col2 { float: right; }
-#view_content li:nth-child(2) {	padding: 15px 15px 80px 15px; }
+#view_content li:nth-child(2) {	padding: 15px 15px 80px 15px; border-bottom: solid 1px #cccccc; }
 #view_content li:nth-child(3) button { padding: 5px 20px; margin: 15px 0 40px 720px; cursor: pointer; }
 #view_content .li_content {height: 220px;}
-.col12 {font-size: 20px; }
 /* .content {height:100px; resize: both;} */
 
 
