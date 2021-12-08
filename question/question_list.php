@@ -40,9 +40,8 @@
 <head>
   <meta charset="utf-8">
   <title>Solid</title>
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.afkqwesadkkster">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.aqwessadd">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.5ssaassasasa12sdda">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
   <link rel="stylesheet" type="text/css" href="./css/question.css">
 </head>
 
@@ -124,9 +123,6 @@
       </ul>
     </div> <!-- board_box -->
   </section>
-  <footer>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php";?>
-  </footer>
   </div>
 </body>
 

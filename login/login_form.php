@@ -3,10 +3,10 @@
 
 <head>
   <title>No.1 가상자산 플랫폼, Solid :: 회원가입</title>
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.afkqwesadkkster">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.aqwessadd">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.5ssaassasasa12sdda">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/css/login.css?.asd">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css?.afkqwesadkkster">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css?.aqwessadd">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDheader.css?.5ssaassasasa12sdda">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/login/css/login.css?.asd">
   <link
     href="https://fonts.googleapis.com/css?family=Gothic+A1:400,500,700|Nanum+Gothic+Coding:400,700|Nanum+Gothic:400,700,800|Noto+Sans+KR:400,500,700,900&display=swap&subset=korean"
     rel="stylesheet">
@@ -51,7 +51,7 @@
 <body>
   <div class="container">
     <header>
-      <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
+      <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php";?>
     </header>
     <section id="loginform">
       <div id="login_main_content">
@@ -171,17 +171,8 @@
             //]]>
             </script>
           </div>
-          <div id="naver_id_login"></div>
-          <!-- //네이버아이디로로그인 버튼 노출 영역 -->
-          <script type="text/javascript">
-          var naver_id_login = new naver_id_login("kqhyCKEnsQrOw5wB5Tob",
-            "http://127.0.0.1/solid/member/member_form.php");
-          var state = naver_id_login.getUniqState();
-          naver_id_login.setButton("green", 3, 43);
-          naver_id_login.setDomain("./login_form.php");
-          naver_id_login.setState(state);
-          naver_id_login.init_naver_id_login();
-          </script>
+
+
         </div>
         <div id="member_form">
           <a href="../member/member_form.php">
@@ -192,7 +183,7 @@
   </div>
   </section>
   <footer>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php";?>
   </footer>
   </section>
   </div>

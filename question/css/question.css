@@ -1,7 +1,8 @@
 /* header { position: relative; color: rgb(44, 55, 68); } */
+section { height: auto;}
 
 /* 게시판 글쓰기(board_form.php) */
-#board_box { position: relative; width: 1100px; margin: 0 auto; height: 100vh; margin-top: 50px;}
+#board_box { position: relative; width: 1100px; margin: 0 auto; height: auto;  margin-bottom: 100px; margin-top: 150px;}
 #board_box h3 {	padding: 10px; border-bottom: solid 2px rgb(44, 55, 68); font-size: 34px; color: rgb(44, 55, 68); }
 #board_form span { display: inline-block; }
 #board_form .col1 { width: 150px; font-size: 18px; font-weight: bold;}
@@ -15,7 +16,7 @@
 #board_form #text_area .col2 { position: absolute; left: 166px; }
 #board_box .buttons { text-align: right; margin: 10px 0 40px 0; }
 #board_box .buttons li { display: inline; }
-#board_box .buttons button { width: 50px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
+#board_box .buttons button { width: 80px; height: 30px; font-size: 14px; border: 1px solid rgb(44, 55, 68); background-color: white; 
 color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px;}
 #board_box .buttons button:hover { background-color: black; color: white; border: 1px solid rgb(44, 55, 68); }
 
@@ -24,7 +25,10 @@ color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px;}
     color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px; float: right;}
 .re_button:hover{ background-color: black; color: white;  }
 .rip_content { width:960px; height:100px; resize: none; font-size: 18px; }
-#board_ripple li { padding: 5px; }
+#board_ripple li { padding: 5px; margin-top: 10px;}
+#ripple_view { height: auto; }
+#rip_view{margin-top: 20px; padding: 5px ;background-color: #f8f8f8;}
+#rip_content{background-color: rgb(236, 236, 236);}
         
 /* 게시판 목록보기(board_list.php) */
 #board_list li { padding: 10px 0; border-bottom: solid 1px #dddddd; }
@@ -53,4 +57,4 @@ color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px;}
 #ripple_view .col2 { margin: 100px 30px 40px 10px;}
 .de_button {width: 40px; height: 25px; margin-left: 1050px; font-size: 14px; background-color: white; 
     color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px; }
-.de_button:hover{ background-color: rgb(252, 4, 4); color: white; }
+.de_button:hover{ display: inline; background-color: rgb(252, 4, 4); color: white; }

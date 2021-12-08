@@ -112,16 +112,20 @@
 					}
 				?>
 			</ul>
-			
-			<ul id="ripple_view">
-				<?php for($i=0; $rip_row[$i]= mysqli_fetch_assoc($result) ; $i++){ ?>
-					<li>
-						<span class="col1"><?= $rip_row[$i]['name'] ?> &nbsp; (<?= $rip_row[$i]['id'] ?>) &nbsp; <?= $rip_row[$i]['regist_day'] ?> </span>
-						<span class="col2"> &nbsp; <?= $rip_row[$i]['content'] ?> </span>
-					</li>
-					<button class="de_button"type="button" onclick="location.href='question_ripple_delete.php?num=<?= $rip_row[$i]['num'] ?>&id=<?= $rip_row[$i]['id'] ?>&parent=<?=$num?>'">삭제</button>
+<div id="ripple_view"></div>
+<?php for($i=0; $rip_row[$i]= mysqli_fetch_assoc($result) ; $i++){ ?>
+	<table id="rip_view">
+		<tr>
+			<td><span class="col1"><?= $rip_row[$i]['name'] ?> &nbsp; (<?= $rip_row[$i]['id'] ?>) &nbsp; <?= $rip_row[$i]['regist_day'] ?> </span></td>
+		</tr>
+		<tr>
+			<td id="rip_content"><span  class="col2"> &nbsp; <?= $rip_row[$i]['content'] ?> </span></td>
+		</tr>
+		<tr>
+			<td><button class="de_button"type="button" onclick="location.href='question_ripple_delete.php?num=<?= $rip_row[$i]['num'] ?>&id=<?= $rip_row[$i]['id'] ?>&parent=<?=$num?>'">삭제</button></td>
+		</tr>
+	</table>
 				<?php } ?>
-			</ul>
 			<ul id="board_ripple">
 				<li>
 					<span class="col12">댓글작성 <?=$username ?> :&nbsp;(<?= $userid ?>)</span>
@@ -139,9 +143,6 @@
 			</form>
 		</div> <!-- board_box -->
 	</section>
-	<footer>
-	<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php"; ?>
-	</footer>
 </body>
 
 </html>

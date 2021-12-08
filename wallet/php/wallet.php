@@ -15,7 +15,7 @@
 
 <body>
   <header>
-    <?php include "../../header.php";
+    <?php include_once "../../header.php";
     $totalPrice = 0;
     ?>
   </header>
@@ -88,8 +88,6 @@
                   $totalAmount;
                   $asd;
                   $buyPrice;
-                  // $sql = "SELECT * FROM coin_info";
-                  // $result = mysqli_query($con, $sql);
                   $coinNameArray = array();
                   if (!isset($_SESSION["user_id"])) {
                       echo "
@@ -99,7 +97,7 @@
                       exit();
                   }
 
-                  $user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : "";
+                  $user_id = $_SESSION['user_id'];
                   $coinName = "SELECT DISTINCT coinName FROM coin_info WHERE $user_id";
                   $coinNameResult = mysqli_query($con, $coinName);
 

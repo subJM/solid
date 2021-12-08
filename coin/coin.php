@@ -21,21 +21,26 @@
  console.log(imgTag);
 
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 error_reporting(E_ALL ^ E_NOTICE);
 
-$coinName = $_GET['coinName'] ? $_GET['coinName'] : 'BTC';
-echo "const coinName = '$coinName';";
-
-$sql = "SELECT * FROM favorite_coin WHERE coinName ='$coinName'";
-$result = mysqli_query($con, $sql) or die("검색 ERROR" . mysqli_error($con));
-$result_record = mysqli_num_rows($result);
-if ($result_record) {
-    echo "console.log('왜 여기만안됨?')";
-    // echo "imgTag.src=\"\";";
-} else {
-    echo "console.log('몰?루')";
-    // echo "imgTag.src=\" \";";
+if (isset($_GET["coinName"])) {
+    $coinName = mysqli_real_escape_string($con, $_GET["coinName"]);
+    if (empty($coinName)) {
+        exit();
+    } else {
+        echo "const coinName = '$coinName';";
+        $sql = "SELECT * FROM favorite_coin WHERE coinName ='$coinName'";
+        $result = mysqli_query($con, $sql) or die("검색 ERROR" . mysqli_error($con));
+        $result_record = mysqli_num_rows($result);
+        if ($result_record) {
+            echo "console.log('왜 여기만안됨?')";
+            // echo "imgTag.src=\"\";";
+        } else {
+            echo "console.log('몰?루')";
+            // echo "imgTag.src=\" \";";
+        }
+    }
 }
 ?>
 
