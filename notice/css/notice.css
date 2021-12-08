@@ -1,7 +1,7 @@
-header { position: relative; color: rgb(44, 55, 68); }
+/* header { position: relative; color: rgb(44, 55, 68); } */
 
 /* 게시판 글쓰기(board_form.php) */
-#board_box { position: relative; width: 1100px; margin: 0 auto; height: 100vh; margin-top: 50px;}
+#board_box { position: relative; width: 1100px; margin: 0 auto; height: 100vh; margin-top: 150px;}
 #board_box h3 {	padding: 10px; border-bottom: solid 2px rgb(44, 55, 68); font-size: 34px; color: rgb(44, 55, 68); }
 #board_form span { display: inline-block; }
 #board_form .col1 { width: 150px; font-size: 18px; font-weight: bold;}

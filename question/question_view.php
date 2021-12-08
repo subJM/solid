@@ -112,7 +112,7 @@
 					}
 				?>
 			</ul>
-			
+<div id="ripple_view"></div>
 			<ul id="ripple_view">
 				<?php for($i=0; $rip_row[$i]= mysqli_fetch_assoc($result) ; $i++){ ?>
 					<li>
@@ -139,9 +139,6 @@
 			</form>
 		</div> <!-- board_box -->
 	</section>
-	<footer>
-	<?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/footer.php"; ?>
-	</footer>
 </body>
 
 </html>
