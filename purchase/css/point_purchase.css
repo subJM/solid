@@ -134,11 +134,14 @@ h6 {
   font-weight: bold;
 }
 .form-control {
-  margin-top: 30px;
+  margin-top: 100px;
   font-size: 20px;
   font-weight: bold;
-  height: 100px;
+  /* height: 100px; */
 }
-/* .choice {
-  padding-top: 50px;
+/* #choice1 {
+  padding-top: -100px;
+}
+#choice2 {
+  padding-top: -100px;
 } */

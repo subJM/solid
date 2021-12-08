@@ -3,6 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 // echo $_SERVER['DOCUMENT_ROOT']
 ?>
 
