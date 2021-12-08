@@ -39,6 +39,8 @@
 
         mysqli_query($con, $sql) or die("삽입 ERROR" . mysqli_error($con));  // $sql 에 저장된 명령 실행
 
+        
+
         mysqli_close($con);
 
         echo "
