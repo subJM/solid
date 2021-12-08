@@ -108,7 +108,7 @@ include("../db/db_connector.php");
 			<ul id="view_content">
 				<li>
 					<span class="col1"><b>제목 : <b><?= $subject ?></span>
-					<span class="col1"></span>
+					<span class="col2"><?= $name ?> &nbsp; <?= $regist_day ?></span>
 				</li>
 				<li class="li_content">
 					<?= $content ?>
