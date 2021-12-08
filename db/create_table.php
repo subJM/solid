@@ -55,7 +55,6 @@ function create_table($con, $table_name)
                     `price` int(20) NOT NULL,
                     `amount` int(20) DEFAULT NULL,
                     `totalPrice` int(20) DEFAULT NULL,
-                    `bank` int(20) DEFAULT NULL,
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   break;
