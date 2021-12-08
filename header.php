@@ -41,7 +41,7 @@
 			?>
       <li id="welcome_message" class="optionmenutable"><?= $logged ?></li>
       <li id="headermenu" class="optionmenutable">
-        <img id="optionmenu" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/optionmenu.png">
+        <img id="option_img" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/optionmenu.png">
 
         <ul class="submenu">
           <li><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php?mode='modify'">마이페이지</a>

@@ -1,9 +1,13 @@
 <div class="slideshow">
   <div class="slideshow_slides">
-    <a href="#"><img src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/mainpic-1.png" alt="slide" /></a>
-    <a href="#"><img src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/mainpic-2.png" alt="slide" /></a>
-    <a href="#"><img src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/mainpic-3.png" alt="slide" /></a>
-    <a href="#"><img src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/mainpic-5.png" alt="slide" /></a>
+    <a href="#"><img class="slide_pic" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/mainpic-1.png"
+        alt="slide" /></a>
+    <a href="#"><img class="slide_pic" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/mainpic-2.png"
+        alt="slide" /></a>
+    <a href="#"><img class="slide_pic" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/mainpic-3.png"
+        alt="slide" /></a>
+    <a href="#"><img class="slide_pic" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/mainpic-5.png"
+        alt="slide" /></a>
   </div>
   <div class="slideshow_nav">
     <a href="#" class="prev">prev</a>

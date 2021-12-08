@@ -66,7 +66,7 @@
 .slide_indicator a.active {
   background: url("../img/sprites.png") no-repeat -133px -4px;
 }
-img {
+.slide_pic {
   width: 80%;
 }
 .notice_FAQ {
@@ -114,6 +114,7 @@ img {
   text-align: right;
 }
 .subframe {
+  padding: 20px;
   background-color: #e6e6e6;
   margin: 0 auto;
   width: 100%;
