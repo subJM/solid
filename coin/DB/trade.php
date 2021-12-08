@@ -33,7 +33,6 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
                 mysqli_close($con);
                 alert_back($message);
             }
-
         } else {
             $totalAmount = 0;
             $sqlSell = "SELECT * FROM coin_info WHERE coinName ='$name'";
@@ -51,11 +50,10 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
                 $message = '판매할수있는 코인이 부족합니다.';
                 mysqli_close($con);
                 alert_back($message);
-
             }
         }
         $sql = "insert into coin_info ";
-        $sql .= "values(null,'$name', '$time', '$transaction', '$price', '$amount', '$totalPrice')";
+        $sql .= "values(null,'$name', '$time', '$transaction', '$price', '$amount', '$totalPrice', null)";
 
         mysqli_query($con, $sql) or die("삽입 ERROR" . mysqli_error($con)); // $sql 에 저장된 명령 실행
 
@@ -63,7 +61,7 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
             $sql = "UPDATE purchase SET available_count = $myMoney - $totalPrice";
             mysqli_query($con, $sql) or die("수정 ERROR" . mysqli_error($con));
         } else {
-            $sql = "UPDATE purchase SET available_count = '$myMoney + $totalPrice'";
+            $sql = "UPDATE purchase SET available_count = $myMoney + $totalPrice";
             mysqli_query($con, $sql) or die("수정 ERROR" . mysqli_error($con));
         }
         $message = '거래성공.';

@@ -1,3 +1,9 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
+$sql = "SELECT * FROM purchase";
+$result = mysqli_query($con, $sql);
+$row = @mysqli_fetch_array($result);
+?>
 <!DOCTYPE html>
 
 <html lang="kr">
@@ -12,10 +18,14 @@
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.2">
   <script src="../js/coinData.JS?12"></script>
 </head>
+<script>
+
+</script>
 
 <body>
   <header>
-    <?php include_once "../../header.php";
+    <?php
+    include_once "../../header.php";
     $totalPrice = 0;
     ?>
   </header>
@@ -40,17 +50,18 @@
           <div class="middle_overall">
             <div class="overall_1">
               <div class="overall_1_1">총 보유자산</div>
-              <div class="overall_1_2" id="totalValue">원</div>
+              <div class="overall_1_2" id="overallValue"></div>
             </div>
             <div class=" overall_2">
               <div class="overall_2_1">
                 <div class="overall_2_1_1">
                   <div class="tag_1">보유 원화</div>
-                  <div class="value_1">원</div>
+                  <div class="value_1">
+                    <?= $row['available_count'] ?>원</div>
                 </div>
                 <div>
                   <div class="tag_1">보유 가상자산</div>
-                  <div class="value_1">원</div>
+                  <div class="value_1" id="totalValue"></div>
                 </div>
               </div>
               <div class="overall_2_1">
@@ -84,22 +95,21 @@
               </thead>
               <tbody>
                 <?php
-                  include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
-                  $totalAmount;
-                  $asd;
-                  $buyPrice;
-                  $coinNameArray = array();
-                  if (!isset($_SESSION["user_id"])) {
-                      echo "
+                $totalAmount;
+                $asd;
+                $buyPrice;
+                $coinNameArray = array();
+                if (!isset($_SESSION["user_id"])) {
+                  echo "
                                 <script>
                                 alert('로그인이 필요합니다.');
                                 </script>";
-                      exit();
-                  }
+                  exit();
+                }
 
-                  $user_id = $_SESSION['user_id'];
-                  $coinName = "SELECT DISTINCT coinName FROM coin_info WHERE $user_id";
-                  $coinNameResult = mysqli_query($con, $coinName);
+                $user_id = $_SESSION['user_id'];
+                $coinName = "SELECT DISTINCT coinName FROM coin_info";
+                $coinNameResult = mysqli_query($con, $coinName);
 
                 while ($row = @mysqli_fetch_array($coinNameResult)) {
 
@@ -147,7 +157,7 @@
   </div>
 
   <footer>
-    <?php include "../../footer.php";?>
+    <?php include "../../footer.php"; ?>
   </footer>
 </body>
 
