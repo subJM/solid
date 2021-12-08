@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="kr">ㄲ
+<html lang="kr">
 
 <head>
     <title>CSS Website Layout</title>
@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <?php include "../../header.php";?>
+        <?php include_once "../../header.php";?>
     </header>
     <div class="row">
         <div class="row_container">

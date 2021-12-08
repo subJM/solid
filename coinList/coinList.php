@@ -2,7 +2,8 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +13,11 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.afkqder">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.addd">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.5dda">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css?.afkqder">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css?.addd">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDheader.css?.5dda">
   <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/coinList/css/coinlist.css">
+
   <script src="http://<?=$_SERVER['HTTP_HOST']?>/solid/coinList/JS/coinDataList.JS"></script>
   <script>
   getTickerListData();

@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 session_start();
 if (!isset($_SESSION["user_id"])) {
     $message = '로그인이 필요합니다.';

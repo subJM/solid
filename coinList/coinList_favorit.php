@@ -7,10 +7,9 @@
     <title>Document</title>
     <script>
         <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/coinList/DB/favorit.php";
-?>
+include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/coinList/DB/favorit.php";?>
     </script>
-    <script src="./JS/coinDataList_favorit.JS?123"></script>
+    <script src="./JS/coinDataList_favorit.JS?1"></script>
     <script>
         getTickerList_favoritData();
         getTransaction_favorit();
