@@ -391,7 +391,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/solid/db/db_connector.php";
 
 
         location.href =
-          "http://<?= $_SERVER['HTTP_HOST'];?>/solid/point_purchase.php"
+          "http://<?= $_SERVER['HTTP_HOST'];?>/solid/purchase/point_purchase.php"
 
       } else {
         var msg = '결제에 실패하였습니다.';
