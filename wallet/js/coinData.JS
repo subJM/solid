@@ -31,7 +31,7 @@ async function getTransactionHistory(coinName) {
 }
 
 function setTransactionHistoryData() {
-  const section = document.querySelectorAll("table td");
+  const section = document.querySelectorAll("table td span");
   let coinName = 0;
   let amount = 0;
   let avgPrice = 0;
@@ -49,29 +49,26 @@ function setTransactionHistoryData() {
       avgPrice = section[i].innerText;
     }
     if (i % 5 === 3) {
-      section[i].innerText = amount * coin_price_map.get(coinName);
+      section[i].innerText = Math.ceil(amount * coin_price_map.get(coinName));
       totalValue[i] = i;
       totalValue[i] = parseInt(section[i].innerText);
       totalValue1 += totalValue[i];
-      document.getElementById("totalValue").innerHTML = AddComma(
-        totalValue1 + "원"
-      );
-
-      document.getElementById("overallValue").innerHTML =
-        totalValue1 + "<?= $row['available_count']?>";
+      document.getElementById("totalValue").innerHTML = totalValue1;
     }
     if (i % 5 === 4) {
-      avgPrice = avgPrice.replace(/,/g, "");
-      console.log(avgPrice + "///" + coin_price_map.get(coinName));
-      section[i].innerText =
-        parseInt(
-          ((amount * coin_price_map.get(coinName) - avgPrice * amount) /
-            avgPrice) *
-            1000
-        ) /
-          100 +
-        "%";
+      var AVG = (coin_price_map.get(coinName) / avgPrice) * 100 - 100;
+      section[i].innerText = AVG.toFixed(2);
+
+      if (AVG > 0) {
+        document.getElementByClassName("AVGValue").style.color = "red";
+      }
     }
+
+    var KRW = document.getElementById("KRWValue").innerHTML;
+    var total = document.getElementById("totalValue").innerHTML;
+    document.getElementById("overallValue").innerHTML = AddComma(
+      parseInt(KRW, 0) + parseInt(total, 0)
+    );
   }
 }
 
