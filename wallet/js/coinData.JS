@@ -58,9 +58,9 @@ function setTransactionHistoryData() {
     if (i % 5 === 4) {
       var AVG = (coin_price_map.get(coinName) / avgPrice) * 100 - 100;
       section[i].innerText = AVG.toFixed(2);
-
+      var AVGValue = document.getElementByClassName("AVGValue");
       if (AVG > 0) {
-        document.getElementByClassName("AVGValue").style.color = "red";
+        AVGValue.style.col = "red";
       }
     }
 

@@ -3,6 +3,11 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 $sql = "SELECT * FROM purchase";
 $result = mysqli_query($con, $sql);
 $row = @mysqli_fetch_array($result);
+
+$sql = "SELECT sum(totalPrice) FROM purchase";
+$result = mysqli_query($con, $sql);
+$row = @mysqli_fetch_array($result);
+
 ?>
 <!DOCTYPE html>
 
