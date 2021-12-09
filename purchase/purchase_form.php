@@ -26,7 +26,8 @@ include $_SERVER["DOCUMENT_ROOT"]."/solid/db/db_connector.php";
 
 <head>
   <meta charset="utf-8">
-  <title>Document</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
+  <title>No.1 가상자산 플랫폼, Solid</title>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" type="text/javascript"></script>

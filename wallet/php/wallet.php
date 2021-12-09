@@ -9,7 +9,8 @@ $row = @mysqli_fetch_array($result);
 <html lang="kr">
 
 <head>
-  <title>CSS Website Layout</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
+  <title>No.1 가상자산 플랫폼, Solid</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../../wallet/css/wallet.css.?sdfawefas">
@@ -36,7 +37,8 @@ $row = @mysqli_fetch_array($result);
           <ul>
             <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/wallet.php">수익현황</a>
             </li>
-            <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/purchasehistory.php?.asdfakjl">거래내역</a>
+            <li class="walletList"><a
+                href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/purchasehistory.php?.asdfakjl">거래내역</a>
             </li>
           </ul>
         </div>
@@ -134,18 +136,18 @@ $row = @mysqli_fetch_array($result);
                   }
 
                 ?>
-                  <tr class="trtr">
-                    <td class="td_l"><span><?= $row['coinName'] ?></span></td>
-                    <td><span><?= $totalAmount ?></span><a class="cName"></a></td>
-                    <td><span><?= floor($buyPrice / $buyAmount) ?></span>원</td>
-                    <td><span></span>원</td>
-                    <td><span class="AVGValue"></span>%</td>
-                  </tr>
+                <tr class="trtr">
+                  <td class="td_l"><span><?= $row['coinName'] ?></span></td>
+                  <td><span><?= $totalAmount ?></span><a class="cName"></a></td>
+                  <td><span><?= floor($buyPrice / $buyAmount) ?></span>원</td>
+                  <td><span></span>원</td>
+                  <td><span class="AVGValue"></span>%</td>
+                </tr>
                 <?php
                 }
                 ?>
                 <script>
-                  getTransactions(<?= json_encode($coinNameArray) ?>);
+                getTransactions(<?= json_encode($coinNameArray) ?>);
                 </script>
 
               </tbody>

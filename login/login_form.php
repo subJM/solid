@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
   <title>No.1 가상자산 플랫폼, Solid :: 회원가입</title>
   <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css?.afkqwesadkkster">
   <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css?.aqwessadd">

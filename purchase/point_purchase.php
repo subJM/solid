@@ -34,7 +34,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/purchase/css/point_purchase.css?.asd5a">
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
-  <title>Document</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
+  <title>No.1 가상자산 플랫폼, Solid</title>
   <script type="text/javascript">
   $(function() {
     $('#option1_0').click(function() {

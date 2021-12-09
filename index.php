@@ -11,6 +11,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 <html lang="ko">
 
 <head>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
   <title>No.1 가상자산 플랫폼, Solid</title>
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.afkqwaesadkkster">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.aqwesasadd">

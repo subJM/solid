@@ -28,6 +28,7 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
   <title>No.1 가상자산 플랫폼, Solid</title>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
