@@ -50,18 +50,19 @@ $row = @mysqli_fetch_array($result);
           <div class="middle_overall">
             <div class="overall_1">
               <div class="overall_1_1">총 보유자산</div>
-              <div class="overall_1_2" id="overallValue"></div>
+              <div class="overall_1_2"><span id=overallValue></span>원</div>
             </div>
             <div class=" overall_2">
               <div class="overall_2_1">
                 <div class="overall_2_1_1">
                   <div class="tag_1">보유 원화</div>
                   <div class="value_1">
-                    <?= $row['available_count'] ?>원</div>
+                    <span id="KRWValue"><?= $row['available_count'] ?></span>원
+                  </div>
                 </div>
                 <div>
                   <div class="tag_1">보유 가상자산</div>
-                  <div class="value_1" id="totalValue"></div>
+                  <div class="value_1"><span id="totalValue"></span>원</div>
                 </div>
               </div>
               <div class="overall_2_1">
@@ -75,7 +76,7 @@ $row = @mysqli_fetch_array($result);
                 </div>
                 <div>
                   <div class="tag_2">수익률</div>
-                  <div class="value_3">%</div>
+                  <div class="value_3"><span>&</span></div>
                 </div>
               </div>
             </div>
@@ -135,10 +136,10 @@ $row = @mysqli_fetch_array($result);
                 ?>
                   <tr class="trtr">
                     <td class="td_l"><span><?= $row['coinName'] ?></span></td>
-                    <td><span><?= $totalAmount ?></span>개</td>
+                    <td><span><?= $totalAmount ?></span><a class="cName"></a></td>
                     <td><span><?= floor($buyPrice / $buyAmount) ?></span>원</td>
                     <td><span></span>원</td>
-                    <td><span></span>%</td>
+                    <td><span class="AVGValue"></span>%</td>
                   </tr>
                 <?php
                 }

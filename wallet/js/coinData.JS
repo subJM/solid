@@ -53,14 +53,22 @@ function setTransactionHistoryData() {
       totalValue[i] = i;
       totalValue[i] = parseInt(section[i].innerText);
       totalValue1 += totalValue[i];
-      document.getElementById("totalValue").innerHTML = AddComma(totalValue1);
+      document.getElementById("totalValue").innerHTML = totalValue1;
     }
     if (i % 5 === 4) {
-      section[i].innerText = (
-        (coin_price_map.get(coinName) / avgPrice) * 100 -
-        100
-      ).toFixed(2);
+      var AVG = (coin_price_map.get(coinName) / avgPrice) * 100 - 100;
+      section[i].innerText = AVG.toFixed(2);
+
+      if (AVG > 0) {
+        document.getElementByClassName("AVGValue").style.color = "red";
+      }
     }
+
+    var KRW = document.getElementById("KRWValue").innerHTML;
+    var total = document.getElementById("totalValue").innerHTML;
+    document.getElementById("overallValue").innerHTML = AddComma(
+      parseInt(KRW, 0) + parseInt(total, 0)
+    );
   }
 }
 

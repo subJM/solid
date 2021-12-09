@@ -30,6 +30,10 @@
   margin-top: 50px;
 }
 
+span {
+  color: black;
+}
+
 .row_container {
   display: flex;
   width: 1280px;
