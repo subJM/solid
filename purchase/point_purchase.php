@@ -41,7 +41,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
       $('input[name=options]').val();
     });
     $('#plan_buy').click(function() {
-      location.href = "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/kakaopay.php?plan=" + $(
+      location.href = "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/purchase/kakaopay.php?plan=" + $(
           'input[name="options"]:checked').val() +
         "&id=<?=$_SESSION['user_id']?>";
     });

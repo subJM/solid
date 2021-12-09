@@ -17,7 +17,10 @@ $sql="select * from recruit_plan where price=".$price.";";
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetch_array($result);
 date_default_timezone_set("Asia/Seoul");
- $date=date("Y-m-d H:i:s");
-$sql="insert into purchase values(null,'".$date."','".$id."',".$num.",'".$name."',".$row['count'].",".$price.",'".$p_type."')";
+$date=date("Y-m-d H:i:s");
+$sql1 = "select * from purchase where available_count;"
+$result1 = mysqli_query($con,$sql1);
+$row1 = mysqli_fetch_array($result1);
+$sql="update purchase set available_count = $row1['avaliable_count'] + $row['count'] where id = $id;";
 mysqli_query($con,$sql);
  ?>
