@@ -8,19 +8,26 @@ $sql = "SELECT sum(totalPrice) FROM purchase";
 $result = mysqli_query($con, $sql);
 $row = @mysqli_fetch_array($result);
 
+$sql2 = "SELECT SUM(totalPrice) as tpb FROM coin_info WHERE transaction in ('buy')";
+$result2 = mysqli_query($con, $sql2);
+$row2 = @mysqli_fetch_array($result2);
+$sql3 = "SELECT SUM(totalPrice) as tps FROM coin_info WHERE transaction in ('sell')";
+$result3 = mysqli_query($con, $sql3);
+$row3 = @mysqli_fetch_array($result3);
 ?>
 <!DOCTYPE html>
 
 <html lang="kr">
 
 <head>
-  <title>CSS Website Layout</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
+  <title>No.1 가상자산 플랫폼, Solid</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../../wallet/css/wallet.css.?sdfawefas">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.2">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.2">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.2">
+  <link rel="stylesheet" href="../../wallet/css/wallet.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
   <script src="../js/coinData.JS?12"></script>
 </head>
 <script>
@@ -41,7 +48,8 @@ $row = @mysqli_fetch_array($result);
           <ul>
             <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/wallet.php">수익현황</a>
             </li>
-            <li class="walletList"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/purchasehistory.php?.asdfakjl">거래내역</a>
+            <li class="walletList"><a
+                href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/wallet/php/purchasehistory.php?.asdfakjl">거래내역</a>
             </li>
           </ul>
         </div>
@@ -73,15 +81,15 @@ $row = @mysqli_fetch_array($result);
               <div class="overall_2_1">
                 <div>
                   <div class="tag_2">총 매수금액</div>
-                  <div class="value_2">원</div>
+                  <div class="value_2"><span id="totalBuy"><?= $row2['tpb'] - $row3['tps'] ?></span>원</div>
                 </div>
                 <div>
                   <div class="tag_2">평가 손익</div>
-                  <div class="value_2">원</div>
+                  <div class="value_2"><span id="evaluationPL"></span>원</div>
                 </div>
                 <div>
                   <div class="tag_2">수익률</div>
-                  <div class="value_3"><span>&</span></div>
+                  <div class="value_3"><span id="totalPercent"></span>%</span></div>
                 </div>
               </div>
             </div>
@@ -144,13 +152,13 @@ $row = @mysqli_fetch_array($result);
                     <td><span><?= $totalAmount ?></span><a class="cName"></a></td>
                     <td><span><?= floor($buyPrice / $buyAmount) ?></span>원</td>
                     <td><span></span>원</td>
-                    <td><span class="AVGValue"></span>%</td>
+                    <td><span></span>%</td>
                   </tr>
                 <?php
                 }
                 ?>
                 <script>
-                  getTransactions(<?= json_encode($coinNameArray) ?>);
+                getTransactions(<?= json_encode($coinNameArray) ?>);
                 </script>
 
               </tbody>
