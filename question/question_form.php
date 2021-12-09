@@ -14,7 +14,7 @@
   function question_input() {
     console.log("눌림");
     var a = document.board_form.subject.value;
-    var b = document.board_form.subject.value;
+    var b = document.board_form.content.value;
     
     //공백만 입력된 경우
     var blank_pattern = /^\s+|\s+$/g;

@@ -3,25 +3,6 @@
 
 
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./CSS/exchange.css">
-    <link rel="stylesheet" href="./CSS/exchange_mobile.css">
-    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXmain.css?.afkqwesadkkster">
-    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXfooter.css?.aqwessadd">
-    <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXheader.css?.5swqeasdsda">
-    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-    <script src="./JS/coinData.JS?123123131"></script>
-    <script src="./JS/trade.JS"></script>
-    <script>
- const imgTag= document.querySelector(".favorit_img")
- console.log(imgTag);
-<?php
-=======
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
@@ -41,7 +22,6 @@
   console.log(imgTag);
 
   <?php
->>>>>>> b5954e6249b6d8671c4f69a21da8a983ea2cc848
 include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 error_reporting(E_ALL ^ E_NOTICE);
 $id = $_POST['id'];
@@ -75,23 +55,6 @@ if (isset($_GET["coinName"])) {
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="coinData-div">
-        <ul>
-            <li><form name="favorit_form" action="./DB/favorit.php" method="post">
-                <input type="hidden" name="coinName" value="<?=$coinName?>">
-                <button type="submit"><img src="./img/star2.png" class="favorit_img"></button>
-                <button type="submit"><img src="./img/star1.png" class="favorit_img"></button>
-
-            </form></li>
-            <li>
-              <?=$coinName?>-KRW
-            </li>
-            <li>
-                <span>현재 가격&nbsp;</span><span>  </span>&nbsp;<span>0%</span>
-            </li>
-        </ul>
-=======
   <div class="coinData-div">
     <ul>
       <li>
@@ -136,7 +99,6 @@ if (isset($_GET["coinName"])) {
       </div>
       <!-- TradingView Widget END -->
       </script>
->>>>>>> b5954e6249b6d8671c4f69a21da8a983ea2cc848
     </div>
 
     <div class="flexTable-div">
