@@ -134,11 +134,11 @@ $row = @mysqli_fetch_array($result);
 
                 ?>
                   <tr class="trtr">
-                    <td class="td_l"><?= $row['coinName'] ?></td>
-                    <td><?= $totalAmount ?></td>
-                    <td><?= number_format($buyPrice / $buyAmount, 0) ?></td>
-                    <td></td>
-                    <td></td>
+                    <td class="td_l"><span><?= $row['coinName'] ?></span></td>
+                    <td><span><?= $totalAmount ?></span>개</td>
+                    <td><span><?= floor($buyPrice / $buyAmount) ?></span>원</td>
+                    <td><span></span>원</td>
+                    <td><span></span>%</td>
                   </tr>
                 <?php
                 }
