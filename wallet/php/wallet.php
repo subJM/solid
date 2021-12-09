@@ -3,6 +3,12 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 $sql = "SELECT * FROM purchase";
 $result = mysqli_query($con, $sql);
 $row = @mysqli_fetch_array($result);
+$sql2 = "SELECT SUM(totalPrice) as tpb FROM coin_info WHERE transaction in ('buy')";
+$result2 = mysqli_query($con, $sql2);
+$row2 = @mysqli_fetch_array($result2);
+$sql3 = "SELECT SUM(totalPrice) as tps FROM coin_info WHERE transaction in ('sell')";
+$result3 = mysqli_query($con, $sql3);
+$row3 = @mysqli_fetch_array($result3);
 ?>
 <!DOCTYPE html>
 
@@ -70,15 +76,15 @@ $row = @mysqli_fetch_array($result);
               <div class="overall_2_1">
                 <div>
                   <div class="tag_2">총 매수금액</div>
-                  <div class="value_2">원</div>
+                  <div class="value_2"><span id="totalBuy"><?= $row2['tpb'] - $row3['tps'] ?></span>원</div>
                 </div>
                 <div>
                   <div class="tag_2">평가 손익</div>
-                  <div class="value_2">원</div>
+                  <div class="value_2"><span id="evaluationPL"></span>원</div>
                 </div>
                 <div>
                   <div class="tag_2">수익률</div>
-                  <div class="value_3"><span>&</span></div>
+                  <div class="value_3"><span id="totalPercent"></span>%</span></div>
                 </div>
               </div>
             </div>
@@ -136,13 +142,13 @@ $row = @mysqli_fetch_array($result);
                   }
 
                 ?>
-                <tr class="trtr">
-                  <td class="td_l"><span><?= $row['coinName'] ?></span></td>
-                  <td><span><?= $totalAmount ?></span><a class="cName"></a></td>
-                  <td><span><?= floor($buyPrice / $buyAmount) ?></span>원</td>
-                  <td><span></span>원</td>
-                  <td><span class="AVGValue"></span>%</td>
-                </tr>
+                  <tr class="trtr">
+                    <td class="td_l"><span><?= $row['coinName'] ?></span></td>
+                    <td><span><?= $totalAmount ?></span><a class="cName"></a></td>
+                    <td><span><?= floor($buyPrice / $buyAmount) ?></span>원</td>
+                    <td><span></span>원</td>
+                    <td><span></span>%</td>
+                  </tr>
                 <?php
                 }
                 ?>
