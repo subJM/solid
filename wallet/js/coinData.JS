@@ -58,18 +58,21 @@ function setTransactionHistoryData() {
     if (i % 5 === 4) {
       var AVG = (coin_price_map.get(coinName) / avgPrice) * 100 - 100;
       section[i].innerText = AVG.toFixed(2);
-
-      if (AVG > 0) {
-        document.getElementByClassName("AVGValue").style.color = "red";
-      }
     }
 
     var KRW = document.getElementById("KRWValue").innerHTML;
     var total = document.getElementById("totalValue").innerHTML;
+    var totalBuy = document.getElementById("totalBuy").innerHTML;
+    var evaluationPL = document.getElementById("evaluationPL").innerHTML;
+    var totalPercent =
+      (parseInt(evaluationPL, 0) / parseInt(totalBuy, 0)) * 100;
     document.getElementById("overallValue").innerHTML = AddComma(
       parseInt(KRW, 0) + parseInt(total, 0)
     );
+    document.getElementById("evaluationPL").innerHTML =
+      parseInt(total, 0) - parseInt(totalBuy, 0);
   }
+  document.getElementById("totalPercent").innerHTML = totalPercent.toFixed(2);
 }
 
 function AddComma(num) {

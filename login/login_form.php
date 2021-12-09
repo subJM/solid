@@ -2,11 +2,12 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
   <title>No.1 가상자산 플랫폼, Solid :: 회원가입</title>
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css?.afkqwesadkkster">
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css?.aqwessadd">
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDheader.css?.5ssaassasasa12sdda">
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/login/css/login.css?.asd">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDheader.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/login/css/login.css">
   <link
     href="https://fonts.googleapis.com/css?family=Gothic+A1:400,500,700|Nanum+Gothic+Coding:400,700|Nanum+Gothic:400,700,800|Noto+Sans+KR:400,500,700,900&display=swap&subset=korean"
     rel="stylesheet">
