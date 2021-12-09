@@ -56,6 +56,9 @@ function setTransactionHistoryData() {
       document.getElementById("totalValue").innerHTML = AddComma(
         totalValue1 + "원"
       );
+
+      document.getElementById("overallValue").innerHTML =
+        totalValue1 + "<?= $row['available_count']?>";
     }
     if (i % 5 === 4) {
       avgPrice = avgPrice.replace(/,/g, "");
