@@ -78,8 +78,8 @@ function create_table($con, $table_name)
                 `member_id` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                 `plan_num` tinyint(3) NOT NULL,
                 `plan_name` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-                `available_count` int(10) unsigned NOT NULL,
-                `price` int(7) NOT NULL,
+                `available_count` int(20) unsigned NOT NULL,
+                `price` int(10) NOT NULL,
                 `method` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                 PRIMARY KEY (`num`)
                 ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
