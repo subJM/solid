@@ -19,10 +19,10 @@
     <script>
  const imgTag= document.querySelector(".favorit_img")
  console.log(imgTag);
-
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 error_reporting(E_ALL ^ E_NOTICE);
+$id = $_POST['id'];
 
 if (isset($_GET["coinName"])) {
     $coinName = mysqli_real_escape_string($con, $_GET["coinName"]);
@@ -57,7 +57,8 @@ if (isset($_GET["coinName"])) {
         <ul>
             <li><form name="favorit_form" action="./DB/favorit.php" method="post">
                 <input type="hidden" name="coinName" value="<?=$coinName?>">
-                <button type="submit"><img src="" alt="즐겨찾기" class="favorit_img"></button>
+                <button type="submit"><img src="./img/star2.png" class="favorit_img"></button>
+                <button type="submit"><img src="./img/star1.png" class="favorit_img"></button>
 
             </form></li>
             <li>

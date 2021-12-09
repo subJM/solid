@@ -8,7 +8,6 @@ if (isset($_POST["coinName"])) {
     if (empty($coinName)) {
         exit();
     } else {
-
         $user_id = $_SESSION['user_id'];
 
         $sql = "SELECT coinName FROM favorite_coin WHERE coinName ='$coinName' AND id='$user_id'";
@@ -34,3 +33,4 @@ if (isset($_POST["coinName"])) {
 } else {
     mysqli_close($con);
 }
+?>
