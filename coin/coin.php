@@ -11,9 +11,9 @@
   <title>No.1 가상자산 플랫폼, Solid</title>
   <link rel="stylesheet" href="./CSS/exchange.css">
   <link rel="stylesheet" href="./CSS/exchange_mobile.css">
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXmain.css?.afkqwesadkkster">
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXfooter.css?.aqwessadd">
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXheader.css?.5swqeasdsda">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXmain.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXfooter.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXheader.css">
   <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
   <script src="./JS/coinData.JS?123123131"></script>
   <script src="./JS/trade.JS"></script>

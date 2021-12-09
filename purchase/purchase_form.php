@@ -162,7 +162,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/solid/db/db_connector.php";
   }
 
   #purchase_table {
-    width: 800px;
+    width: 1000px;
     min-height: 830px;
     margin: 0 auto;
   }
