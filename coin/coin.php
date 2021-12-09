@@ -22,11 +22,7 @@
   console.log(imgTag);
 
   <?php
-<<<<<<< HEAD
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
-=======
-include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
->>>>>>> 2c8fcf689b2bfd604715680b92f31ddcf40f28c5
 error_reporting(E_ALL ^ E_NOTICE);
 $id = $_POST['id'];
 
