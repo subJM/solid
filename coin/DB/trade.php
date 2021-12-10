@@ -55,7 +55,7 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
             }
         }
         $sql = "insert into coin_info ";
-        $sql .= "values(null,'$name', '$time', '$transaction', '$price', '$amount', '$totalPrice')";
+        $sql .= "values(null,'$name', '$time', '$transaction', '$price', '$amount', '$totalPrice', null)";
 
         mysqli_query($con, $sql) or die("삽입 ERROR" . mysqli_error($con)); // $sql 에 저장된 명령 실행
 
@@ -63,7 +63,7 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
             $sql = "UPDATE purchase SET available_count = $myMoney - $totalPrice";
             mysqli_query($con, $sql) or die("수정 ERROR" . mysqli_error($con));
         } else {
-            $sql = "UPDATE purchase SET available_count = '$myMoney + $totalPrice'";
+            $sql = "UPDATE purchase SET available_count = $myMoney + $totalPrice";
             mysqli_query($con, $sql) or die("수정 ERROR" . mysqli_error($con));
         }
         $message = '거래성공.';

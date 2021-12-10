@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXfooter.css?.aqwessadd">
     <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/FTXcss/FTXheader.css?.5swqeasdsda">
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-    <script src="./JS/coinData.JS?123123131"></script>
+    <script src="./JS/coinData.JS?12"></script>
     <script src="./JS/trade.JS"></script>
     <script>
  const imgTag= document.querySelector(".favorit_img")
