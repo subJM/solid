@@ -92,6 +92,12 @@
       .member_form
       .submit();
   }
+  function action_delete() {
+    document.member_form.action = "member_data.php?type=delete";
+    document
+      .member_form
+      .submit();
+  }
 
   function signup_duplicate_check() {
     console.log("signup_duplicate_check");
@@ -221,6 +227,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/solid/header.php"; ?>
   </header>
   <section id="member_section">
+    <div id="title_member">
     <?php
                 // 내 정보 수정인지 판별
                 if (isset($_GET["mode"])) {
@@ -272,6 +279,7 @@
     <?php
                 }
             ?>
+            </div>
     <div id="member_main_content">
       <div id="member_form">
         <form name="member_form" id="input_member_form" method="post">
@@ -483,7 +491,7 @@
       <?php
                     if ($mode !== "") {
                         ?>
-      <div id="member_delete">회원탈퇴</div>
+      <div><input type="button" id="member_delete" onclick="action_update()">회원탈퇴</div>
       <? } ?>
     </div>
   </section>

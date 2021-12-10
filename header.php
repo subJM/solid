@@ -62,7 +62,7 @@
           <li>
             <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃</a>
           </li>
-
+          
           <?php
 			}
 			?>
