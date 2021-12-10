@@ -344,7 +344,7 @@ $(document).on("click", "#member_delete", function () {
             url    : "member_data.php?type=delete",
             data   : {member_num: $("#member_num").val()},
             success: function () {
-                location.href="../index.php";
+                location.href="../../index.php?";
 
             }
         })

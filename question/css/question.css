@@ -50,7 +50,7 @@ color: rgb(44, 55, 68); cursor: pointer; border-radius: 5px;}
 #view_content .col2 { float: right; }
 #view_content li:nth-child(2) {	padding: 15px 15px 80px 15px; border-bottom: solid 1px #cccccc; }
 #view_content li:nth-child(3) button { padding: 5px 20px; margin: 15px 0 40px 720px; cursor: pointer; }
-#view_content .li_content {height: 220px;}
+#view_content .li_content {height: auto; min-height: 300px;}
 
 /* 댓글칸 & 삭제버튼 */
 #ripple_view .col1 { margin: 100px 30px 40px 10px;}
