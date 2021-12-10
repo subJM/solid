@@ -1,6 +1,6 @@
 <?php
     include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
-  
+
     if (isset($_GET["type"])) {
         $type = $_GET["type"];
     } else {
@@ -81,18 +81,11 @@
         $query = "DELETE from `purchase` where member_id = '{$row['id']}';";
         mysqli_query($con, $query);
         mysqli_close($con);
-
+        
         session_start();
         unset($_SESSION["user_id"]);
         unset($_SESSION["user_name"]);
         unset($_SESSION["user_level"]);
-
-    //     echo "
-    //   <script>
-    //     alert('정보가 변경되셨습니다.');
-    //     location.replace('../index.php?삭제실행'); 
-    //   </script>
-    // ";
         
     } else {
         $id = $_POST["id"];
