@@ -1,8 +1,8 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 session_start();
-if (isset($_SESSION["user_id"])) {
-    $user_id = $_SESSION["user_id"];
+// if (isset($_SESSION["user_id"])) {
+//     $user_id = $_SESSION["user_id"];
 
     $totalAmount;
     $buyPrice;
@@ -13,7 +13,7 @@ if (isset($_SESSION["user_id"])) {
     $coinNameResult = mysqli_query($con, $coinName);
 
     $walletList = array();
-    $sqlBuy = "SELECT * FROM purchase WHERE member_id ='$user_id'";
+    $sqlBuy = "SELECT * FROM purchase";
     $resultBuy = mysqli_query($con, $sqlBuy);
     $myMoney = 0;
     while ($rowBuy = mysqli_fetch_assoc($resultBuy)) {
@@ -50,4 +50,4 @@ if (isset($_SESSION["user_id"])) {
     }
     echo json_encode($walletList);
 
-}
+// }
