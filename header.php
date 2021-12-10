@@ -39,7 +39,7 @@
 			} else {
 				$logged = $username . "(" . $userid . ")님 환영합니다.";
 			?>
-      <li id="welcome_message" class="optionmenutable"><?= $logged ?></li>
+
       <li id="headermenu" class="optionmenutable">
         <img id="option_img" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/optionmenu.png">
 
@@ -68,6 +68,7 @@
 			?>
       </li>
     </ul>
+    <li id="welcome_message" class="optionmenutable"><?= $logged ?></li>
   </div>
 </div>
 <script>

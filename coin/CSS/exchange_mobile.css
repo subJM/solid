@@ -9,6 +9,10 @@
     width: 100%;
   }
 
+  header,
+  footer {
+    display: none;
+  }
   #amount {
     font-size: large;
     clear: both;

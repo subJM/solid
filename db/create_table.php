@@ -19,7 +19,7 @@ function create_table($con, $table_name)
             case 'members':
                 $sql = "CREATE TABLE IF NOT EXISTS `members` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
-                    `id` char(15) NOT NULL,
+                    `id` char(20) NOT NULL,
                     `password` char(100) NOT NULL,
                     `name` char(10) NOT NULL,
                     `phone` char(13) NOT NULL,
