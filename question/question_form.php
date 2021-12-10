@@ -1,3 +1,4 @@
+<?php include "../db/db_connector.php";?>
 <!DOCTYPE html>
 <html>
 
@@ -13,15 +14,12 @@
   <script>
   function question_input() {
     console.log("눌림");
-    var a = document.board_form.subject.value;
-    var b = document.board_form.content.value;
-
-    if (empty(document.board_form.subject.value)) {
+    if (trim(document.board_form.subject.value).is_null) {
       alert("제목을 입력하세요!");
       document.board_form.subject.focus();
       return;
     }
-    if (document.board_form.content.value= false) {
+    if (trim(document.board_form.content.value).is_null) {
       alert("내용을 입력하세요!");
       document.board_form.content.focus();
       return;
@@ -65,7 +63,7 @@
           </li>
         </ul>
         <ul class="buttons">
-          <li><button type="submit" onclick="question_input()">등록</button></li>
+          <li><button type="button" onclick="question_input()">등록</button></li>
           <li><button type="button" onclick="location.href='question_list.php'">목록</button></li>
         </ul>
       </form>
