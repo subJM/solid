@@ -3,6 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 // echo $_SERVER['DOCUMENT_ROOT']
 ?>
 
@@ -10,12 +11,13 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
 <html lang="ko">
 
 <head>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
   <title>No.1 가상자산 플랫폼, Solid</title>
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.afkqwesadkkster">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.aqwessadd">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.5ssaassasasa12sdda">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain_section.css?saaa">
-  <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/js/main.js?saad"></script>
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain_section.css">
+  <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/js/main.js"></script>
 </head>
 
 <body onload="call_js()">

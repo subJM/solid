@@ -1,26 +1,38 @@
+<?php include "../db/db_connector.php";?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title>Solid</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
+  <title>No.1 가상자산 플랫폼, Solid</title>
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
   <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
-  <link rel="stylesheet" type="text/css" href="./css/question.css?.sdd">
+  <link rel="stylesheet" type="text/css" href="./css/question.css">
   <script src="http://<?=$_SERVER['HTTP_HOST']?>/solid/question/js/notice.js"></script>
   <script>
   function question_input() {
     console.log("눌림");
-    if (!document.board_form.subject.value) {
-      alert("제목을 입력하세요!");
-      document.board_form.subject.focus();
-      return;
+    var a = document.board_form.subject.value;
+    var b = document.board_form.content.value;
+    
+    //공백만 입력된 경우
+    var blank_pattern = /^\s+|\s+$/g;
+    if(a.replace(blank_pattern, '' ) == "" | b.replace(blank_pattern, '' ) == "" ){
+      alert('공백만 입력되었습니다.');
+      document.board_form.action = "question_list.php?error=글등록에 실패했습니다!";
+      document.board_form.submit();
+      exit;
     }
-    if (!document.board_form.content.value) {
-      alert("내용을 입력하세요!");
-      document.board_form.content.focus();
-      return;
+
+    //특수문자가 있는 경우
+    var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+    if(special_pattern.test(a) == true | special_pattern.test(b) == true ){
+      alert('특수문자가 입력되었습니다.');
+      document.board_form.action = "question_list.php?error=글등록에 실패했습니다!";
+      document.board_form.submit();
+      exit;
     }
     document.board_form.submit();
   }
@@ -61,7 +73,7 @@
           </li>
         </ul>
         <ul class="buttons">
-          <li><button type="submit" onclick="question_input()">등록</button></li>
+          <li><button type="button" onclick="question_input()">등록</button></li>
           <li><button type="button" onclick="location.href='question_list.php'">목록</button></li>
         </ul>
       </form>

@@ -33,7 +33,6 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
                 mysqli_close($con);
                 alert_back($message);
             }
-
         } else {
             $totalAmount = 0;
             $sqlSell = "SELECT * FROM coin_info WHERE coinName ='$name'";
@@ -51,7 +50,6 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
                 $message = '판매할수있는 코인이 부족합니다.';
                 mysqli_close($con);
                 alert_back($message);
-
             }
         }
         $sql = "insert into coin_info ";

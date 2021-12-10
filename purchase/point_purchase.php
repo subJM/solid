@@ -28,20 +28,21 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css?.4">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css?.4">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css?.4">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/purchase/css/point_purchase.css?.asd5a">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
+  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/purchase/css/point_purchase.css">
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
-  <title>Document</title>
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
+  <title>No.1 가상자산 플랫폼, Solid</title>
   <script type="text/javascript">
   $(function() {
     $('#option1_0').click(function() {
       $('input[name=options]').val();
     });
     $('#plan_buy').click(function() {
-      location.href = "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/kakaopay.php?plan=" + $(
+      location.href = "http://<?= $_SERVER['HTTP_HOST'] ?>/solid/purchase/kakaopay.php?plan=" + $(
           'input[name="options"]:checked').val() +
         "&id=<?=$_SESSION['user_id']?>";
     });
@@ -87,7 +88,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
                     <p class='plan_count'>포인트 ".$row[$i]['count']." 점</p>
                     <p class='plan_price'>".$row[$i]['price']."원</p>
                   </label>
-                  <img class='check_mark' src='../img/tick.png'>
                   </div>
                   ";
                 }

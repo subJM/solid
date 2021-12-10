@@ -49,13 +49,13 @@ function create_table($con, $table_name)
             case 'coin_info':
                   $sql = "CREATE TABLE IF NOT EXISTS `coin_info` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
+                    `id` char(15) NOT NULL,
                     `coinName` char(15) NOT NULL,
                     `trTime` char(15) NOT NULL,
                     `transaction` char(20) NOT NULL,
                     `price` int(20) NOT NULL,
                     `amount` int(20) DEFAULT NULL,
                     `totalPrice` int(20) DEFAULT NULL,
-                    `bank` int(20) DEFAULT NULL,
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   break;
@@ -78,8 +78,8 @@ function create_table($con, $table_name)
                 `member_id` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                 `plan_num` tinyint(3) NOT NULL,
                 `plan_name` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-                `available_count` int(10) unsigned NOT NULL,
-                `price` int(7) NOT NULL,
+                `available_count` int(20) unsigned NOT NULL,
+                `price` int(10) NOT NULL,
                 `method` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                 PRIMARY KEY (`num`)
                 ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";

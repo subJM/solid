@@ -1,6 +1,6 @@
 <?php
   include $_SERVER['DOCUMENT_ROOT']."/solid/db/db_connector.php";
-
+  session_start();
   $kakao_name = $_POST["kakao_name"];
   $kakao_email = $_POST["kakao_email"];
   $test = "#";
@@ -20,9 +20,8 @@
   if(!$rowcount){
     $s = '[{"kakao_id":"실패"}]';
   }else{
-    $row = mysqli_fetch_array($result);
-    $_SESSION['user_id']=$row['id'];
-    $_SESSION['user_name']=$row['name'];
+    $_SESSION['user_id']=$kakao_email;
+    $_SESSION['user_name']=$kakao_name;
     $s = '[{"kakao_id":"성공"}]';
   }
  ?>

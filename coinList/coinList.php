@@ -12,10 +12,11 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css?.afkqder">
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css?.addd">
-  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDheader.css?.5dda">
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
+  <title>No.1 가상자산 플랫폼, Solid</title>
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDheader.css">
   <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/coinList/css/coinlist.css">
 
   <script src="http://<?=$_SERVER['HTTP_HOST']?>/solid/coinList/JS/coinDataList.JS"></script>
@@ -37,7 +38,12 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
     <section id="coinList">
       <div id="coinListTable">
         <div id="marketDiv">
-          <span id="markets">거래소</span>
+          <span class="markets">
+            <a href="http://<?=$_SERVER['HTTP_HOST']?>/solid/coinList/coinList.php">거래소</a>
+          </span>
+          <span class="markets">
+            <a href="http://<?=$_SERVER['HTTP_HOST']?>/solid/coinList/coinList_favorite.php">즐겨찾기</a>
+          </span>
         </div>
         <table>
           <tr>
