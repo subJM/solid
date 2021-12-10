@@ -30,16 +30,17 @@
     <ul class="top1-2table">
       <?php
 			if (!$userid) {
-                ?>
+        ?>
 
       <li class="top1-2tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/member/member_form.php">회원가입</a></li>
       <li class="top1-2tabletd"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/login_form.php">로그인</a>
       </li>
       <?php
 			} else {
-				$logged = $username . "(" . $userid . ")님 환영합니다.";
-			?>
+        $logged = $username . "(" . $userid . ")님 환영합니다.";
+        ?>
 
+      <li id="welcome_message" class="optionmenutable"><?= $logged ?></li>
       <li id="headermenu" class="optionmenutable">
         <img id="option_img" src="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/optionmenu.png">
 
@@ -51,24 +52,26 @@
           </li>
           <?php
 			}
-            if ($userid && $userlevel == 1) { ?>
+      if ($userid && $userlevel == 1) { ?>
           <li>
             <a class="top1-2tabletd" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃</a>
           </li>
 
           <?php
 			} else if ($userid) {
-			?>
+        ?>
           <li>
             <a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/login/logout.php">로그아웃</a>
           </li>
-
-          <?php
+        </ul>
+        <?php
 			}
 			?>
       </li>
+
     </ul>
-    <li id="welcome_message" class="optionmenutable"><?= $logged ?></li>
+
+
   </div>
 </div>
 <script>
