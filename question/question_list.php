@@ -23,7 +23,7 @@
     $list = array();
 
     //6. 해당되는 페이지 레코드를 가져와서 배열에 넣고 회원번호 포함
-    $sql = "select * from question order by num asc LIMIT {$start}, {$scale}";
+    $sql = "select * from question order by num desc LIMIT {$start}, {$scale}";
     $select_result = mysqli_query($con, $sql);
 
     for ($i=0; $row=mysqli_fetch_assoc($select_result); $i++){
@@ -32,7 +32,6 @@
       $list_num = $total_record - ($page - 1) * $scale;
       $list[$i]['no'] = $list_num - $i;
     }
-    mysqli_close($con);
 ?>
 <!DOCTYPE html>
 <html>
@@ -82,12 +81,11 @@
             <span class="col6">조회</span>
           </li>
           <?php 
-				
-
+ 
 					for($i=0; $i<count($list); $i++){
-				?>
+		  		?>
           <li>
-            <span class="col1"><?= $i+1 ?></span>
+            <span class="col1"><?= $list[$i]['num'] ?></span>
             <span class="col2_1"><a
                 href="question_view.php?num=<?= $list[$i]['num'] ?>"><?= $list[$i]['subject'] ?></a></span>
             <span class="col3"><?= $list[$i]['name'] ?></span>

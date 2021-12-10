@@ -82,7 +82,7 @@
 					for($i=0; $i<count($list); $i++){
 				?>
           <li>
-            <span class="col1"><?= $i+1 ?></span>
+            <span class="col1"><?= $list[$i]['num'] ?></span>
             <span class="col2_1"><a
                 href="notice_view.php?num=<?= $list[$i]['num'] ?>"><?= $list[$i]['subject'] ?></a></span>
             <span class="col3"><?= $list[$i]['name'] ?></span>
