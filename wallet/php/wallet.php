@@ -147,13 +147,13 @@ $row3 = @mysqli_fetch_array($result3);
         }
 
                 ?>
-                  <tr class="trtr">
-                    <td class="td_l"><span><?= $row['coinName'] ?></span></td>
-                    <td><span><?= $totalAmount ?></span><a class="cName"></a></td>
-                    <td><span><?= floor($buyPrice / $buyAmount) ?></span>원</td>
-                    <td><span></span>원</td>
-                    <td><span></span>%</td>
-                  </tr>
+                <tr class="trtr">
+                  <td class="td_l"><span><?= $row['coinName'] ?></span></td>
+                  <td><span><?= $totalAmount ?></span><a class="cName"></a></td>
+                  <td><span><?= floor($buyPrice / $buyAmount) ?></span>원</td>
+                  <td><span></span>원</td>
+                  <td><span></span>%</td>
+                </tr>
                 <?php
                 }
                 ?>

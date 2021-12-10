@@ -2,20 +2,20 @@
 session_start();
 include $_SERVER["DOCUMENT_ROOT"]."/solid/db/db_connector.php";
 
-  if(isset($_GET['recruit_plan'])){
-    $recruit_plan=$_GET['recruit_plan'];
+  if(isset($_GET['purchase_items'])){
+    $purchase_items=$_GET['purchase_items'];
   }
   if(isset($_GET['id'])){
     $id=$_GET['id'];
   }
-  $sql="select * from recruit_plan where num='$recruit_plan'";
-  $result_recruit_plan=mysqli_query($con,$sql);
-  $row_recruit_plan=mysqli_fetch_array($result_recruit_plan);
+  $sql="select * from purchase_items where num='$purchase_items'";
+  $result_purchase_items=mysqli_query($con,$sql);
+  $row_purchase_items=mysqli_fetch_array($result_purchase_items);
   $sql="select * from members where id='$id'";
   $result_corporate=mysqli_query($con,$sql);
   $row_corporate=mysqli_fetch_array($result_corporate);
 
-  $sql="select * from recruit_plan where num='".$recruit_plan."';";
+  $sql="select * from purchase_items where num='".$purchase_items."';";
   $result_purchase=mysqli_query($con,$sql);
   $numrow_purchase = mysqli_num_rows($result_purchase);
   $row_purchase=mysqli_fetch_array($result_purchase);
@@ -61,9 +61,9 @@ include $_SERVER["DOCUMENT_ROOT"]."/solid/db/db_connector.php";
           type: 'POST',
           data: {
             id: "<?php echo $id ?>",
-            num: "<?php echo $row_recruit_plan['num'] ?>",
-            name: "<?php echo $row_recruit_plan['name'] ?>",
-            price: "<?php echo $row_recruit_plan['price'] ?>",
+            num: "<?php echo $row_purchase_items['num'] ?>",
+            name: "<?php echo $row_purchase_items['name'] ?>",
+            price: "<?php echo $row_purchase_items['price'] ?>",
             account: document.querySelector('#account').value.slice(0, 2),
             p_type: p_typeValue
           }
@@ -74,7 +74,7 @@ include $_SERVER["DOCUMENT_ROOT"]."/solid/db/db_connector.php";
 
       } else if (purchase_plan == "kakao") {
         location.href =
-          "http://<?= $_SERVER['HTTP_HOST'];?>/solid/purchase/kakaopay.php?num=<?=$recruit_plan?>&id=<?=$id?>";
+          "http://<?= $_SERVER['HTTP_HOST'];?>/solid/purchase/kakaopay.php?num=<?=$purchase_items?>&id=<?=$id?>";
       }
     });
   });

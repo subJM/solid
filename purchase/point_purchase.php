@@ -12,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
         // mysql_fetch_array를 반복합니다.
         $row_purchase[$i]=mysqli_fetch_array($result_purchase);
     }
-    $sql="select * from recruit_plan";
+    $sql="select * from purchase_items ";
     $result=mysqli_query($con,$sql);
     $numrow = mysqli_num_rows($result);
      //행(ROW) 수 만큼
@@ -81,7 +81,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
                   echo "
                   <div class='col-sm-5 plan_item'>
                   <input type='radio' autocomplete='off'
-                  ".$sec." name='recruit_plan' value='".$row[$i]['num']."' id='input_".$i."'/>
+                  ".$sec." name='purchase_items' value='".$row[$i]['num']."' id='input_".$i."'/>
                   <label for='input_".$i."' onclick='select_plan(this);'>
                     <p class='plan_name' id='span_".$i."'>".$row[$i]['name']."</p>
                     <img class='plan_point' src='../img/point.png'>

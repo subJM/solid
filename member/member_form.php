@@ -491,7 +491,7 @@
       <?php
                     if ($mode !== "") {
                         ?>
-      <div><input type="button" id="member_delete" onclick="action_update()">회원탈퇴</div>
+      <div><input type="button" id="member_delete" onclick="action_delete()" value="회원탈퇴"> </div>
       <? } ?>
     </div>
   </section>

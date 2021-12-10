@@ -33,7 +33,7 @@ function create_table($con, $table_name)
             case 'deleted_members':
                 $sql = "CREATE TABLE IF NOT EXISTS `deleted_members` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
-                    `id` char(15) NOT NULL,
+                    `id` char(20) NOT NULL,
                     `password` char(100) NOT NULL,
                     `name` char(10) NOT NULL,
                     `phone` char(13) NOT NULL,
@@ -49,7 +49,7 @@ function create_table($con, $table_name)
             case 'coin_info':
                   $sql = "CREATE TABLE IF NOT EXISTS `coin_info` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
-                    `id` char(15) NOT NULL,
+                    `id` char(20) NOT NULL,
                     `coinName` char(15) NOT NULL,
                     `trTime` char(15) NOT NULL,
                     `transaction` char(20) NOT NULL,
@@ -60,8 +60,8 @@ function create_table($con, $table_name)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   break;
                 //포인트 결제내역
-            case 'recruit_plan' :
-              $sql = "CREATE TABLE IF NOT EXISTS `recruit_plan` (
+            case 'purchase_items' :
+              $sql = "CREATE TABLE IF NOT EXISTS `purchase_items` (
                 `num` int(11) NOT NULL AUTO_INCREMENT,
                 `name` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                 `count` int(10) unsigned NOT NULL,
@@ -75,7 +75,7 @@ function create_table($con, $table_name)
               $sql = "CREATE TABLE IF NOT EXISTS `purchase` (
                 `num` int(11) NOT NULL AUTO_INCREMENT,
                 `date` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-                `member_id` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+                `member_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                 `plan_num` tinyint(3) NOT NULL,
                 `plan_name` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                 `available_count` int(20) unsigned NOT NULL,
@@ -88,7 +88,7 @@ function create_table($con, $table_name)
             case 'favorite_coin':
                   $sql = "CREATE TABLE IF NOT EXISTS `favorite_coin` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
-                    `id` char(15) NOT NULL,
+                    `id` char(20) NOT NULL,
                     `coinName` char(15) NOT NULL,
                     PRIMARY KEY (`num`)
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
@@ -97,7 +97,7 @@ function create_table($con, $table_name)
             case 'notice':
                 $sql = "CREATE TABLE IF NOT EXISTS `notice` (
                     `num` int(11) NOT NULL AUTO_INCREMENT,
-                    `id` char(15) NOT NULL,
+                    `id` char(20) NOT NULL,
                     `name` char(10) NOT NULL,
                     `subject` char(200) NOT NULL,
                     `content` text NOT NULL,
@@ -111,7 +111,7 @@ function create_table($con, $table_name)
             case 'review':
                 $sql = "CREATE TABLE IF NOT EXISTS `review` (
                   `no` int(11) NOT NULL AUTO_INCREMENT,
-                  `hospital_id` char(10) NOT NULL,
+                  `hospital_id` char(20) NOT NULL,
                   `member_num` int(11) NOT NULL,
                   `star_rating` int(1) NOT NULL,
                   `kindness` int(1) NOT NULL,
@@ -127,7 +127,7 @@ function create_table($con, $table_name)
             case 'free':
                 $sql = "CREATE TABLE IF NOT EXISTS `free` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
-                  `id` char(15) NOT NULL,
+                  `id` char(20) NOT NULL,
                   `name` char(10) NOT NULL,
                   `subject` char(200) NOT NULL,
                   `content` text NOT NULL,
@@ -141,7 +141,7 @@ function create_table($con, $table_name)
                 $sql = "CREATE TABLE IF NOT EXISTS `free_ripple` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `parent` int(11) NOT NULL,
-                  `id` char(15) NOT NULL,
+                  `id` char(20) NOT NULL,
                   `name` char(10) NOT NULL,
                   `content` text NOT NULL,
                   `regist_day` char(20) DEFAULT NULL,
@@ -152,7 +152,7 @@ function create_table($con, $table_name)
             case 'faq':
                 $sql = "CREATE TABLE IF NOT EXISTS `faq` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
-                  `id` char(15) NOT NULL,
+                  `id` char(20) NOT NULL,
                   `name` char(10) NOT NULL,
                   `subject` char(200) NOT NULL,
                   `content` text NOT NULL,
@@ -166,7 +166,7 @@ function create_table($con, $table_name)
                 $sql = "CREATE TABLE IF NOT EXISTS `faq_ripple` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `parent` int(11) NOT NULL,
-                  `id` char(15) NOT NULL,
+                  `id` char(20) NOT NULL,
                   `name` char(10) NOT NULL,
                   `content` text NOT NULL,
                   `regist_day` char(20) DEFAULT NULL,
@@ -177,7 +177,7 @@ function create_table($con, $table_name)
             case 'question':
                 $sql = "CREATE TABLE IF NOT EXISTS `question` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
-                  `id` char(15) NOT NULL,
+                  `id` char(20) NOT NULL,
                   `name` char(10) NOT NULL,
                   `subject` char(200) NOT NULL,
                   `content` text NOT NULL,
@@ -191,7 +191,7 @@ function create_table($con, $table_name)
                 $sql = "CREATE TABLE IF NOT EXISTS `question_ripple` (
                   `num` int(11) NOT NULL AUTO_INCREMENT,
                   `parent` int(11) NOT NULL,
-                  `id` char(15) NOT NULL,
+                  `id` char(20) NOT NULL,
                   `name` char(10) NOT NULL,
                   `content` text NOT NULL,
                   `regist_day` char(20) DEFAULT NULL,
@@ -201,7 +201,7 @@ function create_table($con, $table_name)
                 //쪽지함
             case 'memo':
                 $sql = "CREATE TABLE IF NOT EXISTS memo (
-                  me_id int(11) NOT NULL AUTO_INCREMENT,
+                  me_id int(20) NOT NULL AUTO_INCREMENT,
                   me_recv_mb_id varchar(20) NOT NULL DEFAULT '',
                   me_send_mb_id varchar(20) NOT NULL DEFAULT '',
                   me_send_datetime datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
