@@ -22,6 +22,7 @@ create_table($con, "memo");
 
 insert_init_data($con, 'recruit_plan');
 insert_init_data($con, 'notice');
+insert_init_data($con, 'faq');
 
 create_procedure($con, 'members_procedure');
 create_procedure($con, 'notice_procedure');

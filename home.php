@@ -22,7 +22,7 @@
 </div>
 <div class="notice_FAQ">
   <div id="notice">
-    <table>
+    <table class="">
       <th id="notice-1" class="notice_FAQ_left">공지사항</th>
       <th class="notice_FAQ_right"><a href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/notice/notice_list.php">전체보기</a>
       </th>
@@ -57,9 +57,7 @@
 						$list_num = $total_record - ($page - 1) * $scale;
 						$list[$i]['no'] = $list_num - $i;
 					}
-
-					for($i=0; $i<count($list); $i++){
-				?>
+      for($i=0; $i<count($list); $i++){ ?>
       <tr>
         <td class="notice_FAQ_left"><a
             href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/notice/notice_view.php?num=<?= $list[$i]['num'] ?>"><?= $list[$i]['subject'] ?></a>
@@ -70,7 +68,6 @@
     </table>
   </div>
   <div id="updown">
-
   </div>
   <div id="FAQ">
     <table>
