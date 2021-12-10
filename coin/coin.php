@@ -24,7 +24,6 @@
   <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
 error_reporting(E_ALL ^ E_NOTICE);
-$id = $_POST['id'];
 
 if (isset($_GET["coinName"])) {
     $coinName = mysqli_real_escape_string($con, $_GET["coinName"]);
@@ -32,7 +31,7 @@ if (isset($_GET["coinName"])) {
         exit();
     } else {
         echo "const coinName = '$coinName';";
-        $sql = "SELECT * FROM favorite_coin WHERE coinName ='$coinName'";
+        $sql = "SELECT * FROM favorite_coin WHERE coinName ='$coinName' AND id='$id'";
         $result = mysqli_query($con, $sql) or die("검색 ERROR" . mysqli_error($con));
         $result_record = mysqli_num_rows($result);
         if ($result_record) {
@@ -60,7 +59,8 @@ if (isset($_GET["coinName"])) {
       <li>
         <form name="favorit_form" action="./DB/favorit.php" method="post">
           <input type="hidden" name="coinName" value="<?=$coinName?>">
-          <button type="submit"><img src="./img/star2.png" class="favorit_img"></button>
+          <button type="submit"><img src="./img/star2.png" alt="즐겨찾기" class="favorit_img"></button>
+          <button type="submit"><img src="./img/star2.png" alt="즐겨찾기" class="favorit_img"></button>
 
         </form>
       </li>
