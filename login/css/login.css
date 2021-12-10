@@ -3,7 +3,10 @@ input {
   border: 0.5px solid lightgray;
   border-radius: 2px;
 }
-
+#loginform {
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
 #login_main_content {
   width: 225px;
   margin: 0 auto;
@@ -29,13 +32,13 @@ input {
   height: 40px;
   margin-bottom: 10px;
   box-sizing: border-box;
-  background-color: #F23005;
+  background-color: #f23005;
   border-radius: 2px;
 }
 
 #login_button a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #login_button a p {
@@ -57,14 +60,13 @@ input {
 #find_info a {
   text-decoration: underline;
   font-size: 20px;
-  color: #1C1C1C;
+  color: #1c1c1c;
 }
 
 #kakao-login-btn {
   width: 225px;
   height: 43px;
   margin-bottom: 10px;
-  background-color: yellow;
   border-radius: 2px;
 }
 
@@ -78,13 +80,13 @@ input {
   height: 40px;
   margin-bottom: 40px;
   box-sizing: border-box;
-  border: 1px solid #F23005;
+  border: 1px solid #f23005;
   border-radius: 2px;
 }
 
 #member_form a {
   text-decoration: none;
-  color: #F23005;
+  color: #f23005;
 }
 
 #member_form a p {

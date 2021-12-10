@@ -9,14 +9,14 @@ var id_pass = false,
     address_one_pass = false,
     address_two_pass = false,
     address_three_pass = false,
-    phone_code_pass = false,
 
     tou_one_pass = false,
     tou_two_pass = false;
 
-var phone_code = "";
+// 폰인증 코드 확인용
+// var phone_code = "";
 
-$(document).ready(function () {
+$(function () {
     var input_id = $("#input_id"),
         input_password = $("#input_password"),
         input_password_check = $("#input_password_check"),
@@ -55,7 +55,7 @@ $(document).ready(function () {
         address_one_pass = true;
         address_two_pass = true;
         address_three_pass = true;
-        phone_code_pass = true;
+        // phone_code_pass = true;
         tou_one_pass = true;
         tou_two_pass = true;
         isAllPass();
@@ -279,49 +279,6 @@ $(document).ready(function () {
         isAllPass();
     }); //address_three.blur end
 
-    $("#phone_check").click(function () {
-        var phone_one_value = $("#phone_one").val();
-        var phone_two_value = $("#phone_two").val();
-        var phone_three_value = $("#phone_three").val();
-        if (phone_one_value !== "" && phone_two_pass && phone_three_pass) {
-            $.ajax({
-                url    : "./phone_certification.php",
-                type   : 'POST',
-                data   : {
-                    "mode"       : "send",
-                    "phone_one"  : phone_one_value,
-                    "phone_two"  : phone_two_value,
-                    "phone_three": phone_three_value
-                },
-                success: function (data) {
-                    phone_code = data;
-                    if (data === "발송 실패") {
-                        alert("문자 전송 실패되었습니다.");
-                    } else {
-                        alert("문자가 전송 되었습니다.");
-                    }
-                }
-            })
-        } else {
-            alert("휴대폰 번호가 제대로 입력되지 않았습니다!");
-        }
-    });
-
-    $("#input_phone_certification_check").click(function () {
-        phone_code_pass = false;
-        if ($("#input_phone_certification").val() === "") {
-            $("#input_phone_confirm").html("<span style='color:red'>인증번호를 입력해주세요.</span>");
-        } else if ($("#input_phone_certification").val() === phone_code) {
-            $("#input_phone_confirm").html("<span style='color:green'>인증에 성공하였습니다.</span>");
-            phone_code_pass = true;
-        } else if ($("#input_phone_certification").val() !== phone_code) {
-            $("#input_phone_confirm").html("<span style='color:red'>인증에 실패하였습니다.</span>");
-        } else {
-            alert("문자 인증 오류입니다!");
-        }
-        console.log("phone_code_pass");
-        isAllPass();
-    });
 
     // 전체 선택 체크박스
     $("#all_agree").click(function () {
@@ -367,15 +324,17 @@ function isAllPass() {
     console.log("isAllPass()");
     if (id_pass && pw_pass && pw_check_pass && name_pass && phone_two_pass && phone_three_pass
         && email_one_pass && email_two_pass && address_one_pass && address_two_pass && address_three_pass
-        && phone_code_pass && tou_one_pass && tou_two_pass) {
+        && tou_one_pass && tou_two_pass) {
         $("#button_submit").attr("disabled", false);
+        console.log("모두 입력 성공")
     } else {
         $("#button_submit").attr("disabled", true);
+        console.log("입력 안된곳있음")
     }
 }
 
 $("#cancel").on("click", function () {
-    location.href = "./member_mypage.php"
+    location.href = "../../index.php"
 })
 
 $(document).on("click", "#member_delete", function () {
@@ -385,7 +344,7 @@ $(document).on("click", "#member_delete", function () {
             url    : "member_data.php?type=delete",
             data   : {member_num: $("#member_num").val()},
             success: function () {
-                location.href="../index.php";
+                location.href="../../index.php?";
 
             }
         })

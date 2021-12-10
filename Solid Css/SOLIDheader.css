@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+* {
+  font-family: "Pretendard-Light";
+}
+.top1 {
+  padding-left: 40px;
+  width: 100%;
+  height: 65px;
+  background-color: #1a1d53;
+}
+.top1-1 {
+  width: 500px;
+  min-width: 500px;
+  height: 65px;
+  position: relative;
+  float: left;
+}
+.top1-1_icon {
+  float: left;
+  margin-top: 8px;
+  width: 150px;
+  height: 50px;
+}
+.top1-1table {
+  display: inline-block;
+  position: absolute;
+  top: 48%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul > li.top1-1tabletd {
+  color: white;
+  display: inline;
+  margin-right: 25px;
+  font-weight: bold;
+}
+ul > li.top1-1tabletd:hover {
+  cursor: pointer;
+  color: rgb(104, 145, 231);
+}
+.top1-2 {
+  text-align: right;
+  position: relative;
+  float: right;
+  width: 700px;
+  min-width: 400px;
+  height: 65px;
+}
+.top1-2table {
+  float: right;
+  padding: 20px;
+}
+ul > li.top1-2tabletd {
+  color: white;
+  display: inline;
+  margin-right: 25px;
+  font-weight: bold;
+  float: right;
+}
+ul > li.top1-2tabletd:hover {
+  cursor: pointer;
+  color: rgb(104, 145, 231);
+}
+li.optionmenutable {
+  float: left;
+  margin-left: 25px;
+  display: inline-block;
+  width: 80px;
+  padding-right: 10px;
+  text-align: center;
+  position: relative;
+}
+li ul.submenu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: -8px;
+}
+li.optionmenutable:hover ul.submenu {
+  display: block;
+}
+li ul.submenu > li {
+  display: inline-block;
+  font-weight: bold;
+  width: 90px;
+  padding: 5px 7.5px;
+  color: black;
+  /* background: #eee; */
+  text-align: center;
+}
+li ul.submenu > li:hover {
+  color: rgb(104, 145, 231);
+}
+#optionmenu {
+  /* margin-top: -20px; */
+}
+#headermenu {
+  margin-top: -15px;
+}
+#welcome_message {
+  color: white;
+  width: auto;
+  padding-top: 3px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#option_img {
+  width: 80%;
+}
