@@ -30,9 +30,9 @@
     border: 1px solid white;
   }
 
-  .favorit_img {
+  .favorite_img {
     cursor: pointer;
-    width: 27px; 
+    width: 27px;
     height: 27px;
     background-color: white;
   }
@@ -50,7 +50,7 @@
   .coinData-div li:nth-child(2) {
     font-size: 15px;
   }
-  
+
   .coinData-div li:nth-child(3) {
     font-size: 15px;
     font-weight: bold;

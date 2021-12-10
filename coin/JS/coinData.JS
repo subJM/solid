@@ -66,10 +66,10 @@ function setOrderBookData(array) {
         }
 
         if (i % 4 === 2) {
-            section[i].innerText = array['bids'][count].price
+            section[i].innerText = array['asks'][count].price
         }
          if (i % 4 === 3) {
-            section[i].innerText = array['bids'][count--].quantity
+            section[i].innerText = array['asks'][count--].quantity
         }
     }
 }

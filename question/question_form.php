@@ -1,3 +1,4 @@
+<?php include "../db/db_connector.php";?>
 <!DOCTYPE html>
 <html>
 
@@ -72,7 +73,7 @@
           </li>
         </ul>
         <ul class="buttons">
-          <li><button type="submit" onclick="question_input()">등록</button></li>
+          <li><button type="button" onclick="question_input()">등록</button></li>
           <li><button type="button" onclick="location.href='question_list.php'">목록</button></li>
         </ul>
       </form>

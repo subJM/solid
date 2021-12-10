@@ -33,7 +33,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/db/create_statement.php";
 <body>
   <div class="container">
     <header>
-      <?php include "../header.php";?>
+      <?php include "../header.php"; ?>
     </header>
     <section id="coinList">
       <div id="coinListTable">

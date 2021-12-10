@@ -15,8 +15,8 @@
   background-color: #1a1d53;
 }
 .top1-1 {
-  width: 800px;
-  min-width: 600px;
+  width: 500px;
+  min-width: 500px;
   height: 65px;
   position: relative;
   float: left;
@@ -31,8 +31,9 @@
   display: inline-block;
   position: absolute;
   top: 48%;
-  left: 48%;
+  left: 70%;
   transform: translate(-50%, -50%);
+  width: 300px;
 }
 
 ul,
@@ -53,14 +54,15 @@ ul > li.top1-1tabletd:hover {
   color: rgb(104, 145, 231);
 }
 .top1-2 {
+  text-align: right;
   position: relative;
   float: right;
-  width: 400px;
-  min-width: 220px;
+  width: 700px;
+  min-width: 400px;
   height: 65px;
 }
 .top1-2table {
-  width: 100%;
+  float: right;
   padding: 20px;
 }
 ul > li.top1-2tabletd {
