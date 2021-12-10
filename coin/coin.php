@@ -37,7 +37,7 @@ if (isset($_GET["coinName"])) {
         exit();
     } else {
         echo "const coinName = '$coinName';";
-        $sql = "SELECT * FROM favorite_coin WHERE coinName ='$coinName'";
+        $sql = "SELECT * FROM favorite_coin WHERE coinName ='$coinName' AND id='$id'";
         $result = mysqli_query($con, $sql) or die("검색 ERROR" . mysqli_error($con));
         $result_record = mysqli_num_rows($result);
         if ($result_record) {

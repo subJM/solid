@@ -11,14 +11,15 @@ function create_trigger($con, $trigger_name) {
   if ($flag === "NO") {
     switch ($trigger_name) {
       case 'deleted_members':
-        $sql = "CREATE trigger deleted_members
-            after delete
-            on members
-            for each row
-            begin
-            insert into deleted_members values (old.num, old.id, old.password, old.name, old.phone, 
-            old.email, old.regist_day, old.level, curdate());
-            end";
+        $sql = "
+          CREATE trigger deleted_members
+          after delete
+          on members
+          for each row
+          begin
+          insert into deleted_members values (old.num, old.id, old.password, old.name, old.phone, 
+          old.email, old.regist_day, old.level, curdate() );
+          END ";
         break;
       default:
         echo "<script>alert('해당트리거명이 없습니다. 점검요망!');</script>";
