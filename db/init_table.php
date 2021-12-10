@@ -191,8 +191,8 @@ function insert_init_data($con, $table_name){
                 전송한 디지털 자산이 아직 도착하지 않았다면 입금주소를 잘못 작성하여 도착하지 않았는지 또는 네트워크 노드의 승인(컨펌)이 늦어져서 도착하지 않았는지 등에 대한 확인이 가능합니다.',DATE_FORMAT(now(), '%Y-%m-%d'),0);";
                 break;
             // 모든 테이블에 대한 초기값
-            case 'recruit_plan' :
-                $sql = "insert into `recruit_plan` values (null, '포인트 구매', '1000000', '1000')";
+            case 'purchase_items' :
+                $sql = "insert into `purchase_items` values (null, '포인트 구매', '1000000', '1000')";
                 break;
             default:
                 // 존재하지 않는 테이블명일 때

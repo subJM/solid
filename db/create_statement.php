@@ -9,7 +9,7 @@ create_table($con, "members");
 create_table($con, "deleted_members");
 create_table($con, "coin_info");
 create_table($con, "favorite_coin");
-create_table($con, "recruit_plan");
+create_table($con, "purchase_items");
 create_table($con, "purchase");
 create_table($con, "notice");
 create_table($con, "free");
@@ -20,7 +20,7 @@ create_table($con, "question");
 create_table($con, "question_ripple");
 create_table($con, "memo");
 
-insert_init_data($con, 'recruit_plan');
+insert_init_data($con, 'purchase_items');
 insert_init_data($con, 'notice');
 insert_init_data($con, 'faq');
 
