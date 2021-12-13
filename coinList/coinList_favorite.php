@@ -10,16 +10,16 @@
   <title>No.1 가상자산 플랫폼, Solid</title>
   <script>
   <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/coinList/DB/favorit.php";?>
+include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/coinList/DB/favorite.php";?>
   </script>
-  <script src="./JS/coinDataList_favorit.JS?1"></script>
+  <script src="./JS/coinDataList_favorite.JS"></script>
   <script>
-  getTickerList_favoritData();
-  getTransaction_favorit();
+  getTickerList_favoriteData();
+  getTransaction_favorite();
 
   setInterval(() => {
-    getTickerList_favoritData();
-    getTransaction_favorit();
+    getTickerList_favoriteData();
+    getTransaction_favorite();
   }, 1000);
   </script>
 </head>
@@ -34,7 +34,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/solid/coinList/DB/favorit.php";?>
         <th>Daily Change</th>
 
         <script type="text/javascript">
-        for (let j = 0; j < favorit_coinName.length; j++) {
+        for (let j = 0; j < favorite_coinName.length; j++) {
           let txt = 1;
           document.write("<tr>");
           document.write("<td>" + 1 + "</td>");

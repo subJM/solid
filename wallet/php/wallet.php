@@ -4,9 +4,6 @@ $sql = "SELECT * FROM purchase";
 $result = mysqli_query($con, $sql);
 $row = @mysqli_fetch_array($result);
 
-$sql = "SELECT sum(totalPrice) FROM purchase";
-$result = mysqli_query($con, $sql);
-$row = @mysqli_fetch_array($result);
 
 $sql2 = "SELECT SUM(totalPrice) as tpb FROM coin_info WHERE transaction in ('buy')";
 $result2 = mysqli_query($con, $sql2);
