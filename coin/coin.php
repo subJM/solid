@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css">
   <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css">
   <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDheader.css">
-  <link rel="stylesheet" href="./CSS/exchange.css?12">
-  <link rel="stylesheet" href="./CSS/exchange_mobile.css?12">
+  <link rel="stylesheet" href="./CSS/exchange.css?122">
+  <link rel="stylesheet" href="./CSS/exchange_mobile.css?122">
   <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
   <script src="./JS/coinData.JS?123123131"></script>
   <script src="./JS/trade.JS"></script>

@@ -74,7 +74,8 @@
   }
 
   .orderbookTable-div td {
-    padding: 5px;
+    padding: 5px 10px;
+    color: red;
   }
 
   .orderbookTable-div td:nth-child(4n-3) {
@@ -174,5 +175,9 @@
 
   .coinTransactionDataTable-div > table > caption {
     margin: 20px;
+  }
+
+  .marketTradesTable-div td {
+    color: blue;
   }
 }
