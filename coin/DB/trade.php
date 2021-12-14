@@ -53,7 +53,7 @@ if (isset($_POST["name"]) && isset($_POST["transaction"]) && isset($_POST["price
             }
         }
         $sql = "insert into coin_info ";
-        $sql .= "values(null,'$name', '$time', '$transaction', '$price', '$amount', '$totalPrice', null)";
+        $sql .= "values(null, '$user_id','$name', '$time', '$transaction', '$price', '$amount', '$totalPrice')";
 
         mysqli_query($con, $sql) or die("삽입 ERROR" . mysqli_error($con)); // $sql 에 저장된 명령 실행
 

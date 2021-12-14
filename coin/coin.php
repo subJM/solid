@@ -7,24 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
     content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/x-icon" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/img/solid_icon.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/img/solid_icon.svg">
   <title>No.1 가상자산 플랫폼, Solid</title>
-  <link rel="stylesheet" href="./CSS/exchange.css">
-  <link rel="stylesheet" href="./CSS/exchange_mobile.css">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDmain.css">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDfooter.css">
-  <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/solid/Solid Css/SOLIDheader.css">
+
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDmain.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDfooter.css">
+  <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST']?>/solid/Solid Css/SOLIDheader.css">
+  <link rel="stylesheet" href="./CSS/exchange.css?122">
+  <link rel="stylesheet" href="./CSS/exchange_mobile.css?122">
   <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
   <script src="./JS/coinData.JS?123123131"></script>
   <script src="./JS/trade.JS"></script>
   <style>
-  /* .container {
-    height: auto;
-  } */
   </style>
   <script>
   const imgTag = document.querySelectorAll(".favorite_img");
-  console.log(imgTag[0]);
 
   <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/solid/db/db_connector.php";
@@ -41,9 +38,8 @@ if (isset($_GET["coinName"])) {
         $result = mysqli_query($con, $sql) or die("검색 ERROR" . mysqli_error($con));
         $result_record = mysqli_num_rows($result);
         if ($result_record) {
-          $favorite_img = "./img/star1.png";
-          // echo "console.log('왜 여기만안됨?')";
-          } else {
+            $favorite_img = "./img/star1.png";
+        } else {
             $favorite_img = "./img/star2.png";
         }
     }
@@ -60,14 +56,14 @@ if (isset($_GET["coinName"])) {
 
 <body>
   <header>
-    <?php include "../header.php"; ?>
+    <?php include "../header.php";?>
   </header>
   <div class="coinData-div">
     <ul>
       <li>
         <form name="favorite_form" action="./DB/favorite.php" method="post">
           <input type="hidden" name="coinName" value="<?=$coinName?>">
-          <button type="submit"><img src="<?= $favorite_img ?>" class="favorite_img"></button>
+          <button type="submit"><img src="<?=$favorite_img?>" class="favorite_img"></button>
 
         </form>
       </li>

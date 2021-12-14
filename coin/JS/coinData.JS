@@ -55,6 +55,7 @@ async function getOrderBook(coinName,  callbackFunc) {
 function setOrderBookData(array) {
     const section = document.querySelectorAll(".orderbook-div td")
     let count = 29
+    console.log(array);
     for (let i = 0; i < section.length; i++) {
         section[i].innerText = ""
         if (i % 4 === 0) {

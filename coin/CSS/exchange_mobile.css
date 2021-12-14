@@ -9,9 +9,23 @@
     width: 100%;
   }
 
-  header,
+  body {
+    margin-top: 0px;
+  }
+
   footer {
     display: none;
+  }
+
+  header {
+    display: none;
+  }
+
+  .favorite_img {
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+    background-color: white;
   }
   #amount {
     font-size: large;
@@ -60,7 +74,8 @@
   }
 
   .orderbookTable-div td {
-    padding: 5px;
+    padding: 5px 10px;
+    color: red;
   }
 
   .orderbookTable-div td:nth-child(4n-3) {
@@ -160,5 +175,9 @@
 
   .coinTransactionDataTable-div > table > caption {
     margin: 20px;
+  }
+
+  .marketTradesTable-div td {
+    color: blue;
   }
 }

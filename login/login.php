@@ -68,7 +68,8 @@ if (!isset($_POST['client'])) {
             exit;
         } else {
             session_start();
-            $_SESSION["user_id"] = $row["id"];
+
+            $_SESSION["user_id"] = $id;
             $_SESSION["user_name"] = $row["name"];
             $_SESSION["user_level"] = $row["level"];
 
